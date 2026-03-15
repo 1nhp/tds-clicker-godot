@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TDS Clicker"
+run/main_scene="uid://beaahem6rjcru"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="uid://coff4sliwpyid"
+
+[autoload]
+
+MusicManager="*uid://cqyvuiy53044b"
+Debug="*uid://b48cy4htieo13"
+SceneManager="*uid://vyn72swd38dp"
+object="*uid://c42lri0p7u7bv"
+DebugInfo="*uid://b0wfwstlxjqk2"
+SoundManager="*uid://c1qw1flexg5ji"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[global_group]
+
+game=""
+enemy=""
+coin_icon=""
+store_button=""
+screen_blur=""
+store_controller=""
+
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+3d/physics_engine="Dummy"
+2d/time_before_sleep=2.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=0

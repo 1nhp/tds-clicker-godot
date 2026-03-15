@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c1qw1flexg5ji"]
+
+[ext_resource type="Script" uid="uid://tjr1lbbfo3x5" path="res://scenes/sound_manager.gd" id="1_ef7im"]
+[ext_resource type="AudioStream" uid="uid://cqja5nrthvoog" path="res://assets/sounds/enemy_kill1.ogg" id="2_7jm8v"]
+[ext_resource type="AudioStream" uid="uid://c1f3nkc8bd1eb" path="res://assets/sounds/button_decide.ogg" id="3_mpi5b"]
+[ext_resource type="AudioStream" uid="uid://dpurgcjrhsfum" path="res://assets/sounds/coin.ogg" id="3_shlr6"]
+[ext_resource type="AudioStream" uid="uid://dx102q8q72o6a" path="res://assets/sounds/coin_collect.ogg" id="4_5lwbd"]
+[ext_resource type="AudioStream" uid="uid://ins8m5n6q620" path="res://assets/sounds/button_hover.ogg" id="4_aa63w"]
+[ext_resource type="AudioStream" uid="uid://db2xbs4b658lm" path="res://assets/sounds/notification_error.ogg" id="5_k1d7a"]
+[ext_resource type="AudioStream" uid="uid://c38o7u714bia0" path="res://assets/sounds/upgrade.ogg" id="6_aa63w"]
+
+[node name="SoundManager" type="Node2D" unique_id=1483975434]
+script = ExtResource("1_ef7im")
+
+[node name="EnemyKill1" type="AudioStreamPlayer" parent="." unique_id=1957363689]
+stream = ExtResource("2_7jm8v")
+volume_db = -14.747
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="ButtonDecide" type="AudioStreamPlayer" parent="." unique_id=636633450]
+stream = ExtResource("3_mpi5b")
+bus = &"Sounds"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1226777360]
+stream = ExtResource("4_aa63w")
+volume_db = -10.28
+bus = &"Sounds"
+
+[node name="NotificationError" type="AudioStreamPlayer" parent="." unique_id=308742591]
+stream = ExtResource("5_k1d7a")
+volume_db = -8.211
+bus = &"Sounds"
+
+[node name="Upgrade" type="AudioStreamPlayer" parent="." unique_id=137505226]
+stream = ExtResource("6_aa63w")
+bus = &"Sounds"
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="." unique_id=1495490723]
+position = Vector2(32, 32)
+stream = ExtResource("3_shlr6")
+volume_db = 4.481
+attenuation = 3.363586
+max_polyphony = 32
+panning_strength = 3.0
+bus = &"Sounds"
+
+[node name="CoinCollect" type="AudioStreamPlayer2D" parent="." unique_id=1705914332]
+position = Vector2(32, 32)
+stream = ExtResource("4_5lwbd")
+volume_db = -15.034
+attenuation = 3.363586
+max_polyphony = 4
+panning_strength = 3.0
+bus = &"Sounds"

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cqyvuiy53044b"]
+
+[ext_resource type="AudioStream" uid="uid://b1pjqaqyp15tk" path="res://assets/music/2k22_lobby.ogg" id="1_hu6vc"]
+[ext_resource type="Script" uid="uid://bpeu6dsik14j" path="res://scripts/music_controller.gd" id="1_p07gy"]
+[ext_resource type="AudioStream" uid="uid://d1mvow2mx0hr7" path="res://assets/music/ducky_boom.ogg" id="2_p07gy"]
+[ext_resource type="AudioStream" uid="uid://dqeqboemboh2l" path="res://assets/music/orig_lobby.ogg" id="3_fb0y8"]
+[ext_resource type="AudioStream" uid="uid://cx1lhcsrr0f0g" path="res://assets/music/outpost_16.ogg" id="4_fkbch"]
+[ext_resource type="AudioStream" uid="uid://qvbqe2v8l0oo" path="res://assets/music/rave_dj.ogg" id="5_r6agn"]
+[ext_resource type="AudioStream" uid="uid://d0i5wlfhy6tug" path="res://assets/music/spring_lobby.ogg" id="6_suxwa"]
+[ext_resource type="AudioStream" uid="uid://bnbyjyc3nbpnm" path="res://assets/music/tutorial.ogg" id="7_r5t12"]
+
+[node name="MusicManager" type="Node2D" unique_id=1920759052]
+script = ExtResource("1_p07gy")
+
+[node name="music1" type="AudioStreamPlayer" parent="." unique_id=1667111042]
+stream = ExtResource("1_hu6vc")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music2" type="AudioStreamPlayer" parent="." unique_id=881842364]
+stream = ExtResource("2_p07gy")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music3" type="AudioStreamPlayer" parent="." unique_id=2040624028]
+stream = ExtResource("3_fb0y8")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music4" type="AudioStreamPlayer" parent="." unique_id=1015125000]
+stream = ExtResource("4_fkbch")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music5" type="AudioStreamPlayer" parent="." unique_id=1154796602]
+stream = ExtResource("5_r6agn")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music6" type="AudioStreamPlayer" parent="." unique_id=420127235]
+stream = ExtResource("6_suxwa")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="music7" type="AudioStreamPlayer" parent="." unique_id=127300804]
+stream = ExtResource("7_r5t12")
+volume_db = -5.0
+bus = &"Music"
+
+[connection signal="finished" from="music1" to="." method="_on_music_finished"]
+[connection signal="finished" from="music2" to="." method="_on_music_finished"]
+[connection signal="finished" from="music3" to="." method="_on_music_finished"]
+[connection signal="finished" from="music4" to="." method="_on_music_finished"]
+[connection signal="finished" from="music5" to="." method="_on_music_finished"]
+[connection signal="finished" from="music6" to="." method="_on_music_finished"]
+[connection signal="finished" from="music7" to="." method="_on_music_finished"]

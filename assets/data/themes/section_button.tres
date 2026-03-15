@@ -1,0 +1,63 @@
+[gd_resource type="Theme" format=3 uid="uid://cjncq3twcu1la"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6o25"]
+bg_color = Color(1.973361e-06, 0.66536117, 0.10817353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(1, 0.5294118, 0.5294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_348kp"]
+bg_color = Color(0.41368303, 0.4136831, 0.41368303, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(1, 0.5294118, 0.5294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd15g"]
+bg_color = Color(1.973361e-06, 0.66536117, 0.10817353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(1, 0.5294118, 0.5294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tkw6"]
+bg_color = Color(0.32915857, 0.3291583, 0.3291585, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(1, 0.5294118, 0.5294118, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/icons/icon = null
+Button/styles/focus = SubResource("StyleBoxFlat_p6o25")
+Button/styles/hover = SubResource("StyleBoxFlat_348kp")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_p6o25")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_dd15g")
+Button/styles/normal = SubResource("StyleBoxFlat_1tkw6")
+Button/styles/pressed = SubResource("StyleBoxFlat_1tkw6")

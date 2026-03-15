@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dl8y6cngy24y2"]
+
+[ext_resource type="Script" uid="uid://dkupl2yutf64l" path="res://assets/data/manifest/item_data.gd" id="1_0gj5v"]
+[ext_resource type="Texture2D" uid="uid://ywywvcyvalat" path="res://assets/sprites/enemy_heavy.webp" id="2_0gj5v"]
+
+[resource]
+script = ExtResource("1_0gj5v")
+name = "Heavy"
+coin_award = 15
+price = 2000
+texture = ExtResource("2_0gj5v")

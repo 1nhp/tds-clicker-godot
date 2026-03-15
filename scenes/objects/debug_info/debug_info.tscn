@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b0wfwstlxjqk2"]
+
+[ext_resource type="Script" uid="uid://cfgjppnejgxwe" path="res://scenes/objects/debug_info/debug_info.gd" id="1_0e4su"]
+
+[node name="DebugInfo" type="CanvasLayer" unique_id=852280272]
+layer = 3
+script = ExtResource("1_0e4su")
+
+[node name="music" type="Label" parent="." unique_id=479100577]
+offset_left = 8.0
+offset_top = 472.0
+offset_right = 82.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.69467354, 0.69467354, 0.6946735, 0)
+theme_override_font_sizes/font_size = 24
+text = "Music:"
+
+[node name="fps" type="Label" parent="." unique_id=1965078912]
+offset_left = 8.0
+offset_top = 496.0
+offset_right = 82.0
+offset_bottom = 530.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.69467354, 0.69467354, 0.6946735, 0)
+theme_override_font_sizes/font_size = 24
+text = "FPS:"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cfa3alvcj1yos"]
+
+[ext_resource type="Script" uid="uid://dkupl2yutf64l" path="res://assets/data/manifest/item_data.gd" id="1_7lq41"]
+[ext_resource type="Texture2D" uid="uid://c2f7mdvdu20i4" path="res://assets/sprites/droopers/drooper_1_preview.png" id="2_aoric"]
+
+[resource]
+script = ExtResource("1_7lq41")
+name = "Plastic Drooper"
+type = "Drooper"
+price = 100
+texture = ExtResource("2_aoric")
