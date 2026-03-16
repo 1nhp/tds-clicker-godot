@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dpax6fy6givp7"]
+
+[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="1_1mdrj"]
+[ext_resource type="Script" uid="uid://d2r30s4bxwwdg" path="res://scenes/objects/coin_effect/coin_effect.gd" id="1_5orlh"]
+
+[node name="CoinEffect" type="Node2D" unique_id=1468992777]
+z_index = 1
+z_as_relative = false
+script = ExtResource("1_5orlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435891349]
+scale = Vector2(0.38095233, 0.38095212)
+texture = ExtResource("1_1mdrj")

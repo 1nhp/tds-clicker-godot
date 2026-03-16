@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ins8m5n6q620" path="res://assets/sounds/button_hover.ogg" id="4_aa63w"]
 [ext_resource type="AudioStream" uid="uid://db2xbs4b658lm" path="res://assets/sounds/notification_error.ogg" id="5_k1d7a"]
 [ext_resource type="AudioStream" uid="uid://c38o7u714bia0" path="res://assets/sounds/upgrade.ogg" id="6_aa63w"]
+[ext_resource type="AudioStream" uid="uid://dsofo2iltpamu" path="res://assets/sounds/coin2.ogg" id="8_k1d7a"]
 
 [node name="SoundManager" type="Node2D" unique_id=1483975434]
 script = ExtResource("1_ef7im")
@@ -39,7 +40,16 @@ bus = &"Sounds"
 [node name="Coin" type="AudioStreamPlayer2D" parent="." unique_id=1495490723]
 position = Vector2(32, 32)
 stream = ExtResource("3_shlr6")
-volume_db = 4.481
+volume_db = 7.11
+attenuation = 3.363586
+max_polyphony = 32
+panning_strength = 3.0
+bus = &"Sounds"
+
+[node name="Coin2" type="AudioStreamPlayer2D" parent="." unique_id=460370043]
+position = Vector2(32, 32)
+stream = ExtResource("8_k1d7a")
+volume_db = -16.17
 attenuation = 3.363586
 max_polyphony = 32
 panning_strength = 3.0
@@ -48,8 +58,8 @@ bus = &"Sounds"
 [node name="CoinCollect" type="AudioStreamPlayer2D" parent="." unique_id=1705914332]
 position = Vector2(32, 32)
 stream = ExtResource("4_5lwbd")
-volume_db = -15.034
+volume_db = -11.531
 attenuation = 3.363586
-max_polyphony = 4
+max_polyphony = 2
 panning_strength = 3.0
 bus = &"Sounds"

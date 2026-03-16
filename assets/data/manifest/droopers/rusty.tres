@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cfa3alvcj1yos"]
+[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://cfa3alvcj1yos"]
 
-[ext_resource type="Script" uid="uid://dkupl2yutf64l" path="res://assets/data/manifest/item_data.gd" id="1_7lq41"]
-[ext_resource type="Texture2D" uid="uid://c2f7mdvdu20i4" path="res://assets/sprites/droopers/drooper_1_preview.png" id="2_aoric"]
+[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://assets/data/manifest/store_item_data.gd" id="1_7lq41"]
+[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://assets/sprites/droopers/drooper_1.png" id="2_aoric"]
 
 [resource]
 script = ExtResource("1_7lq41")
-name = "Plastic Drooper"
-type = "Drooper"
-price = 100
+id = "rusty"
+name = "Rusty Drooper"
 texture = ExtResource("2_aoric")
+price = 100
+type = "Drooper"
+coin_award = 1

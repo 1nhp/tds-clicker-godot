@@ -4,7 +4,6 @@ signal EnemyClicked
 # Enemy variables
 @export var coin_award = 1
 @export_enum("Normal", "Abnormal", "Speedy") var type: String
-@export var data: EnemyData
 
 var tex = []
 
@@ -20,16 +19,13 @@ var time: float = 0.0
 
 # Tween reference to prevent creating multiple tweens
 var tween: Tween
-
-func _ready() -> void:
-	_update_enemy(data)
 	
-func _update_enemy(data1):
-	data = data1
-	if data:
-		coin_award = data.coin_award
-		$sprite.texture = data.texture
-	
+func _update_enemy(name1 = "Normal"):
+	var name2 = load("res://assets/data/manifest/enemies/" + str(name1 + ".tres"))
+	if name2:
+		coin_award = name2.coin_award
+		$sprite.texture = name2.texture
+		$sprite_hurt.texture = name2.texture	
 func _process(delta: float) -> void:
 	# Increase time by delta then rotate sprite
 	# Using the Sinus function
@@ -53,7 +49,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		EnemyClicked.emit()
 		
 		# Click animation
-		var max_effects = min(coin_award, 100)
+		var game = get_tree().get_first_node_in_group("game")
+		var max_effects = min(coin_award * game.enemy_multiplier, 100)
 
 		for i in range(max_effects):
 			var offset_x = randi_range(-70, 70)

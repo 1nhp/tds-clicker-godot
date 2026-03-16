@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://f74kg8q3mktq" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://is1mdatpinro" path="res://scenes/objects/enemy/enemy.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="4_lbhrr"]
-[ext_resource type="Resource" uid="uid://djxtuaekc1hbd" path="res://assets/data/enemies/normal.tres" id="4_vtaks"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="5_gee14"]
 [ext_resource type="Theme" uid="uid://d2i15xaik5s3x" path="res://assets/data/themes/store_button.tres" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui_cash.png" id="6_0tnpc"]
@@ -136,7 +135,6 @@ texture = ExtResource("1_uwrxv")
 [node name="enemy" parent="." unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
 position = Vector2(400, 288)
 type = "Normal"
-data = ExtResource("4_vtaks")
 
 [node name="screen_blur" type="ColorRect" parent="." unique_id=1494572352]
 visible = false

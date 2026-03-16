@@ -6,13 +6,14 @@
 [ext_resource type="Script" uid="uid://c15onmgcjcpqv" path="res://scenes/objects/store_ui/store.gd" id="1_ri5nt"]
 [ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://assets/data/themes/section_button.tres" id="1_v1cqb"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/button.gd" id="2_adcba"]
+[ext_resource type="Resource" uid="uid://5al64qevitgq" path="res://assets/data/manifest/enemies/normal.tres" id="2_kwivj"]
 [ext_resource type="Theme" uid="uid://cf3r6joitnq0p" path="res://assets/data/themes/store_exit_button.tres" id="2_q445e"]
+[ext_resource type="Resource" uid="uid://kjdikoq2o707" path="res://assets/data/manifest/path_data.tres" id="2_wgssr"]
 [ext_resource type="Texture2D" uid="uid://bcdb3v7ybxy1f" path="res://assets/sprites/enemy_normal.png" id="3_n4xxd"]
-[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://assets/sprites/droopers/drooper_1.png" id="7_5v5xw"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="10_4qb5x"]
+[ext_resource type="Texture2D" uid="uid://c2f7mdvdu20i4" path="res://assets/sprites/droopers/drooper_1_preview.png" id="10_idrsy"]
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="11_1fad6"]
 [ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://assets/data/themes/buy_button.tres" id="12_4530j"]
-[ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://assets/sprites/bg_crossroads.jpg" id="12_ag4xe"]
 [ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui_cash.png" id="12_b6ikj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v5xw"]
@@ -186,34 +187,10 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(5.5, 4)]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Window/Buttons/UpgradesButton:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(329, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Window/Buttons/UpgradesButton:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_adcba"]
 resource_name = "slide"
-length = 0.33498272
+length = 0.33824342
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -326,37 +303,13 @@ tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/path = NodePath("Window/DroopersTab/DrooperList:position")
-tracks/9/interp = 2
+tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.13346352, 0.25572014),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(5.5, 4), Vector2(5.5, -10), Vector2(5.5, 3)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Window/Buttons/UpgradesButton:position")
-tracks/10/interp = 2
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.15862937, 0.2500177, 0.30984703),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(329, 0), Vector2(329, -30), Vector2(329, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Window/Buttons/UpgradesButton:modulate")
-tracks/11/interp = 2
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0.11862935, 0.3220657),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n4xxd"]
@@ -370,6 +323,8 @@ z_index = 5
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ri5nt")
+item_data = ExtResource("2_kwivj")
+paths = ExtResource("2_wgssr")
 
 [node name="Window" type="Panel" parent="." unique_id=1396775829]
 layout_mode = 1
@@ -381,7 +336,7 @@ anchor_bottom = 0.5
 offset_left = 60.0
 offset_top = 68.0
 offset_right = 740.0
-offset_bottom = 532.0006
+offset_bottom = 532.00104
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(338, 232)
@@ -392,7 +347,7 @@ layout_mode = 0
 offset_left = 616.0
 offset_top = 4.0
 offset_right = 671.0
-offset_bottom = 59.999893
+offset_bottom = 59.999886
 pivot_offset = Vector2(28, 28)
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_q445e")
@@ -408,7 +363,7 @@ hover_scale = Vector2(1.1, 1.1)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 10.0
-offset_right = 132.00009
+offset_right = 131.99991
 offset_bottom = 44.0
 theme = ExtResource("1_n4xxd")
 
@@ -456,7 +411,7 @@ focus_mode = 3
 [node name="EnemiesButton" type="Button" parent="Window/Buttons" unique_id=356111029]
 layout_mode = 0
 offset_right = 159.0
-offset_bottom = 51.999916
+offset_bottom = 51.99997
 pivot_offset = Vector2(88, 30)
 focus_behavior_recursive = 2
 mouse_filter = 1
@@ -491,7 +446,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 164.0
 offset_right = 323.0
-offset_bottom = 52.00006
+offset_bottom = 52.000153
 pivot_offset = Vector2(88, 30)
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_v1cqb")
@@ -592,11 +547,12 @@ tile_scroll_hint = true
 
 [node name="BoxContainer" type="BoxContainer" parent="Window/DroopersTab/DrooperList" unique_id=20240095]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="GridContainer" type="GridContainer" parent="Window/DroopersTab/DrooperList/BoxContainer" unique_id=1064754246]
 layout_mode = 2
-size_flags_horizontal = 3
-columns = 3
+columns = 6
 
 [node name="DrooperContent" type="Panel" parent="Window/DroopersTab" unique_id=592111257]
 z_index = 1
@@ -625,39 +581,14 @@ theme_override_font_sizes/font_size = 30
 text = "Rusty Drooper"
 horizontal_alignment = 1
 
-[node name="bg_image" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=328393975]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -113.5
-offset_top = -156.0
-offset_right = 110.49997
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_ag4xe")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="image" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1050283728]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -41.49997
-offset_top = -96.0
-offset_right = 49.78842
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_5v5xw")
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 222.28214
+offset_bottom = 140.0
+texture = ExtResource("10_idrsy")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="coin_icon" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1873877799 groups=["coin_icon"]]
 texture_filter = 2
@@ -788,28 +719,11 @@ theme_override_font_sizes/font_size = 30
 text = "Abnormal"
 horizontal_alignment = 1
 
-[node name="bg_image" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=1643979803]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -113.5
-offset_top = -156.0
-offset_right = 110.49997
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_ag4xe")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="image" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=277976640]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 35.384613
-offset_right = 164.0
+offset_left = 44.0
+offset_top = 4.0
+offset_right = 174.0
 offset_bottom = 140.0
 texture = ExtResource("3_n4xxd")
 expand_mode = 1
@@ -908,16 +822,229 @@ vertical_scroll_mode = 2
 scroll_hint_mode = 1
 tile_scroll_hint = true
 
-[node name="BoxContainer" type="BoxContainer" parent="Window/UpgradesTab/UpgradeList" unique_id=127690616]
+[node name="BoxContainer" type="BoxContainer" parent="Window/UpgradesTab/UpgradeList" unique_id=1315976966]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="Window/UpgradesTab/UpgradeList/BoxContainer" unique_id=252834768]
+custom_minimum_size = Vector2(32, 60)
+layout_direction = 2
+layout_mode = 2
 size_flags_stretch_ratio = 0.0
-vertical = true
+
+[node name="Cooldown" type="Panel" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control" unique_id=2004900190]
+layout_mode = 0
+offset_right = 637.5
+offset_bottom = 73.0
+theme = ExtResource("1_n4xxd")
+
+[node name="upgrade_name" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=1621286452]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = -3.0
+offset_right = 295.5
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "Faster drooper cooldown"
+
+[node name="upgrade_description" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=507728578]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 21.0
+offset_right = 295.5
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "Speeds up droopers by 0.1 second"
+
+[node name="upgrade_price" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=1150242557]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 39.0
+offset_right = 295.5
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 0.7647059, 0, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "500 Coims"
+
+[node name="cooldown" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=10853846]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 55.0
+offset_right = 295.5
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0.42352942, 0.9372549, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "1 Cooldown"
+
+[node name="icon" type="TextureRect" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=2061138614 groups=["coin_icon"]]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.5
+offset_top = -15.0
+offset_right = 37.5
+offset_bottom = 18.383133
+grow_vertical = 2
+texture = ExtResource("10_4qb5x")
+expand_mode = 1
+
+[node name="cooldown_button" type="Button" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown" unique_id=1524383358]
+layout_mode = 0
+offset_left = 505.5
+offset_top = 9.0
+offset_right = 624.5
+offset_bottom = 61.00006
+pivot_offset = Vector2(60, 26)
+mouse_default_cursor_shape = 2
+theme = ExtResource("12_4530j")
+theme_override_colors/font_outline_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Upgrade"
+script = ExtResource("2_adcba")
+
+[node name="EnemyMultiplier" type="Panel" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control" unique_id=1272918153]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 637.5
+offset_bottom = 149.0
+theme = ExtResource("1_n4xxd")
+
+[node name="upgrade_name" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=1314315728]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = -3.0
+offset_right = 295.5
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 18
+text = "Enemy coin multiplier"
+
+[node name="upgrade_description" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=1941420458]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 21.0
+offset_right = 295.5
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "Multiplies coin amount when enemy is clicked"
+
+[node name="upgrade_price" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=2133013578]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 39.0
+offset_right = 295.5
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 0.7647059, 0, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "150 Coins"
+
+[node name="mult" type="Label" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=1463664973]
+z_index = 3
+layout_mode = 0
+offset_left = 41.5
+offset_top = 55.0
+offset_right = 295.5
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.85490197, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "1x Mult"
+
+[node name="icon" type="TextureRect" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=1513453218 groups=["coin_icon"]]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.5
+offset_top = -15.0
+offset_right = 37.5
+offset_bottom = 18.383133
+grow_vertical = 2
+texture = ExtResource("3_n4xxd")
+expand_mode = 1
+
+[node name="icon2" type="TextureRect" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=734416052 groups=["coin_icon"]]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.5
+offset_top = -3.4999924
+offset_right = 41.5
+offset_bottom = 22.383133
+grow_vertical = 2
+texture = ExtResource("12_b6ikj")
+expand_mode = 1
+
+[node name="mult_button" type="Button" parent="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier" unique_id=249766772]
+layout_mode = 0
+offset_left = 505.5
+offset_top = 9.0
+offset_right = 624.5
+offset_bottom = 61.00006
+pivot_offset = Vector2(60, 26)
+mouse_default_cursor_shape = 2
+theme = ExtResource("12_4530j")
+theme_override_colors/font_outline_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Upgrade"
+script = ExtResource("2_adcba")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1888525451]
 libraries/ = SubResource("AnimationLibrary_n4xxd")
-speed_scale = 0.8
+speed_scale = 0.7
 
 [connection signal="clicked" from="Window/CloseButton" to="." method="_on_close_button_clicked"]
 [connection signal="clicked" from="Window/Buttons/EnemiesButton" to="." method="_on_enemies_button_clicked"]
@@ -925,4 +1052,6 @@ speed_scale = 0.8
 [connection signal="clicked" from="Window/Buttons/UpgradesButton" to="." method="_on_upgrades_button_clicked"]
 [connection signal="clicked" from="Window/DroopersTab/DrooperContent/buy" to="." method="_on_buy_clicked"]
 [connection signal="clicked" from="Window/EnemiesTab/EnemyContent/buy" to="." method="_on_buy_clicked"]
+[connection signal="clicked" from="Window/UpgradesTab/UpgradeList/BoxContainer/Control/Cooldown/cooldown_button" to="." method="_on_cooldown_button_clicked"]
+[connection signal="clicked" from="Window/UpgradesTab/UpgradeList/BoxContainer/Control/EnemyMultiplier/mult_button" to="." method="_on_mult_button_clicked"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

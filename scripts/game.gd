@@ -1,17 +1,30 @@
 extends Node
 
-var coins = 0
-var income = 0
+var coins: int = 0
+var income: int = 0
 
 var droopers = {
 	"Rusty Drooper": 0,
 	"Plastic Drooper": 0
 }
-var total_droopers = 0
+var total_droopers: int = 0
+var drooper_cooldown: float = 1
+var enemy_multiplier: float = 1
+var coins_display = coins
 var enemies = {
 	"Abnormal": false,
-	"Speedy": false
+	"Speedy": false,
+	"Heavy": false,
+	"Normal Boss": false,
+	"Hidden": false,
+	"Elite Abnormal": false,
+	"Molten": false,
+	"Corpse": false,
+	"Molten Golem": false
 }
+var upgrades = {}
+
+var enemy_name = "Normal"
 
 @onready var coin_counter = $HUD/TL/CoinCounter/Counter/Label
 @onready var coin_counter2 = $HUD/TL/CoinCounter/Counter/Label2
@@ -19,20 +32,27 @@ var enemies = {
 @onready var income_counter = $HUD/TL/Income/Counter/Label
 @onready var income_counter2 = $HUD/TL/Income/Counter/Label2
 
-
 @onready var droopers_counter = $HUD/TL/DroopersCounter/Counter/Label
 @onready var droopers_counter2 = $HUD/TL/DroopersCounter/Counter/Label2
 @onready var coin_icon = $HUD/TL/CoinCounter/coin_icon
 @onready var drooper_icon = $HUD/TL/DroopersCounter/drooper_icon
 
 func _ready():
-	print(droopers)
+	SavingSystem.load_data()
 	_update_coin_count()
 	income_loop()
+	savedata_loop()
+	get_tree().get_first_node_in_group("enemy")._update_enemy(enemy_name)
 	
+func savedata_loop():
+	while true:	
+		await get_tree().create_timer(10).timeout
+		SavingSystem.save_data()
+
 func _update_coin_count():
-	coin_counter.text = str(coins)
-	coin_counter2.text = str(coins)
+	coins_display = NumFormat.format_number(coins)
+	coin_counter.text = str(coins_display)
+	coin_counter2.text = str(coins_display)
 	droopers_counter.text = str(total_droopers)
 	droopers_counter2.text = str(total_droopers)
 	income_counter.text = str(income)
@@ -52,7 +72,7 @@ func _update_coin_count():
 	
 func _on_enemy_enemy_clicked() -> void:
 	SoundManager.play_sound("Coin", randf_range(0.8, 1.3))
-	coins += get_tree().get_first_node_in_group("enemy").coin_award
+	coins += get_tree().get_first_node_in_group("enemy").coin_award * enemy_multiplier
 	_update_coin_count()
 
 func _on_store_button_pressed() -> void:
@@ -62,7 +82,7 @@ func _on_store_button_pressed() -> void:
 # Drooper logic
 func income_loop():
 	while true:
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(drooper_cooldown).timeout
 		
 		if income > 0:
 			coins += income
@@ -84,5 +104,5 @@ func income_loop():
 			create_tween().tween_property(drooper_icon, "scale", Vector2(1, 1), 0.05)
 
 			
-			SoundManager.play_sound("Coin", randf_range(0.8, 1.3))
-			_update_coin_count()
+			SoundManager.play_sound("Coin2", randf_range(0.8, 1.3))
+			#_update_coin_count()

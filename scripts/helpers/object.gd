@@ -5,7 +5,7 @@ var scenes := {
 	"debug_info": "res://scenes/objects/debug_info/debug_info.tscn",
 	"ui_store": "res://scenes/objects/store_ui/store.tscn",
 	"error_notification": "res://scenes/objects/error_notification/error_notification.tscn",
-	"coin_partices": "res://scenes/objects/coin_particles/coin_particles.tscn"
+	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn"
 }
 
 var cache := {}

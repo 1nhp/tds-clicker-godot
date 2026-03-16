@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmnf55b1ukndn"]
+
+[ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://assets/data/themes/section_button.tres" id="1_cmkxw"]
+[ext_resource type="Texture2D" uid="uid://bcdb3v7ybxy1f" path="res://assets/sprites/enemy_normal.png" id="2_sns1b"]
+[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/button.gd" id="3_iyi01"]
+
+[node name="StoreSelectButton" type="Button" unique_id=463436673]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -704.0
+offset_bottom = -498.66666
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cmkxw")
+icon = ExtResource("2_sns1b")
+expand_icon = true
+script = ExtResource("3_iyi01")

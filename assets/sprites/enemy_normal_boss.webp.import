@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3joeboto1j2"
-path="res://.godot/imported/drooper_2_preview.png-652b1f0419275aacfd750e95f0cbaa8d.ctex"
+uid="uid://bovxwo1562we1"
+path="res://.godot/imported/enemy_normal_boss.webp-5fc4f1786e8e326a0ab2c1971d1850da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/droopers/drooper_2_preview.png"
-dest_files=["res://.godot/imported/drooper_2_preview.png-652b1f0419275aacfd750e95f0cbaa8d.ctex"]
+source_file="res://assets/sprites/enemy_normal_boss.webp"
+dest_files=["res://.godot/imported/enemy_normal_boss.webp-5fc4f1786e8e326a0ab2c1971d1850da.ctex"]
 
 [params]
 
@@ -36,5 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=430
 detect_3d/compress_to=1

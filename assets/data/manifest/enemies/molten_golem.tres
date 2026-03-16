@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bcgx684psacen"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://assets/data/manifest/enemy_data.gd" id="1_v8b21"]
+[ext_resource type="Texture2D" uid="uid://dlbdt1jj1hoxd" path="res://assets/sprites/enemy_molten_golem.webp" id="2_dw4kt"]
+
+[resource]
+script = ExtResource("1_v8b21")
+coin_award = 130
+id = "molten_golem"
+name = "Molten Golem"
+texture = ExtResource("2_dw4kt")
+price = 100000
+type = "Enemy"

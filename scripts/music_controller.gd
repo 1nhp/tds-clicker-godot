@@ -1,7 +1,7 @@
 extends Node
 
 var music_node = null
-
+@export var max_music = 8
 # Execute the play music function when the MusicManager enters
 # the root scene
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 func play_music():
 	# Generate random number that will be used
 	# as number to play the node
-	var rng = randi_range(1, 7)
+	var rng = randi_range(1, max_music)
 	music_node = get_node("music" + str(rng))
 	music_node.play()
 	print("MUSIC CONTOLLER: " + str(music_node))

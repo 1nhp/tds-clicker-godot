@@ -1,0 +1,2 @@
+extends StoreItemData
+class_name EnemyData

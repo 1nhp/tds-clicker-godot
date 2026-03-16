@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="1_30wu4"]
 [ext_resource type="Script" uid="uid://dxcj2e4dsg625" path="res://scenes/objects/coin_particles/coin_particles.gd" id="1_xiuj4"]
 
+[sub_resource type="Curve" id="Curve_xiuj4"]
+_data = [Vector2(0.062780276, 0.48540324), 0.0, 0.0, 0, 0, Vector2(0.4910314, 0.94854033), 0.0, 0.0, 0, 0, Vector2(0.896861, 0.11660898), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="CoinParticles" type="Node2D" unique_id=1640335304]
 z_index = 9
 script = ExtResource("1_xiuj4")
@@ -12,12 +16,13 @@ modulate = Color(1, 1, 1, 0.9372549)
 z_index = 9
 z_as_relative = false
 emitting = false
-amount = 6
+amount = 15
 texture = ExtResource("1_30wu4")
 lifetime = 1.73
 one_shot = true
-preprocess = 0.3
-speed_scale = 2.0
+preprocess = 0.5
+speed_scale = 2.27
+randomness = 0.39
 draw_order = 1
 emission_shape = 3
 emission_rect_extents = Vector2(32, 10.705)
@@ -29,5 +34,6 @@ angular_velocity_min = 139.66
 angular_velocity_max = 218.44
 scale_amount_min = 0.3
 scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_xiuj4")
 
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

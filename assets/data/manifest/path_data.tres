@@ -1,6 +1,0 @@
-[gd_resource type="Resource" script_class="PathData" format=3 uid="uid://kjdikoq2o707"]
-
-[ext_resource type="Script" uid="uid://bkr05egj6qrnt" path="res://assets/data/manifest/path_data.gd" id="1_1bb82"]
-
-[resource]
-script = ExtResource("1_1bb82")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ywywvcyvalat"
-path="res://.godot/imported/enemy_heavy.webp-1f6dfcea018103ee866d5aa8c822d321.ctex"
+uid="uid://dlbdt1jj1hoxd"
+path="res://.godot/imported/enemy_molten_golem.webp-383dfd4349670a9f320481fad9f32979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemy_heavy.webp"
-dest_files=["res://.godot/imported/enemy_heavy.webp-1f6dfcea018103ee866d5aa8c822d321.ctex"]
+source_file="res://assets/sprites/enemy_molten_golem.webp"
+dest_files=["res://.godot/imported/enemy_molten_golem.webp-383dfd4349670a9f320481fad9f32979.ctex"]
 
 [params]
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dnceaawrlnffb"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://assets/data/manifest/enemy_data.gd" id="1_di8sk"]
+[ext_resource type="Texture2D" uid="uid://bovxwo1562we1" path="res://assets/sprites/enemy_normal_boss.webp" id="2_di8sk"]
+
+[resource]
+script = ExtResource("1_di8sk")
+coin_award = 20
+id = "normal_boss"
+name = "Normal Boss"
+texture = ExtResource("2_di8sk")
+price = 8000
+type = "Enemy"
