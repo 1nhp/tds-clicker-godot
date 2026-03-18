@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://u2lsfgj8n2rt"]
 
-[ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://assets/data/themes/store_gui_panel2.tres" id="1_j8vre"]
+[ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://data/themes/store_gui_panel2.tres" id="1_j8vre"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="2_a4qnc"]
-[ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://assets/data/themes/buy_button.tres" id="3_s6mq3"]
+[ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://data/themes/buy_button.tres" id="3_s6mq3"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/button.gd" id="4_2qm78"]
 
 [node name="StoreUpgradeContainer" type="Control" unique_id=2007051372]

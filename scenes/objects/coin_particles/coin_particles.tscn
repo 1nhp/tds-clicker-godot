@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://cmtlrmjgr60do"]
 
-[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="1_30wu4"]
+[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="1_30wu4"]
 [ext_resource type="Script" uid="uid://dxcj2e4dsg625" path="res://scenes/objects/coin_particles/coin_particles.gd" id="1_xiuj4"]
 
 [sub_resource type="Curve" id="Curve_xiuj4"]
 _data = [Vector2(0.062780276, 0.48540324), 0.0, 0.0, 0, 0, Vector2(0.4910314, 0.94854033), 0.0, 0.0, 0, 0, Vector2(0.896861, 0.11660898), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="CoinParticles" type="Node2D" unique_id=1640335304]
-z_index = 9
+[node name="CoinParticles" type="CanvasLayer" unique_id=1039331741]
 script = ExtResource("1_xiuj4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=373928889]
 modulate = Color(1, 1, 1, 0.9372549)
-z_index = 9
+z_index = 11
 z_as_relative = false
 emitting = false
 amount = 15

@@ -9,6 +9,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		game.coins += 999999999999999
 		game._update_coin_count()
 		
-func _ready() -> void:
-	if not OS.is_debug_build():
-		DebugInfo.queue_free()
+#func _ready() -> void:
+	#if not OS.is_debug_build():
+		#DebugInfo.queue_free()

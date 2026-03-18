@@ -11,11 +11,13 @@ enum AnimationType {
 @export var click_animation = AnimationType.SCALE
 @export var hover_animation = AnimationType.SCALE
 @export var hover_scale = Vector2(1.05,1.05)
+@export var node: Node = self
 
 var original_position: Vector2
 
 func _ready() -> void:
 	original_position = position
+	print("button: " + str(node))
 	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -44,27 +46,27 @@ func _play_anim(anim):
 	if anim == 1:
 		match click_animation:
 			AnimationType.SCALE:
-				create_tween().tween_property(self, "scale", Vector2(0.9,0.9), 0.1)
+				create_tween().tween_property(node, "scale", Vector2(0.9,0.9), 0.1)
 				await get_tree().create_timer(0.1).timeout
-				create_tween().tween_property(self, "scale", Vector2.ONE, 0.1)
+				create_tween().tween_property(node, "scale", Vector2.ONE, 0.1)
 	if anim == 2:
 		match hover_animation:
 			AnimationType.SCALE:
-				create_tween().tween_property(self, "scale", Vector2.ONE, 0.1)
+				create_tween().tween_property(node, "scale", Vector2.ONE, 0.1)
 
 			AnimationType.POSITION:
-				create_tween().tween_property(self, "position", original_position, 0.1)
+				create_tween().tween_property(node, "position", original_position, 0.1)
 	if anim == 3:
 		match hover_animation:
 			AnimationType.SCALE:
-				create_tween().tween_property(self, "scale", hover_scale, 0.1)
+				create_tween().tween_property(node, "scale", hover_scale, 0.1)
 
 			AnimationType.POSITION:
-				create_tween().tween_property(self, "position", original_position + Vector2(0, -3), 0.1)
+				create_tween().tween_property(node, "position", original_position + Vector2(0, -3), 0.1)
 	if anim == 4:
 		match hover_animation:
 			AnimationType.SCALE:
-				create_tween().tween_property(self, "scale", Vector2(0.9,0.9), 0.1)
+				create_tween().tween_property(node, "scale", Vector2(0.9,0.9), 0.1)
 
 		
 func _on_button_down():

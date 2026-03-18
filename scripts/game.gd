@@ -20,7 +20,10 @@ var enemies = {
 	"Elite Abnormal": false,
 	"Molten": false,
 	"Corpse": false,
-	"Molten Golem": false
+	"Molten Golem": false,
+	"Elite Hazmat": false,
+	"Hidden Boss": false,
+	"Molten Necromancer": false,
 }
 var upgrades = {}
 
@@ -76,7 +79,7 @@ func _on_enemy_enemy_clicked() -> void:
 	_update_coin_count()
 
 func _on_store_button_pressed() -> void:
-	object.create("ui_store")
+	object.create("ui_store", Vector2.ZERO, "/root/game/HUD")
 	get_tree().get_first_node_in_group("screen_blur").play("blur")
 
 # Drooper logic

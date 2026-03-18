@@ -28,14 +28,20 @@ DebugInfo="*uid://b0wfwstlxjqk2"
 SoundManager="*uid://c1qw1flexg5ji"
 SavingSystem="*uid://cjxhjmcl8qedi"
 NumFormat="*uid://q4gvjsg70unp"
+DiscordRPCLoader="*uid://dg8roxxkt1hnb"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/stretch/mode="viewport"
+window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
 
 [global_group]
 
@@ -44,7 +50,6 @@ enemy=""
 coin_icon=""
 store_button=""
 screen_blur=""
-store_controller=""
 
 [physics]
 
@@ -54,8 +59,67 @@ store_controller=""
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+occlusion_culling/bvh_build_quality=0
+occlusion_culling/jitter_projection=false
+rendering_device/vsync/swapchain_image_count=2
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+shader_compiler/shader_cache/compress=false
+shader_compiler/shader_cache/use_zstd_compression=false
+reflections/sky_reflections/roughness_layers=1
+reflections/sky_reflections/texture_array_reflections=false
+reflections/sky_reflections/ggx_samples=0
+reflections/sky_reflections/ggx_samples.mobile=0
+reflections/reflection_atlas/reflection_size=4
+reflections/reflection_atlas/reflection_size.mobile=4
+reflections/reflection_atlas/reflection_count=1
+reflections/specular_occlusion/enabled=false
+shading/overrides/force_lambert_over_burley.mobile=false
 textures/default_filters/anisotropic_filtering_level=0
+camera/depth_of_field/depth_of_field_bokeh_shape=0
+environment/ssao/quality=0
+environment/ssao/half_size=false
+environment/ssao/adaptive_target=0.0
+environment/ssao/blur_passes=0
+environment/ssao/fadeout_from=0.0
+environment/ssil/quality=0
+environment/ssil/half_size=false
+environment/ssil/adaptive_target=0.0
+environment/ssil/blur_passes=0
+environment/ssil/fadeout_from=0.0
+environment/ssil/fadeout_to=64.0
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+anti_aliasing/screen_space_roughness_limiter/amount=0.01
+anti_aliasing/screen_space_roughness_limiter/limit=0.01
+textures/decals/filter=1
+textures/light_projectors/filter=1
+occlusion_culling/occlusion_rays_per_thread=1
+environment/glow/upscale_mode=0
+environment/screen_space_reflection/half_size=false
+environment/subsurface_scattering/subsurface_scattering_quality=0
+environment/subsurface_scattering/subsurface_scattering_scale=0.001
+environment/subsurface_scattering/subsurface_scattering_depth_scale=0.001
+lightmapping/probe_capture/update_speed=0.001
+lightmapping/primitive_meshes/texel_size=0.001
+lightmapping/lightmap_gi/use_bicubic_filter=false
+global_illumination/sdfgi/probe_ray_count=0
+global_illumination/sdfgi/frames_to_converge=0
+global_illumination/sdfgi/frames_to_update_lights=0
+environment/volumetric_fog/volume_size=16
+environment/volumetric_fog/volume_depth=16
+environment/volumetric_fog/use_filter=0
+textures/basis_universal/rdo_dict_size=64
+textures/basis_universal/zstd_supercompression=false
+lightmapping/bake_quality/low_quality_ray_count=1
+lightmapping/bake_quality/medium_quality_ray_count=1
+lightmapping/bake_quality/high_quality_ray_count=1
+lightmapping/bake_quality/ultra_quality_ray_count=1
+lightmapping/bake_performance/max_rays_per_pass=1
+lightmapping/bake_performance/region_size=1
+lightmapping/bake_performance/max_transparency_rays=1
+lightmapping/bake_quality/low_quality_probe_ray_count=1
+lightmapping/bake_quality/medium_quality_probe_ray_count=1
+lightmapping/bake_quality/high_quality_probe_ray_count=1
+lightmapping/bake_quality/ultra_quality_probe_ray_count=1
+lightmapping/bake_performance/max_rays_per_probe_pass=1

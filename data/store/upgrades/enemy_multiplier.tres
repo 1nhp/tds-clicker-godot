@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://m2j3es8jba06"]
+
+[ext_resource type="Script" uid="uid://dyckhxk7r1sj5" path="res://data/store/upgrades/scripts/enemy_multiplier.upgrade.gd" id="1_c4jpv"]
+[ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui/ui_cash.png" id="2_nvjtg"]
+
+[resource]
+script = ExtResource("1_c4jpv")
+base_price = 2000
+price_multiplier = 8.0
+max_level = 9999
+description = "Enimes give more coins by 2x"
+text_color = Color(1, 0, 0, 1)
+id = "enemy_multiplier"
+name = "Enemy Multiplier"
+texture = ExtResource("2_nvjtg")
+price = 1000
+type = "Upgrade"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dq36pdtm02lwu"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_3aa1a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3aa1a"]
+load_path = "res://.godot/imported/enemy_corpse.webp-3bd674f1b0b9227118d4fdf80ffdda4a.ctex"
+
+[resource]
+script = ExtResource("1_3aa1a")
+id = "corpse"
+name = "Corpse"
+texture = SubResource("CompressedTexture2D_3aa1a")
+price = 60000
+type = "Enemy"
+coin_award = 80

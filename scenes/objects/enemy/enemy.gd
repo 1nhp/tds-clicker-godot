@@ -21,7 +21,7 @@ var time: float = 0.0
 var tween: Tween
 	
 func _update_enemy(name1 = "Normal"):
-	var name2 = load("res://assets/data/manifest/enemies/" + str(name1 + ".tres"))
+	var name2 = load("res://data/store/enemies/" + str(name1 + ".tres"))
 	if name2:
 		coin_award = name2.coin_award
 		$sprite.texture = name2.texture
@@ -58,7 +58,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 			object.create(
 				"coin_effect",
-				Vector2(position.x + offset_x, position.y + offset_y)
+				Vector2(global_position.x + offset_x, global_position.y + offset_y)
 			)
 			
 		$AnimationPlayer.stop()

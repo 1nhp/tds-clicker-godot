@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://assets/sprites/bg_crossroads.jpg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://f74kg8q3mktq" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://is1mdatpinro" path="res://scenes/objects/enemy/enemy.tscn" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui_coin.png" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="5_gee14"]
-[ext_resource type="Theme" uid="uid://d2i15xaik5s3x" path="res://assets/data/themes/store_button.tres" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui_cash.png" id="6_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://crrqh831cvy5i" path="res://assets/sprites/ui_store.png" id="6_p57ef"]
+[ext_resource type="Theme" uid="uid://d2i15xaik5s3x" path="res://data/themes/store_button.tres" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui/ui_cash.png" id="6_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://crrqh831cvy5i" path="res://assets/sprites/ui/ui_store.png" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/button.gd" id="6_u5sy4"]
+[ext_resource type="Theme" uid="uid://ctwo7iarpgsqu" path="res://data/themes/settings_button.tres" id="10_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://bya1yjsgfvc8" path="res://assets/sprites/ui/ui_settings.png" id="10_vtaks"]
 
 [sub_resource type="Shader" id="Shader_u5sy4"]
 code = "shader_type canvas_item;
@@ -33,7 +35,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("screen_blur:visible")
+tracks/0/path = NodePath("HUD/screen_blur:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -45,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("screen_blur:material:shader_parameter/blur_amount")
+tracks/1/path = NodePath("HUD/screen_blur:material:shader_parameter/blur_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -61,7 +63,7 @@ length = 0.19764827
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("screen_blur:visible")
+tracks/0/path = NodePath("HUD/screen_blur:visible")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -73,7 +75,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("screen_blur:material:shader_parameter/blur_amount")
+tracks/1/path = NodePath("HUD/screen_blur:material:shader_parameter/blur_amount")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,43 +129,60 @@ gradient = SubResource("Gradient_vtaks")
 [node name="game" type="Node2D" unique_id=2054689851 groups=["game"]]
 script = ExtResource("1_yqjtg")
 
-[node name="BgCrossroads" type="Sprite2D" parent="." unique_id=2004084491]
-position = Vector2(400, 300)
-scale = Vector2(0.7, 0.79260236)
-texture = ExtResource("1_uwrxv")
+[node name="BG" type="CanvasLayer" parent="." unique_id=343989833]
+layer = -1
 
-[node name="enemy" parent="." unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
-position = Vector2(400, 288)
-type = "Normal"
-
-[node name="screen_blur" type="ColorRect" parent="." unique_id=1494572352]
-visible = false
-z_index = 2
-material = SubResource("ShaderMaterial_0tnpc")
+[node name="BgCrossroads" type="TextureRect" parent="BG" unique_id=427109852]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -48.0
-offset_right = 852.0
-offset_bottom = 600.0
+offset_left = -1.0000019
+offset_right = 509.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.79260236)
+texture = ExtResource("1_uwrxv")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="BG" unique_id=291727362]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="blur" type="AnimationPlayer" parent="screen_blur" unique_id=429635026 groups=["screen_blur"]]
-root_node = NodePath("../..")
+[node name="enemy" parent="BG/Control" unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=191480564 groups=["HUD"]]
+
+[node name="screen_blur" type="ColorRect" parent="HUD" unique_id=1494572352]
+visible = false
+material = SubResource("ShaderMaterial_0tnpc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="blur" type="AnimationPlayer" parent="HUD/screen_blur" unique_id=429635026 groups=["screen_blur"]]
+root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_vtaks")
 
-[node name="HUD" type="Control" parent="." unique_id=1709860778]
-z_index = 2
+[node name="TL" type="Control" parent="HUD" unique_id=62936682]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="TL" type="Control" parent="HUD" unique_id=62936682]
-anchors_preset = 0
-offset_top = 12.0
-offset_right = 120.0
-offset_bottom = 78.0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 124.0
+offset_bottom = 82.0
 
 [node name="CoinCounter" type="Control" parent="HUD/TL" unique_id=396256124]
 anchors_preset = 0
@@ -408,47 +427,82 @@ pivot_offset = Vector2(20, 18)
 texture = ExtResource("6_0tnpc")
 expand_mode = 1
 
-[node name="BL" type="Control" parent="HUD/TL" unique_id=979296561]
-layout_mode = 1
+[node name="BR" type="Control" parent="HUD" unique_id=554877454]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SettingsButton" type="Button" parent="HUD/BR" unique_id=1054299928 groups=["store_button"]]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -44.000008
+offset_right = 36.0
+offset_bottom = 33.999992
+pivot_offset = Vector2(38, 40)
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_kvpfn")
+theme_override_colors/font_outline_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/icon_max_width = 57
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 18
+text = "
+Settings"
+icon = ExtResource("10_vtaks")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_u5sy4")
+one_click = true
+node = NodePath("")
+
+[node name="BL" type="Control" parent="HUD" unique_id=979296561]
+layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 482.0
+offset_top = -40.0
 offset_right = 40.0
-offset_bottom = 522.0
 grow_vertical = 0
 
-[node name="StoreButton" type="Button" parent="HUD/TL/BL" unique_id=1158544405 groups=["store_button"]]
+[node name="StoreButton" type="Button" parent="HUD/BL" unique_id=1158544405 groups=["store_button"]]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 7.0
 offset_top = -28.0
-offset_right = 184.0
+offset_right = 183.0
 offset_bottom = 32.0
 pivot_offset = Vector2(88, 30)
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_iywne")
-theme_override_colors/font_outline_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+theme_override_colors/font_outline_color = Color(0.25565878, 0.2556588, 0.2556587, 1)
 theme_override_constants/outline_size = 12
-theme_override_constants/align_to_largest_stylebox = 0
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 26
-text = "  Store"
+theme_override_font_sizes/font_size = 31
+text = "Store     "
+alignment = 2
 script = ExtResource("6_u5sy4")
 one_click = true
 
-[node name="store_icon" type="TextureRect" parent="HUD/TL/BL/StoreButton" unique_id=1135789683 groups=["coin_icon"]]
+[node name="icon" type="TextureRect" parent="HUD/BL/StoreButton" unique_id=1135789683 groups=["coin_icon"]]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -26.0
-offset_right = 52.0
-offset_bottom = 19.90181
+offset_left = 1.0
+offset_top = -26.000023
+offset_right = 45.0
+offset_bottom = 19.901787
 grow_vertical = 2
 texture = ExtResource("6_p57ef")
 expand_mode = 1
 
-[connection signal="EnemyClicked" from="enemy" to="." method="_on_enemy_enemy_clicked"]
-[connection signal="pressed" from="HUD/TL/BL/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="EnemyClicked" from="BG/Control/enemy" to="." method="_on_enemy_enemy_clicked"]
+[connection signal="pressed" from="HUD/BR/SettingsButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="HUD/BL/StoreButton" to="." method="_on_store_button_pressed"]

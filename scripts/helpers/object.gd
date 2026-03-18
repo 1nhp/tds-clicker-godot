@@ -10,7 +10,7 @@ var scenes := {
 
 var cache := {}
 
-func create(scene_name:String, position:Vector2 = Vector2.ZERO) -> Node:
+func create(scene_name: String, position: Vector2 = Vector2.ZERO, parent_path: NodePath = NodePath("")) -> Node:
 	if not scenes.has(scene_name):
 		push_error("Scene not registered: " + scene_name)
 		return null
@@ -19,8 +19,21 @@ func create(scene_name:String, position:Vector2 = Vector2.ZERO) -> Node:
 		cache[scene_name] = load(scenes[scene_name])
 
 	var instance = cache[scene_name].instantiate()
+
 	if not instance is CanvasLayer:
 		instance.position = position
-	get_tree().current_scene.add_child(instance)
+	else:
+		instance.offset = position
+		
+	var parent_node: Node = null
+	
+	if parent_path != NodePath(""):
+		parent_node = get_node_or_null(parent_path)
+		if parent_node == null:
+			return null
+	else:
+		parent_node = get_tree().current_scene
+
+	parent_node.add_child(instance)
 
 	return instance
