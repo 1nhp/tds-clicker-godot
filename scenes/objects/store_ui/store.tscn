@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ceft1du7jh6si" path="res://assets/sprites/ui/ui_store_small.png" id="1_adcba"]
 [ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://data/themes/store_gui_panel2.tres" id="1_n4xxd"]
 [ext_resource type="Script" uid="uid://c15onmgcjcpqv" path="res://scenes/objects/store_ui/scripts/store_ui.gd" id="1_ri5nt"]
-[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/button.gd" id="2_adcba"]
+[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="2_adcba"]
 [ext_resource type="Script" uid="uid://cnhanq11ux3mc" path="res://scenes/objects/store_ui/scripts/store_manager.gd" id="2_gh8kj"]
 [ext_resource type="Script" uid="uid://b2fw1k1g2g153" path="res://scenes/objects/store_ui/scripts/store_logic.gd" id="2_wgssr"]
 [ext_resource type="Theme" uid="uid://cf3r6joitnq0p" path="res://data/themes/store_exit_button.tres" id="3_gh8kj"]

@@ -4,6 +4,7 @@ var scenes := {
 	"coin_effect": "res://scenes/objects/coin_effect/coin_effect.tscn",
 	"debug_info": "res://scenes/objects/debug_info/debug_info.tscn",
 	"ui_store": "res://scenes/objects/store_ui/store.tscn",
+	"ui_settings": "res://scenes/objects/settings_ui/settings.tscn",
 	"error_notification": "res://scenes/objects/error_notification/error_notification.tscn",
 	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn"
 }

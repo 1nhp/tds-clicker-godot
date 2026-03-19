@@ -24,7 +24,10 @@ var upgrade_container_scene = preload("res://scenes/objects/error_notification/s
 
 func _ready():
 	get_tree().get_first_node_in_group("LoadingText").visible = true
-	anim_player.play("slide")
+	
+	if StoreManager.game.settings["ui_animations"]:
+		anim_player.play("slide")
+		
 	EnemiesTab.visible = false
 	DroopersTab.visible = false
 	UpgradesTab.visible = false
@@ -59,7 +62,8 @@ func _fill_content(container, item, rate_text):
 	container.get_node("name").text = item.name
 	container.get_node("coinaward").text = rate_text
 	container.get_node("image").texture = item.texture
-	container.get_node("price").text = "Price: " + str(item.price)
+	var display_item_price = NumFormat.format_number(item.price)
+	container.get_node("price").text = "Price: " + str(display_item_price)
 
 func _update_content(item):
 	match item.type:
@@ -110,13 +114,15 @@ func _on_droopers_button_clicked(button): _switch_tab(DroopersTab)
 func _on_upgrades_button_clicked(button): _switch_tab(UpgradesTab)
 
 func _on_close_button_clicked(button):
-	anim_player.play_backwards("slide")
-	closing = true
-
+	if StoreManager.game.settings["ui_animations"]:
+		anim_player.play_backwards("slide")
+		closing = true
+	else:
+		store_root.queue_free()
+		
 	var store_button = get_tree().get_first_node_in_group("store_button")
 	store_button.disabled = false
-	var screen_blur = get_tree().get_first_node_in_group("screen_blur")
-	screen_blur.play_backwards("blur")
+	StoreManager.game._blur_screen(false)
 
 
 func _on_store_manager_finished_loading() -> void:

@@ -1,15 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c3aodjmkra3oe"]
 
 [ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_tefh3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kdct6"]
-load_path = "res://.godot/imported/enemy_speedy.webp-6970310760d5c5dff3fd81e1c9c257d5.ctex"
+[ext_resource type="Texture2D" uid="uid://d4e6ngk0lvkp3" path="res://assets/sprites/enemies/enemy_speedy.webp" id="2_anfbn"]
 
 [resource]
 script = ExtResource("1_tefh3")
 id = "speedy"
 name = "Speedy"
-texture = SubResource("CompressedTexture2D_kdct6")
+texture = ExtResource("2_anfbn")
 price = 1000
 type = "Enemy"
 coin_award = 5

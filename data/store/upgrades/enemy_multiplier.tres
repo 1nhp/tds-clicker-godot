@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_c4jpv")
 base_price = 2000
-price_multiplier = 8.0
+price_multiplier = 16.0
 max_level = 9999
 description = "Enimes give more coins by 2x"
 text_color = Color(1, 0, 0, 1)

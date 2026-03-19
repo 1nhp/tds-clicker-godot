@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TDS Clicker"
-run/main_scene="uid://beaahem6rjcru"
+run/main_scene="uid://duuee8bvyllsp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [audio]
@@ -50,6 +50,7 @@ enemy=""
 coin_icon=""
 store_button=""
 screen_blur=""
+settings_button=""
 
 [physics]
 

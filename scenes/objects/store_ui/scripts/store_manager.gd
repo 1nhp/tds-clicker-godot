@@ -20,24 +20,19 @@ func _ready() -> void:
 		var items = _load_store_items(folder)
 		store_items.append_array(items)
 		await get_tree().process_frame
-			
+		
 	# Or emit once at the end
 	emit_signal("FinishedLoading")
 	
 func _load_store_items(folder):
 	var items = []
-	var dir = DirAccess.open(folder)
+	var files = ResourceLoader.list_directory(folder)
 
-	dir.list_dir_begin()
-	var file = dir.get_next()
-
-	while file != "":
+	for file in files:
 		if file.ends_with(".tres"):
 			var item = load(folder + "/" + file)
 			items.append(item)
-		file = dir.get_next()
-	dir.list_dir_end()
-	
+
 	items.sort_custom(func(a,b): 
 		return a.price < b.price)
 

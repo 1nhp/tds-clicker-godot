@@ -19,7 +19,8 @@ func save_data():
 		"enemy_name": game.enemy_name,
 		"drooper_cooldown": game.drooper_cooldown,
 		"upgrades": game.upgrades,
-		"enemy_multiplier": game.enemy_multiplier
+		"enemy_multiplier": game.enemy_multiplier,
+		"settings": game.settings,
 	}
 
 	var json_string = JSON.stringify(saved_data)
@@ -58,15 +59,23 @@ func load_data():
 	var saved_data = JSON.parse_string(json_string)
 
 	var game = get_game()
-
-	game.coins = saved_data["coins"]
-	game.total_droopers = saved_data["total_droopers"]
-	game.income = saved_data["income"]
-	game.droopers = saved_data["droopers"]
-	game.enemies = saved_data["enemies"]
-	game.enemy_name = saved_data["enemy_name"]
-	game.drooper_cooldown = saved_data["drooper_cooldown"]
-	game.upgrades = saved_data["upgrades"]	
-	game.enemy_multiplier = saved_data["enemy_multiplier"]	
 	
+	game.coins = saved_data.get("coins", 0)
+	game.total_droopers = saved_data.get("total_droopers", 0)
+	game.income = saved_data.get("income", 0)
+	game.droopers = saved_data.get("droopers", {})
+	game.enemies = saved_data.get("enemies", {})
+	game.enemy_name = saved_data.get("enemy_name", "")
+	game.drooper_cooldown = saved_data.get("drooper_cooldown", 0)
+	game.upgrades = saved_data.get("upgrades", {})
+	game.enemy_multiplier = saved_data.get("enemy_multiplier", 1)
+	game.settings = saved_data.get("settings", {
+		"blur_bg": true,
+		"coin_particles": 100,
+		"enemy_animations": true,
+		"ui_animations": true,
+		"soundvolume": 1.0,
+		"musicvolume": 1.0,
+		})	
+
 	print("Encrypted save loaded: ", saved_data)

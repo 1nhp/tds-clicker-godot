@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://1s6k4wb6ayqo"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_e7hgq"]
+[ext_resource type="Texture2D" uid="uid://dxfraail7gchw" path="res://assets/sprites/enemies/enemy_elite_boomer.webp" id="2_e7hgq"]
+
+[resource]
+script = ExtResource("1_e7hgq")
+id = "elite_boomer"
+name = "Elite Boomer"
+texture = ExtResource("2_e7hgq")
+price = 1000000
+type = "Enemy"
+coin_award = 300

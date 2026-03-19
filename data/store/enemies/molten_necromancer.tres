@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cqliim0181fkm"]
 
 [ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_agny5"]
-[ext_resource type="Texture2D" uid="uid://beb4rdyjhwlwx" path="res://assets/sprites/enemies/molten_necromancer.webp" id="2_agny5"]
+[ext_resource type="Texture2D" uid="uid://d0bpdw7gp3y2v" path="res://assets/sprites/enemies/enemy_molten_necromancer.webp" id="2_agny5"]
 
 [resource]
 script = ExtResource("1_agny5")

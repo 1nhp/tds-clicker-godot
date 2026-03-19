@@ -1,15 +1,13 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dl8y6cngy24y2"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://assets/data/manifest/enemy_data.gd" id="1_0gj5v"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lggn3"]
-load_path = "res://.godot/imported/enemy_heavy.webp-1f6dfcea018103ee866d5aa8c822d321.ctex"
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_0gj5v"]
+[ext_resource type="Texture2D" uid="uid://ywywvcyvalat" path="res://assets/sprites/enemies/enemy_heavy.webp" id="2_pb83x"]
 
 [resource]
 script = ExtResource("1_0gj5v")
-coin_award = 15
 id = "heavy"
 name = "Heavy"
-texture = SubResource("CompressedTexture2D_lggn3")
-price = 2500
+texture = ExtResource("2_pb83x")
+price = 4500
 type = "Enemy"
+coin_award = 15
