@@ -126,5 +126,5 @@ theme_override_constants/outline_size = 12
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
-text = "Upgrade"
+text = "upgrade_btn"
 script = ExtResource("4_2qm78")

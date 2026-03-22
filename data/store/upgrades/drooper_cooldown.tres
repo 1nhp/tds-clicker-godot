@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("1_3m3rh")
 base_price = 500
-price_multiplier = 8.0
-max_level = 8
-description = "Speeds up droopers by 0.1 second"
+price_multiplier = 6.0
+max_level = 10
+upgrade_name_key = "drooper_cooldown_name"
+description_key = "drooper_cooldown_desc"
 text_color = Color(0, 0.5803922, 1, 1)
 id = "drooper_cooldown"
 name = "Drooper Cooldown"

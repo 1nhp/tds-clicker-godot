@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cxla2yi4qpli0"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_rpdoq"]
+[ext_resource type="Texture2D" uid="uid://cb0jhq0cg7pvy" path="res://assets/sprites/enemies/elite_molten.webp" id="2_rpdoq"]
+
+[resource]
+script = ExtResource("1_rpdoq")
+id = "elite_molten"
+name = "Elite Molten"
+texture = ExtResource("2_rpdoq")
+price = 15000000.0
+type = "Enemy"
+coin_award = 500

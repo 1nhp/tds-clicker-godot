@@ -1,0 +1,48 @@
+key,ru
+store_btn,Магазин
+settings_btn,Настройки
+settings_graphics_btn,Графика
+settings_audio_btn,Звук
+settings_game_btn,Игра
+coin_particles_amount,Кол. частиц монет
+coin_amount_dropdown_1,Много
+coin_amount_dropdown_2,Середина
+coin_amount_dropdown_3,Мало
+coin_amount_dropdown_4,Очень мало
+coin_amount_dropdown_5,Отключено
+coin_particles_amount_description,"Меняет количество монет на екране, может увеличить\nпроизводительность на слабых устройствах."
+enemy_animations,Анимация противника
+enemy_animations_description,"Включает или отключает анимации противника, может увеличить\nпроизводительность на слабых устройствах."
+ui_animations,Анимация пол. интерфейса
+ui_animations_description,"Включает или отключает анимации интерфейса, может увеличить\nпроизводительность на слабых устройствах."
+blur_bg,Размития фона
+blur_bg_description,"Включает или отключает размития фона в меню, может увеличить\nпроизводительность на слабых устройствах."
+sound_volume,Громкость Звука
+music_volume,Громкость Музики
+language,Язик
+droopers,Дроперы
+coins,Монеты
+income,Доход 
+enemies,Враги
+upgrades,Прокачка
+buy_btn,Купить
+upgrade_btn,Улучшить уровень 
+enemy_change_btn,Сменить
+price,Цена: 
+drooper_cooldown_name,Ускоренния дроперов
+enemy_multiplier_name,Множитель врагов
+drooper_cooldown_desc,Ускоряет скорость дроперов на 0.1 секунд
+enemy_multiplier_desc,Враги дают монеты на раза больше
+enemy_multiplier_text,х Множ
+drooper_cooldown_text,Задержка: 
+per_second,за секунду
+per_click,за убивание
+disclaimer_content,"Этот фанатский проект не поддерживается и не связан с Paradoxum Games,
+и её разработчиками каким-либо образом, а также с Roblox Corporation и другими компаниями. Не продавайте и не распространяйте этот проект
+платно, он всегда будет бесплатным.
+Если вы хотите поддержать меня, подписывайтесь на меня в социальных сетях!
+Maritosu.bsky.social
+@Maritosu на YouTube "
+disclaimer_btn,Внимание!
+not_enough_coins,У тебя недостаточно монет чтобы купить это!
+upgrade_maxxed,Уровень улучшения уже на полном уровне!

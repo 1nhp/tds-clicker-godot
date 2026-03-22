@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dpwf48y4lc4do"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_05wua"]
+[ext_resource type="Texture2D" uid="uid://edbllwxt4u11" path="res://assets/sprites/enemies/bulwark.webp" id="2_05wua"]
+
+[resource]
+script = ExtResource("1_05wua")
+id = "bulwark"
+name = "Bulwark"
+texture = ExtResource("2_05wua")
+price = 9000000.0
+type = "Enemy"
+coin_award = 420

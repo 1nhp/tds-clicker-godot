@@ -23,8 +23,6 @@ enum Anim{
 var original_position: Vector2
 
 func _ready() -> void:
-	
-	
 	original_position = position
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -54,10 +52,8 @@ func _on_button_clicked():
 
 var tween: Tween
 
-@onready var game = get_tree().get_first_node_in_group("game")
-
 func _play_anim(anim_type):
-	if game and game.settings["ui_animations"]:
+	if Globals.game and Globals.game.settings["ui_animations"]:
 		if tween: tween.kill()
 		tween = create_tween()
 		tween.set_trans(Tween.TRANS_BACK)

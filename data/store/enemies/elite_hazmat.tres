@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://p2mmdi3gfh7s"]
 
 [ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_q1a2o"]
-[ext_resource type="Texture2D" uid="uid://d35pk2jlnmqtu" path="res://assets/sprites/enemies/enemy_elite_hazmat.webp" id="2_q1a2o"]
+[ext_resource type="Texture2D" uid="uid://co5kb4jkmgelf" path="res://assets/sprites/enemies/elite_hazmat.webp" id="2_q1a2o"]
 
 [resource]
 script = ExtResource("1_q1a2o")
@@ -10,4 +10,4 @@ name = "Elite Hazmat"
 texture = ExtResource("2_q1a2o")
 price = 250000
 type = "Enemy"
-coin_award = 160
+coin_award = 145

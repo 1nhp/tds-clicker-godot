@@ -93,20 +93,20 @@ _data = {
 
 [sub_resource type="Gradient" id="Gradient_0tnpc"]
 offsets = PackedFloat32Array(0.40625, 1)
-colors = PackedColorArray(0.08718953, 0.051053986, 6.016344e-09, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.5702499, 0.24106166, 1.92523e-07, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vtaks"]
 gradient = SubResource("Gradient_0tnpc")
 
 [sub_resource type="Gradient" id="Gradient_kvpfn"]
-offsets = PackedFloat32Array(0.51670647, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.5585443, 1)
+colors = PackedColorArray(1, 0.84705883, 0.21176471, 1, 0.8627451, 0.41960785, 0.003921569, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dinhu"]
 gradient = SubResource("Gradient_kvpfn")
 
 [sub_resource type="Gradient" id="Gradient_u5sy4"]
-offsets = PackedFloat32Array(0.40625, 1)
+offsets = PackedFloat32Array(0.40664557, 1)
 colors = PackedColorArray(0.08718953, 0.051053986, 6.016344e-09, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p57ef"]
@@ -118,6 +118,13 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iywne"]
 gradient = SubResource("Gradient_gee14")
+
+[sub_resource type="Gradient" id="Gradient_dinhu"]
+offsets = PackedFloat32Array(0.57753164, 1)
+colors = PackedColorArray(0.08627451, 0.41960785, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kvuet"]
+gradient = SubResource("Gradient_dinhu")
 
 [sub_resource type="Gradient" id="Gradient_vtaks"]
 offsets = PackedFloat32Array(0.2875895, 1)
@@ -136,8 +143,8 @@ layer = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0000019
-offset_right = 509.0
+offset_left = -144.99998
+offset_right = 610.7141
 offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -157,6 +164,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="enemy" parent="BG/Control" unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
+type = "Normal"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=191480564 groups=["HUD"]]
 
@@ -200,7 +208,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.31431624, 0.31431606, 0.3143161, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 24
-text = "Coins"
+text = "coins"
 
 [node name="Counter" type="Control" parent="HUD/TL/CoinCounter" unique_id=442910942]
 anchors_preset = 0
@@ -281,7 +289,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.31431624, 0.31431606, 0.3143161, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 24
-text = "Droopers"
+text = "droopers"
 
 [node name="Counter" type="Control" parent="HUD/TL/DroopersCounter" unique_id=430484065]
 anchors_preset = 0
@@ -362,7 +370,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.31431624, 0.31431606, 0.3143161, 1)
 theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 24
-text = "Income"
+text = "income"
 
 [node name="Counter" type="Control" parent="HUD/TL/Income" unique_id=1280271900]
 anchors_preset = 0
@@ -393,7 +401,7 @@ offset_top = 4.410261
 offset_right = 307.55457
 offset_bottom = 279.684
 rotation = 1.5707964
-texture = SubResource("GradientTexture2D_p57ef")
+texture = SubResource("GradientTexture2D_kvuet")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HUD/TL/Income/Counter" unique_id=1674897060]
@@ -441,9 +449,9 @@ grow_vertical = 0
 
 [node name="SettingsButton" type="Button" parent="HUD/BR" unique_id=1054299928 groups=["settings_button"]]
 layout_mode = 0
-offset_left = -48.0
+offset_left = -56.0
 offset_top = -56.0
-offset_right = 36.0
+offset_right = 32.0
 offset_bottom = 30.210526
 pivot_offset = Vector2(38, 40)
 mouse_default_cursor_shape = 2
@@ -453,11 +461,11 @@ theme_override_constants/outline_size = 12
 theme_override_constants/icon_max_width = 57
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 20
-theme_override_font_sizes/font_size = 18
-text = "
-Settings"
+theme_override_font_sizes/font_size = 14
+text = "settings_btn"
 icon = ExtResource("10_vtaks")
 icon_alignment = 1
+vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("6_u5sy4")
 one_click = true
@@ -475,32 +483,20 @@ grow_vertical = 0
 layout_mode = 0
 offset_left = 7.0
 offset_top = -28.0
-offset_right = 183.0
+offset_right = 184.0
 offset_bottom = 32.0
 pivot_offset = Vector2(88, 30)
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_iywne")
 theme_override_colors/font_outline_color = Color(0.25565878, 0.2556588, 0.2556587, 1)
 theme_override_constants/outline_size = 12
+theme_override_constants/icon_max_width = 48
 theme_override_font_sizes/font_size = 31
-text = "Store     "
-alignment = 2
+text = "store_btn"
+icon = ExtResource("6_p57ef")
+expand_icon = true
 script = ExtResource("6_u5sy4")
 one_click = true
-
-[node name="icon" type="TextureRect" parent="HUD/BL/StoreButton" unique_id=1135789683 groups=["coin_icon"]]
-texture_filter = 2
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -26.000023
-offset_right = 45.0
-offset_bottom = 19.901787
-grow_vertical = 2
-texture = ExtResource("6_p57ef")
-expand_mode = 1
 
 [connection signal="EnemyClicked" from="BG/Control/enemy" to="." method="_on_enemy_enemy_clicked"]
 [connection signal="pressed" from="HUD/BR/SettingsButton" to="." method="_on_settings_button_pressed"]

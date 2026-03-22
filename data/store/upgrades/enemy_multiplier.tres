@@ -5,13 +5,13 @@
 
 [resource]
 script = ExtResource("1_c4jpv")
-base_price = 2000
-price_multiplier = 16.0
-max_level = 9999
-description = "Enimes give more coins by 2x"
+base_price = 32000
+price_multiplier = 2.0
+max_level = 45
+upgrade_name_key = "enemy_multiplier_name"
+description_key = "enemy_multiplier_desc"
 text_color = Color(1, 0, 0, 1)
 id = "enemy_multiplier"
 name = "Enemy Multiplier"
 texture = ExtResource("2_nvjtg")
-price = 1000
 type = "Upgrade"

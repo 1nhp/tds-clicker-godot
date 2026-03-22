@@ -1,4 +1,4 @@
 extends UpgradeData
 
 func get_display_text(game):
-	return "Cooldown: " + str(game.drooper_cooldown)
+	return tr("drooper_cooldown_text") + str(game.drooper_cooldown)

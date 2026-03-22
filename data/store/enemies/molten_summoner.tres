@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://upd8wf1bjxm1"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_bvceq"]
+[ext_resource type="Texture2D" uid="uid://d0o4jvvex7lej" path="res://assets/sprites/enemies/molten_summoner.webp" id="2_bvceq"]
+
+[resource]
+script = ExtResource("1_bvceq")
+id = "molten_summoner"
+name = "Molten Summoner"
+texture = ExtResource("2_bvceq")
+price = 50000000.0
+type = "Enemy"
+coin_award = 700

@@ -5,9 +5,6 @@ signal EnemyClicked
 @export var coin_award = 1
 @export_enum("Normal", "Abnormal", "Speedy") var type: String
 
-var tex = []
-@onready var game = get_tree().get_first_node_in_group("game")
-
 # sin variables
 var time: float = 0.0
 @export var speed: float = 3.0
@@ -30,26 +27,25 @@ func _update_enemy(name1 = "Normal"):
 		$sprite.rotation = 0
 		
 func _process(delta: float) -> void:
-	if game.settings["enemy_animations"]:
+	if Globals.game.settings["enemy_animations"]:
 		# Increase time by delta then rotate sprite
 		# Using the Sinus function
 		time += delta
 		$sprite.rotation = sin(time * speed) * amplitude
 		$sprite_hurt.rotation = sin(time * speed) * amplitude
-		
 	
 # If mouse is hovered or not scale the sprite but not the
 # Hitbox to prevent overlapping issues
 
 func _on_area_2d_mouse_entered() -> void:
-	if game.settings["enemy_animations"]:
+	if Globals.game.settings["enemy_animations"]:
 		create_tween().tween_property($sprite, "scale", final_scale, 0.15)
 
 func _on_area_2d_mouse_exited() -> void:
-	if game.settings["enemy_animations"]:
+	if Globals.game.settings["enemy_animations"]:
 		create_tween().tween_property($sprite, "scale", normal_scale, 0.15)
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		# When enemy is clicked play
 		# death sound and emit clicked signal
@@ -57,7 +53,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		EnemyClicked.emit()
 		
 		# Click animation
-		var max_effects = min(coin_award, game.settings["coin_particles"])
+		var max_effects = min(coin_award, Globals.game.settings["coin_particles"])
 
 		for i in range(max_effects):
 			var offset_x = randi_range(-70, 70)
@@ -68,7 +64,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				Vector2(global_position.x + offset_x, global_position.y + offset_y)
 			)
 			
-		if game.settings["enemy_animations"]:
+		if Globals.game.settings["enemy_animations"]:
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play("hurt")
 			create_tween().tween_property($sprite, "scale", Vector2(0.4, 0.4), 0.05)

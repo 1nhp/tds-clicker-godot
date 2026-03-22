@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://rsqlhuukrxjm"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_mo4dq"]
+[ext_resource type="Texture2D" uid="uid://dba1oen2ulsuj" path="res://assets/sprites/enemies/tanker.webp" id="2_mo4dq"]
+
+[resource]
+script = ExtResource("1_mo4dq")
+id = "tanker"
+name = "Tanker"
+texture = ExtResource("2_mo4dq")
+price = 35000000.0
+type = "Enemy"
+coin_award = 650

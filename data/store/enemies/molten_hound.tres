@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://d0jgs703s8ks6"]
 
 [ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_krdh5"]
-[ext_resource type="Texture2D" uid="uid://cqj3q0odd1e2a" path="res://assets/sprites/enemies/enemy_molten_hound.webp" id="2_krdh5"]
+[ext_resource type="Texture2D" uid="uid://freio4i4fcjd" path="res://assets/sprites/enemies/molten_hound.webp" id="2_krdh5"]
 
 [resource]
 script = ExtResource("1_krdh5")

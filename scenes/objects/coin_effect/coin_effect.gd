@@ -15,5 +15,5 @@ func _ready() -> void:
 	
 func _on_anim_finished():
 	SoundManager.play_sound("CoinCollect")
-	get_tree().get_first_node_in_group("game")._update_coin_count()
+	get_tree().get_first_node_in_group("game").update_coin_count()
 	queue_free()

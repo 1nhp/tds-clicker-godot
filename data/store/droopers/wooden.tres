@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://tr8tfe8tvlfv"]
+
+[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://data/store/store_item_data.gd" id="1_nfy2p"]
+[ext_resource type="Texture2D" uid="uid://dcu1fc8lxl5vb" path="res://assets/sprites/droopers/drooper_3.png" id="2_nfy2p"]
+
+[resource]
+script = ExtResource("1_nfy2p")
+id = "wooden"
+name = "Wooden Drooper"
+texture = ExtResource("2_nfy2p")
+price = 1000.0
+price_addition = 300.0
+type = "Drooper"
+coin_award = 10

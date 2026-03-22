@@ -110,15 +110,9 @@ text = "Maritosu"
 [node name="Control2" type="Control" parent="Control" unique_id=268719740]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -142,7 +136,7 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 21
 theme_override_font_sizes/font_size = 48
-text = "Warning!"
+text = "disclaimer_btn"
 
 [node name="disclaimer_content" type="Label" parent="Control/Control2" unique_id=812238665]
 z_index = 3
@@ -152,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -341.0
-offset_top = -180.0
-offset_right = 341.0
-offset_bottom = 207.0
+offset_left = -376.0
+offset_top = -177.0
+offset_right = 376.0
+offset_bottom = 284.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -164,16 +158,8 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 26
-text = "This fan project is not endorsored
-or afflitiated with Paradoxum Games,
-and its developers in any way, as well with Roblox
-Corporation and others, do not sell or distribute this project
-in a paid manner this and will always be free of charge
-
-If you want to support me Follow me on social media!
-
-Maritosu.bsky.social
-@Maritosu on YouTube"
+text = "disclaimer_content"
+autowrap_mode = 3
 
 [node name="agree" type="Button" parent="Control/Control2" unique_id=829860304]
 layout_mode = 1
@@ -196,7 +182,7 @@ theme_override_constants/outline_size = 12
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
-text = "I agree"
+text = "OK"
 script = ExtResource("3_tqk0k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266875827]

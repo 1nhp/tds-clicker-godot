@@ -1,36 +1,16 @@
 extends Node
 
-var version = "1.1 Beta"
-
-var coins: int = 0
+var version: String = "1.2 Beta indev"
+var coins: float = 0
 var income: int = 0
 
-var droopers = {
-	"Rusty Drooper": 0,
-	"Plastic Drooper": 0
-}
+var droopers = {}
 var total_droopers: int = 0
 var drooper_cooldown: float = 1
 var enemy_multiplier: float = 1
 var coins_display = coins
 
-var enemies = {
-	"Abnormal": false,
-	"Speedy": false,
-	"Heavy": false,
-	"Normal Boss": false,
-	"Hidden": false,
-	"Elite Abnormal": false,
-	"Molten": false,
-	"Corpse": false,
-	"Molten Golem": false,
-	"Elite Hazmat": false,
-	"Hidden Boss": false,
-	"Molten Necromancer": false,
-	"Elite Boomer": false,
-	"Molten Hound": false,	
-	"Molten Mech": false,		
-}
+var enemies = {}
 
 var upgrades = {}
 var enemy_name = "Normal"
@@ -42,6 +22,10 @@ var settings = {
 	"ui_animations": true,
 	"musicvolume": 1.0,
 	"soundvolume": 1.0,
+	"dropdown_selection": {
+		"coin_particles": 1,
+		"language": 1,
+	}
 }
 
 @onready var coin_counter = $HUD/TL/CoinCounter/Counter/Label
@@ -59,21 +43,21 @@ var settings = {
 
 func _ready():
 	SavingSystem.load_data()
+	Globals._get_game()
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings["musicvolume"]))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings["soundvolume"]))
 	
-	_update_coin_count()
+	update_coin_count()
 	income_loop()
 	savedata_loop()
 	get_tree().get_first_node_in_group("enemy")._update_enemy(enemy_name)
-	
 	
 func savedata_loop():
 	while true:	
 		await get_tree().create_timer(4).timeout
 		SavingSystem.save_data()
 
-func _update_coin_count():
+func update_coin_count():
 	coins_display = NumFormat.format_number(coins)
 	coin_counter.text = str(coins_display)
 	coin_counter2.text = str(coins_display)
@@ -81,6 +65,7 @@ func _update_coin_count():
 	droopers_counter2.text = str(total_droopers)
 	income_counter.text = str(income)
 	income_counter2.text = str(income)
+	
 	
 	if settings["ui_animations"]:
 		var tween = create_tween()
@@ -97,7 +82,7 @@ func _update_coin_count():
 func _on_enemy_enemy_clicked() -> void:
 	SoundManager.play_sound("Coin", randf_range(0.8, 1.3))
 	coins += get_tree().get_first_node_in_group("enemy").coin_award * enemy_multiplier
-	_update_coin_count()
+	update_coin_count()
 
 func _on_store_button_pressed() -> void:
 	object.create("ui_store", Vector2.ZERO, "/root/game/HUD")
@@ -144,4 +129,3 @@ func income_loop():
 
 			
 			SoundManager.play_sound("Coin2", randf_range(0.8, 1.3))
-			#_update_coin_count()

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bnkwltfo5ulke"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_ga6jp"]
+[ext_resource type="Texture2D" uid="uid://v4q77klgni1c" path="res://assets/sprites/enemies/enraged.webp" id="2_ga6jp"]
+
+[resource]
+script = ExtResource("1_ga6jp")
+id = "enraged"
+name = "Enraged"
+texture = ExtResource("2_ga6jp")
+price = 30000.0
+type = "Enemy"
+coin_award = 40

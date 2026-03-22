@@ -18,7 +18,6 @@ var closing := false
 @onready var DroopersTab = get_tree().get_first_node_in_group("DroopersTab")
 @onready var UpgradesTab = get_tree().get_first_node_in_group("UpgradesTab")
 
-#
 var store_button_scene = preload("res://scenes/objects/store_ui/store_select_button.tscn")
 var upgrade_container_scene = preload("res://scenes/objects/error_notification/store_upgrade_container.tscn")
 
@@ -32,7 +31,7 @@ func _ready():
 	DroopersTab.visible = false
 	UpgradesTab.visible = false
 
-func _create_button(item, container):
+func create_button(item, container):
 	var button = store_button_scene.instantiate()
 	container.add_child(button)
 	button.icon = item.texture
@@ -40,80 +39,87 @@ func _create_button(item, container):
 	button.set_meta("item", item)
 	button.clicked.connect(_on_item_clicked)
 
-func _create_upgrade(item):
+func create_upgrade(item):
 	var container = upgrade_container_scene.instantiate()
 	upgrade_container.add_child(container)
 
 	var buy_button = container.get_node("Control/buy")
 	buy_button.set_meta("item", item)
-	buy_button.clicked.connect(_on_upgrade_clicked)
+	buy_button.clicked.connect(on_upgrade_clicked)
 	StoreManager.upgrade_containers[item.id] = container
 	StoreManager.upgrade_data[item.id] = item
 
-	StoreLogic._update_upgrades_state(item)
+	StoreLogic.update_item_state(item)
 	container.custom_minimum_size = Vector2(50,75)
-	_update_upgrade_container(container,item)
+	update_upgrade_container(container,item)
 
 func _on_item_clicked(button):
 	StoreManager.current_item = button.get_meta("item")
-	_update_content(StoreManager.current_item)
+	update_content(StoreManager.current_item)
 
-func _fill_content(container, item, rate_text):
+func fill_content(container, item, rate_text):
 	container.get_node("name").text = item.name
 	container.get_node("coinaward").text = rate_text
 	container.get_node("image").texture = item.texture
+	container.visible = true
+	
+	if item.type == "Drooper":
+		if StoreManager.game.droopers.has(item.id):
+			item.price = StoreManager.game.droopers[item.id]["price"]
+	
 	var display_item_price = NumFormat.format_number(item.price)
-	container.get_node("price").text = "Price: " + str(display_item_price)
-
-func _update_content(item):
+	container.get_node("price").text = tr("price") + str(display_item_price)
+	
+	
+func update_content(item):
 	match item.type:
 		"Enemy":
-			_fill_content(enemy_content_container,item,str(item.coin_award) + " per click")
-			_update_enemy_button()
+			fill_content(enemy_content_container,item,str(NumFormat.format_number(item.coin_award)) + " " + tr("per_click"))
+			update_enemy_button()
 		"Drooper":
-			_fill_content(drooper_content_container,item,str(item.coin_award) + " per second")
+			fill_content(drooper_content_container,item,str(item.coin_award) + " " + tr("per_second"))
 			
-func _on_upgrade_clicked(button):
+func on_upgrade_clicked(button):
 	var item = button.get_meta("item")
-	StoreLogic._buy_upgrade(item, button)
+	StoreLogic.buy_upgrade(item, button)
 
-func _update_upgrade_container(container,item):
+func update_upgrade_container(container,item):
 	var control = container.get_node("Control")
-	var price = int(item.base_price * pow(item.price_multiplier,item.level))
+	var price = float(item.base_price * pow(item.price_multiplier,item.level))
 	var display_price = NumFormat.format_number(price)
 	
-	control.get_node("upgrade_name").text = item.name
-	control.get_node("upgrade_price").text = "Price: " + str(display_price)
+	control.get_node("upgrade_name").text = tr(item.upgrade_name_key)
+	control.get_node("upgrade_price").text = tr("price") + str(display_price)
 	control.get_node("icon").texture = item.texture
-	control.get_node("upgrade_description").text = item.description
+	control.get_node("upgrade_description").text = tr(item.description_key)
 	
 	var text = item.get_display_text(StoreManager.game)
 	control.get_node("variable").text = text
 	control.get_node("variable").add_theme_color_override("font_color", item.text_color)
-	control.get_node("buy").text = "Upgrade Level " + str(item.level)
+	control.get_node("buy").text = tr("upgrade_btn") + str(item.level)
 
-func _update_enemy_button():
-	if StoreManager.game.enemies.get(StoreManager.current_item.name,false):
-		enemy_content_container.get_node("buy").text = "Change"
+func update_enemy_button():
+	if StoreManager.game.enemies.get(StoreManager.current_item.id,false):
+		enemy_content_container.get_node("buy").text = tr("enemy_change_btn")
 	else:
-		enemy_content_container.get_node("buy").text = "Buy"
+		enemy_content_container.get_node("buy").text = tr("buy_btn")
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "slide" and closing:
 		await get_tree().process_frame
 		store_root.queue_free()
 
-func _switch_tab(tab):
+func switch_tab(tab):
 	if 	get_tree().get_first_node_in_group("LoadingText").visible == false:
 		for t in [DroopersTab,EnemiesTab,UpgradesTab]:
 			t.visible = false
 		tab.visible = true
 
-func _on_enemies_button_clicked(button): _switch_tab(EnemiesTab)
-func _on_droopers_button_clicked(button): _switch_tab(DroopersTab)
-func _on_upgrades_button_clicked(button): _switch_tab(UpgradesTab)
+func _on_enemies_button_clicked(_button): switch_tab(EnemiesTab)
+func _on_droopers_button_clicked(_button): switch_tab(DroopersTab)
+func _on_upgrades_button_clicked(_button): switch_tab(UpgradesTab)
 
-func _on_close_button_clicked(button):
+func _on_close_button_clicked(_button):
 	if StoreManager.game.settings["ui_animations"]:
 		anim_player.play_backwards("slide")
 		closing = true
@@ -124,15 +130,28 @@ func _on_close_button_clicked(button):
 	store_button.disabled = false
 	StoreManager.game._blur_screen(false)
 
-
 func _on_store_manager_finished_loading() -> void:
 	for item in StoreManager.store_items:
 		match item.type:
-			"Enemy":_create_button(item, enemy_container)
-			"Drooper":_create_button(item, drooper_container)
-			"Upgrade":_create_upgrade(item)
+			"Enemy":create_button(item, enemy_container)
+			"Drooper":create_button(item, drooper_container)
+			"Upgrade":create_upgrade(item)
 		await get_tree().process_frame
 
-	print("finished!")
 	EnemiesTab.visible = true
 	get_tree().get_first_node_in_group("LoadingText").visible = false
+
+func error(message = "not_enough_coins"):
+	SoundManager.play_sound("NotificationError")
+	var error = object.create("error_notification")
+	error.error_message = tr(message)
+	error._update()
+
+func _on_store_logic_show_error(msg = "not_enough_coins") -> void:
+	error(msg)
+func _on_store_logic_update_enemy_button() -> void:
+	update_enemy_button()
+func _on_store_logic_update_upgrade_container(item):
+	update_upgrade_container(StoreManager.upgrade_containers[item.id],item)
+func _on_store_logic_update_drooper_content(item) -> void:
+	fill_content(drooper_content_container,item,str(item.coin_award) + " " + tr("per_second"))

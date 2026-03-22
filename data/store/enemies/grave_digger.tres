@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bf8wssbsimfhy"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_k7yue"]
+[ext_resource type="Texture2D" uid="uid://fo7u7fupkgyd" path="res://assets/sprites/enemies/grave_digger.webp" id="2_k7yue"]
+
+[resource]
+script = ExtResource("1_k7yue")
+id = "grave_digger"
+name = "Grave Digger"
+texture = ExtResource("2_k7yue")
+price = 390000.0
+type = "Enemy"
+coin_award = 180
