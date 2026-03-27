@@ -1,5 +1,6 @@
 extends Node
 
+# Debug hotkeys
 func _unhandled_input(_event: InputEvent) -> void:
 	if OS.is_debug_build():
 		if Input.is_key_pressed(KEY_R):
@@ -13,7 +14,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if Input.is_key_pressed(KEY_T):	
 			TranslationServer.set_locale("ru")
 			print_debug("Language changed")
+		if Input.is_key_pressed(KEY_D):
+			Dlc.load()
+		if Input.is_key_pressed(KEY_N):
+			EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
 			
 func _ready() -> void:
 	if not OS.is_debug_build():
 		DebugInfo.queue_free()
+	else:
+		print_debug("Hotkeys")
+		print_debug("R: Reloads scene\nC: Gives player money\nD: Reloads DLC\nT: Changes language to russian")

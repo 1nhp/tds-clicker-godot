@@ -19,6 +19,14 @@ blur_bg,BG Blur
 blur_bg_description,"Toggles background blur on menus,\n can improve performance on low-end devices."
 sound_volume,Sound Volume
 music_volume,Music Volune
+download_music_dlc_btn,Download Additional Music DLC
+redownload_music_dlc_btn,Redownload Additional Music DLC
+remove_music_dlc_btn,Remove Additional Music DLC
+download_music_dlc_description,"Downloads Additional Music DLC from Google Drive 
+Requires free 51mb of space on disk
+NOTE:
+If the download has too much traffic it may not download."
+remove_music_dlc_description,"Deletes Additional Music DLC,\nbut you will lose additional music."
 language,Language
 droopers,Droopers
 coins,Coins
@@ -46,5 +54,7 @@ If you want to support me Follow me on social media!
 Maritosu.bsky.social
 @Maritosu on YouTube"
 disclaimer_btn,Warning
+disclaimer_indev,This game is still in development expect short playtime and less content.
+disclaimer_dev_version,"You might be either playing or testing an version from the project’s source code, be warned that this version is unstable and most content is not finished you are warned."
 not_enough_coins,You don’t have enough coins to buy this item!
 upgrade_maxxed,You have reached maximum level for this upgrade!

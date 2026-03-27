@@ -5,7 +5,7 @@ var scenes := {
 	"debug_info": "res://scenes/objects/debug_info/debug_info.tscn",
 	"ui_store": "res://scenes/objects/store_ui/store.tscn",
 	"ui_settings": "res://scenes/objects/settings_ui/settings.tscn",
-	"error_notification": "res://scenes/objects/error_notification/error_notification.tscn",
+	"notification": "res://scenes/objects/notification/notification.tscn",
 	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn"
 }
 
@@ -20,7 +20,6 @@ func create(scene_name: String, position: Vector2 = Vector2.ZERO, parent_path: N
 		cache[scene_name] = load(scenes[scene_name])
 
 	var instance = cache[scene_name].instantiate()
-
 	if not instance is CanvasLayer:
 		instance.position = position
 	else:
@@ -35,6 +34,6 @@ func create(scene_name: String, position: Vector2 = Vector2.ZERO, parent_path: N
 	else:
 		parent_node = get_tree().current_scene
 
-	parent_node.add_child(instance)
+	parent_node.add_child(instance, true)
 
 	return instance

@@ -59,7 +59,7 @@ func load_data():
 			"coin_particles": 100,
 			"enemy_animations": true,
 			"ui_animations": true,
-			"musicvolume": 1.0,
+			"musicvolume": 0.5,
 			"soundvolume": 1.0,
 			"dropdown_selection": {
 				"coin_particles": 1,

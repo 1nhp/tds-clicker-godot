@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ins8m5n6q620" path="res://assets/sounds/button_hover.ogg" id="4_aa63w"]
 [ext_resource type="AudioStream" uid="uid://db2xbs4b658lm" path="res://assets/sounds/notification_error.ogg" id="5_k1d7a"]
 [ext_resource type="AudioStream" uid="uid://c38o7u714bia0" path="res://assets/sounds/upgrade.ogg" id="6_aa63w"]
+[ext_resource type="AudioStream" uid="uid://djjsf5stimbub" path="res://assets/sounds/notification.ogg" id="6_k1d7a"]
 [ext_resource type="AudioStream" uid="uid://dsofo2iltpamu" path="res://assets/sounds/coin2.ogg" id="8_k1d7a"]
 
 [sub_resource type="OggPacketSequence" id="OggPacketSequence_mc4oe"]
@@ -44,6 +45,11 @@ bus = &"Sounds"
 
 [node name="Upgrade" type="AudioStreamPlayer" parent="." unique_id=137505226]
 stream = ExtResource("6_aa63w")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="Notification" type="AudioStreamPlayer" parent="." unique_id=946820133]
+stream = ExtResource("6_k1d7a")
 volume_db = -10.0
 bus = &"Sounds"
 

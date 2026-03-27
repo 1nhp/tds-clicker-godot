@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqyvuiy53044b"]
+
+[ext_resource type="Script" uid="uid://bpeu6dsik14j" path="res://scripts/music_controller.gd" id="1_p07gy"]
+[ext_resource type="AudioStream" uid="uid://cxxwiqecg23ad" path="res://assets/music/track1.ogg" id="2_oxtdo"]
+
+[node name="MusicManager" type="Node2D" unique_id=1920759052]
+script = ExtResource("1_p07gy")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1667111042]
+stream = ExtResource("2_oxtdo")
+bus = &"Music"
+playback_type = 1
+
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

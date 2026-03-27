@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmnf55b1ukndn"]
 
 [ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://data/themes/section_button.tres" id="1_cmkxw"]
-[ext_resource type="Texture2D" uid="uid://bcdb3v7ybxy1f" path="res://assets/sprites/enemies/enemy_normal.png" id="2_sns1b"]
+[ext_resource type="Texture2D" uid="uid://ccv8tr7sqp5v5" path="res://assets/sprites/enemies/normal.png" id="2_sns1b"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="3_iyi01"]
 
 [node name="StoreSelectButton" type="Button" unique_id=463436673]

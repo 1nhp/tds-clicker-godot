@@ -4,7 +4,7 @@ func _enter_tree() -> void:
 	scale = Vector2(0, 0)
 
 func _ready() -> void:
-	var node = get_tree().get_first_node_in_group("coin_icon")
+	var node = Globals.game.coin_icon
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	var s = randf_range(1, 2)
@@ -15,5 +15,5 @@ func _ready() -> void:
 	
 func _on_anim_finished():
 	SoundManager.play_sound("CoinCollect")
-	get_tree().get_first_node_in_group("game").update_coin_count()
+	Globals.game.update_coin_count()
 	queue_free()

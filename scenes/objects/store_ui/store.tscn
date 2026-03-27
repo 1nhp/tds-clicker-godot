@@ -85,7 +85,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -109,7 +109,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -162,79 +162,91 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Window/Panel:position")
+tracks/10/path = NodePath("Window/Buttons/UpgradesButton:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(5, 10)]
+"values": [Vector2(329, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Window/DroopersTab/DrooperContent:position")
+tracks/11/path = NodePath("Window/Buttons/UpgradesButton:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(431, 8)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Window/DroopersTab/DrooperList:position")
+tracks/12/path = NodePath("Window:position:y")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5.5, 4)]
+"update": 1,
+"values": [200.0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Window/Buttons/UpgradesButton:position")
+tracks/13/path = NodePath("Window/Buttons/EnemiesButton:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(329, 0)]
+"update": 1,
+"values": [11.147781]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Window/Buttons/UpgradesButton:modulate")
+tracks/14/path = NodePath("Window/EnemiesTab/EnemyList:position:x")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [6.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Window:position:y")
+tracks/15/path = NodePath("Window/EnemiesTab/EnemyList:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [200.0]
+"update": 0,
+"values": [Vector2(6, 3)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Window/EnemiesTab/EnemyList:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_adcba"]
-resource_name = "slide"
-length = 0.33498272
+resource_name = "anim"
+length = 0.2981977
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -262,23 +274,63 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Window/Buttons/EnemiesButton:position")
+tracks/2/path = NodePath("Window/CloseButton:position:y")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.03333334, 0.16666669, 0.3),
+"times": PackedFloat32Array(0.10000001, 0.20000002, 0.26666668),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 30), Vector2(0, -10), Vector2(0, 0)]
+"values": [30.0, -10.0, 5.0]
+}
+
+[sub_resource type="Animation" id="Animation_bowtv"]
+resource_name = "tab_buttons_fade"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window/Buttons/EnemiesButton:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.010786852, 0.11078688, 0.31075352),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [11.147781, -10.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Window/Buttons/EnemiesButton:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0020045098, 0.21078685),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Window/Buttons/DroopersButton:position:y")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1441202, 0.24412023, 0.41078687),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [11.147781, -10.0, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Window/Buttons/EnemiesButton:modulate")
+tracks/3/path = NodePath("Window/Buttons/DroopersButton:modulate")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.03333334, 0.26666668),
+"times": PackedFloat32Array(0.13533784, 0.3441202),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -286,95 +338,23 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Window/Buttons/DroopersButton:position")
+tracks/4/path = NodePath("Window/Buttons/UpgradesButton:position:y")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.06666667, 0.20000002, 0.33333334),
+"times": PackedFloat32Array(0.21078688, 0.3107869, 0.47745353),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(164, 30), Vector2(164, -10), Vector2(164, 0)]
+"values": [11.147781, -10.0, 0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Window/Buttons/DroopersButton:modulate")
+tracks/5/path = NodePath("Window/Buttons/UpgradesButton:modulate")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.06666667, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Window/CloseButton:position:y")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.06666665, 0.19999999, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [30.0, -10.0, 5.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Window/Panel:position")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.06666668, 0.16666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-20, 10), Vector2(5, 10)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Window/DroopersTab/DrooperContent:position")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.11920026, 0.28832197),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(431, 8), Vector2(431, -30), Vector2(431, 8)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Window/DroopersTab/DrooperList:position")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.13346352, 0.25572014),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(5.5, 4), Vector2(5.5, -10), Vector2(5.5, 3)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Window/Buttons/UpgradesButton:position")
-tracks/10/interp = 2
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.15862937, 0.2500177, 0.30984703),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(329, 0), Vector2(329, -30), Vector2(329, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Window/Buttons/UpgradesButton:modulate")
-tracks/11/interp = 2
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0.11862935, 0.3220657),
+"times": PackedFloat32Array(0.20200452, 0.41078687),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -383,7 +363,40 @@ tracks/11/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n4xxd"]
 _data = {
 &"RESET": SubResource("Animation_v1cqb"),
-&"slide": SubResource("Animation_adcba")
+&"anim": SubResource("Animation_adcba"),
+&"tab_buttons_fade": SubResource("Animation_bowtv")
+}
+
+[sub_resource type="Animation" id="Animation_cxhn8"]
+resource_name = "content_fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window/EnemiesTab/EnemyList:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333334, 0.26666665, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [6.0, 30.0, 6.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Window/EnemiesTab/EnemyList:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bowtv"]
+_data = {
+&"content_fade": SubResource("Animation_cxhn8")
 }
 
 [node name="Store" type="Control" unique_id=681208218 groups=["store_root"]]
@@ -401,10 +414,25 @@ script = ExtResource("2_gh8kj")
 [node name="StoreLogic" type="Node" parent="." unique_id=587713049 groups=["StoreLogic"]]
 script = ExtResource("2_wgssr")
 
-[node name="StoreUI" type="Node" parent="." unique_id=1112595495 groups=["StoreUI"]]
+[node name="StoreUI" type="Node" parent="." unique_id=1112595495 node_paths=PackedStringArray("loading_text", "anim_player", "list_anim_player", "store_root", "StoreManager", "StoreLogic", "enemy_container", "drooper_container", "upgrade_container", "enemy_content_container", "drooper_content_container", "EnemiesTab", "DroopersTab", "UpgradesTab") groups=["StoreUI"]]
 script = ExtResource("1_ri5nt")
+loading_text = NodePath("../Window/LoadingText")
+anim_player = NodePath("../WindowAnim")
+list_anim_player = NodePath("../ListAnim")
+store_root = NodePath("..")
+StoreManager = NodePath("../StoreManager")
+StoreLogic = NodePath("../StoreLogic")
+enemy_container = NodePath("../Window/EnemiesTab/EnemyList/BoxContainer/GridContainer")
+drooper_container = NodePath("../Window/DroopersTab/DrooperList/BoxContainer/GridContainer")
+upgrade_container = NodePath("../Window/UpgradesTab/UpgradeList/BoxContainer")
+enemy_content_container = NodePath("../Window/EnemiesTab/EnemyContent")
+drooper_content_container = NodePath("../Window/DroopersTab/DrooperContent")
+EnemiesTab = NodePath("../Window/EnemiesTab")
+DroopersTab = NodePath("../Window/DroopersTab")
+UpgradesTab = NodePath("../Window/UpgradesTab")
 
 [node name="Window" type="Panel" parent="." unique_id=1396775829]
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -414,7 +442,7 @@ anchor_bottom = 0.5
 offset_left = -340.0
 offset_top = -232.0
 offset_right = 340.0
-offset_bottom = 232.00043
+offset_bottom = 232.00049
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(338, 232)
@@ -426,7 +454,7 @@ layout_mode = 0
 offset_left = 616.0
 offset_top = 4.0
 offset_right = 671.0
-offset_bottom = 59.99991
+offset_bottom = 59.99999
 pivot_offset = Vector2(28, 28)
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_gh8kj")
@@ -485,6 +513,7 @@ offset_bottom = 88.0
 focus_mode = 3
 
 [node name="EnemiesButton" type="Button" parent="Window/Buttons" unique_id=356111029]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 159.0
 offset_bottom = 51.999893
@@ -517,10 +546,11 @@ texture = ExtResource("3_n4xxd")
 expand_mode = 1
 
 [node name="DroopersButton" type="Button" parent="Window/Buttons" unique_id=975741417]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 164.0
 offset_right = 323.0
-offset_bottom = 52.00003
+offset_bottom = 52.000053
 pivot_offset = Vector2(88, 30)
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_ag4xe")
@@ -550,6 +580,7 @@ texture = ExtResource("10_4qb5x")
 expand_mode = 1
 
 [node name="UpgradesButton" type="Button" parent="Window/Buttons" unique_id=769707478]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 329.0
 offset_right = 488.0
@@ -583,6 +614,7 @@ texture = ExtResource("12_b6ikj")
 expand_mode = 1
 
 [node name="DroopersTab" type="Panel" parent="Window" unique_id=2038745410 groups=["DroopersTab"]]
+visible = false
 z_index = 1
 layout_mode = 1
 offset_left = 5.0
@@ -636,7 +668,6 @@ columns = 6
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="DrooperContent" type="Panel" parent="Window/DroopersTab" unique_id=592111257 groups=["DrooperContentContainer"]]
-z_index = 1
 layout_mode = 0
 offset_left = 431.0
 offset_top = 8.0
@@ -754,7 +785,8 @@ text = "buy_btn"
 script = ExtResource("2_adcba")
 
 [node name="EnemiesTab" type="Panel" parent="Window" unique_id=2104058131 groups=["EnemiesTab"]]
-z_index = 1
+z_index = 4
+z_as_relative = false
 layout_mode = 0
 offset_left = 5.0
 offset_top = 104.0
@@ -765,15 +797,18 @@ theme = ExtResource("1_2kfr3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5v5xw")
 
 [node name="EnemyList" type="ScrollContainer" parent="Window/EnemiesTab" unique_id=818530879]
+z_index = 5
+z_as_relative = false
+custom_minimum_size = Vector2(32, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.0
+offset_left = -329.5
 offset_top = -173.0
-offset_right = 95.5
+offset_right = 96.0
 offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -797,6 +832,7 @@ allow_horizontal_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
 [node name="BoxContainer" type="BoxContainer" parent="Window/EnemiesTab/EnemyList" unique_id=1249704194]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -812,7 +848,6 @@ columns = 6
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="EnemyContent" type="Panel" parent="Window/EnemiesTab" unique_id=1034859504 groups=["EnemyContentContainer"]]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 431.0
@@ -1000,9 +1035,12 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 30
 text = "Loading stuff sit tight!"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1888525451 groups=["AnimationPlayer"]]
+[node name="WindowAnim" type="AnimationPlayer" parent="." unique_id=1888525451 groups=["AnimationPlayer"]]
 libraries/ = SubResource("AnimationLibrary_n4xxd")
-speed_scale = 0.8
+
+[node name="ListAnim" type="AnimationPlayer" parent="." unique_id=1938429207 groups=["AnimationPlayer"]]
+libraries/ = SubResource("AnimationLibrary_n4xxd")
+libraries/ListAnim = SubResource("AnimationLibrary_bowtv")
 
 [connection signal="FinishedLoading" from="StoreManager" to="StoreUI" method="_on_store_manager_finished_loading"]
 [connection signal="show_error" from="StoreLogic" to="StoreUI" method="_on_store_logic_show_error"]
@@ -1015,4 +1053,5 @@ speed_scale = 0.8
 [connection signal="clicked" from="Window/Buttons/UpgradesButton" to="StoreUI" method="_on_upgrades_button_clicked"]
 [connection signal="clicked" from="Window/DroopersTab/DrooperContent/buy" to="StoreLogic" method="_on_buy_clicked"]
 [connection signal="clicked" from="Window/EnemiesTab/EnemyContent/buy" to="StoreLogic" method="_on_buy_clicked"]
-[connection signal="animation_finished" from="AnimationPlayer" to="StoreUI" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="WindowAnim" to="StoreUI" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ListAnim" to="StoreUI" method="_on_animation_player_animation_finished"]

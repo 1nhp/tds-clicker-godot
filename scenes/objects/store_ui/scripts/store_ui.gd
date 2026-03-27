@@ -1,58 +1,91 @@
 extends Node
+# Closing variable
+var closing = false
 
-var closing := false
-@onready var enemy = get_tree().get_first_node_in_group("enemy")
-@onready var anim_player = get_tree().get_first_node_in_group("AnimationPlayer")
-@onready var store_root = get_tree().get_first_node_in_group("store_root")
-@onready var StoreManager = get_tree().get_first_node_in_group("StoreManager")
-@onready var StoreLogic = get_tree().get_first_node_in_group("StoreLogic")
+# Node references
+@export var loading_text: Node
+@export var anim_player: Node
+@export var list_anim_player: Node
+@export var store_root: Node
+@export var StoreManager: Node
+@export var StoreLogic: Node
 
 # Containers
-@onready var enemy_container = get_tree().get_first_node_in_group("EnemyContainer")
-@onready var drooper_container = get_tree().get_first_node_in_group("DrooperContainer")
-@onready var upgrade_container = get_tree().get_first_node_in_group("UpgradeContainer")
-@onready var enemy_content_container = get_tree().get_first_node_in_group("EnemyContentContainer")
-@onready var drooper_content_container = get_tree().get_first_node_in_group("DrooperContentContainer")
+@export var enemy_container: Node
+@export var drooper_container: Node
+@export var upgrade_container: Node
+@export var enemy_content_container: Node
+@export var drooper_content_container: Node
+
 # Tabs
-@onready var EnemiesTab = get_tree().get_first_node_in_group("EnemiesTab")
-@onready var DroopersTab = get_tree().get_first_node_in_group("DroopersTab")
-@onready var UpgradesTab = get_tree().get_first_node_in_group("UpgradesTab")
+@export var EnemiesTab: Node
+@export var DroopersTab: Node
+@export var UpgradesTab: Node
 
+# Object scene references
 var store_button_scene = preload("res://scenes/objects/store_ui/store_select_button.tscn")
-var upgrade_container_scene = preload("res://scenes/objects/error_notification/store_upgrade_container.tscn")
+var upgrade_container_scene = preload("res://scenes/objects/notification/store_upgrade_container.tscn")
 
+# Initialization function
 func _ready():
-	get_tree().get_first_node_in_group("LoadingText").visible = true
+	# Show loading text and connect MenuClosing Function
+	loading_text.visible = true
+	Globals.game.MenuClosing.connect(_on_menu_closing)
 	
+	# If ui animations are turned on play opening animation
 	if StoreManager.game.settings["ui_animations"]:
-		anim_player.play("slide")
-		
+		anim_player.play("anim")
+	
+	# Set all tab visibility to false
 	EnemiesTab.visible = false
 	DroopersTab.visible = false
 	UpgradesTab.visible = false
 
+# Enable store button
+func _on_menu_closing():
+	Globals.game.store_button.disabled = false
+
+# This function will create store selection button for
+# Enemies and drooper list
 func create_button(item, container):
+	# Create button
 	var button = store_button_scene.instantiate()
 	container.add_child(button)
+	
+	# Set button icon
 	button.icon = item.texture
+	
+	# Set minimum size to 64x64 to fix overlapping
+	# Then set meta to the item variable which is
+	# an Resource reference
 	button.custom_minimum_size = Vector2(64,64)
 	button.set_meta("item", item)
 	button.clicked.connect(_on_item_clicked)
 
+# This function creates upgrade container for upgrades
+# tab and sets the item meta like the previous function
 func create_upgrade(item):
+	# Create container
 	var container = upgrade_container_scene.instantiate()
 	upgrade_container.add_child(container)
-
+	
+	# Get buy button then set its meta to item
 	var buy_button = container.get_node("Control/buy")
 	buy_button.set_meta("item", item)
 	buy_button.clicked.connect(on_upgrade_clicked)
+	
+	#Set upgrade_container reference
 	StoreManager.upgrade_containers[item.id] = container
 	StoreManager.upgrade_data[item.id] = item
-
+	
+	# Update item states
+	# FIXME: tight coupling mind you!
 	StoreLogic.update_item_state(item)
+	
 	container.custom_minimum_size = Vector2(50,75)
 	update_upgrade_container(container,item)
 
+# 
 func _on_item_clicked(button):
 	StoreManager.current_item = button.get_meta("item")
 	update_content(StoreManager.current_item)
@@ -69,7 +102,6 @@ func fill_content(container, item, rate_text):
 	
 	var display_item_price = NumFormat.format_number(item.price)
 	container.get_node("price").text = tr("price") + str(display_item_price)
-	
 	
 func update_content(item):
 	match item.type:
@@ -105,30 +137,21 @@ func update_enemy_button():
 		enemy_content_container.get_node("buy").text = tr("buy_btn")
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "slide" and closing:
-		await get_tree().process_frame
-		store_root.queue_free()
-
+	if closing: store_root.queue_free()
+	if anim_name == "anim":
+		list_anim_player.play("ListAnim/content_fade")
+		
 func switch_tab(tab):
-	if 	get_tree().get_first_node_in_group("LoadingText").visible == false:
-		for t in [DroopersTab,EnemiesTab,UpgradesTab]:
-			t.visible = false
-		tab.visible = true
+	for t in [DroopersTab,EnemiesTab,UpgradesTab]:
+		t.visible = false
+	tab.visible = true
 
 func _on_enemies_button_clicked(_button): switch_tab(EnemiesTab)
 func _on_droopers_button_clicked(_button): switch_tab(DroopersTab)
 func _on_upgrades_button_clicked(_button): switch_tab(UpgradesTab)
 
 func _on_close_button_clicked(_button):
-	if StoreManager.game.settings["ui_animations"]:
-		anim_player.play_backwards("slide")
-		closing = true
-	else:
-		store_root.queue_free()
-		
-	var store_button = get_tree().get_first_node_in_group("store_button")
-	store_button.disabled = false
-	StoreManager.game._blur_screen(false)
+	closing = Globals.game.menu(Globals.game.actions.CLOSE, "ui_store", closing, anim_player, store_root)
 
 func _on_store_manager_finished_loading() -> void:
 	for item in StoreManager.store_items:
@@ -139,16 +162,11 @@ func _on_store_manager_finished_loading() -> void:
 		await get_tree().process_frame
 
 	EnemiesTab.visible = true
-	get_tree().get_first_node_in_group("LoadingText").visible = false
-
-func error(message = "not_enough_coins"):
-	SoundManager.play_sound("NotificationError")
-	var error = object.create("error_notification")
-	error.error_message = tr(message)
-	error._update()
+	list_anim_player.play("ListAnim/content_fade")
+	loading_text.visible = false
 
 func _on_store_logic_show_error(msg = "not_enough_coins") -> void:
-	error(msg)
+	EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
 func _on_store_logic_update_enemy_button() -> void:
 	update_enemy_button()
 func _on_store_logic_update_upgrade_container(item):

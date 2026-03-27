@@ -22,7 +22,6 @@ buses/default_bus_layout="uid://coff4sliwpyid"
 
 [autoload]
 
-MusicManager="*uid://cqyvuiy53044b"
 Debug="*uid://b48cy4htieo13"
 SceneManager="*uid://vyn72swd38dp"
 object="*uid://c42lri0p7u7bv"
@@ -30,8 +29,10 @@ DebugInfo="*uid://b0wfwstlxjqk2"
 SoundManager="*uid://c1qw1flexg5ji"
 SavingSystem="*uid://cjxhjmcl8qedi"
 NumFormat="*uid://q4gvjsg70unp"
-DiscordRPCLoader="*uid://dg8roxxkt1hnb"
 Globals="*uid://cw86eq4fddktl"
+Dlc="*uid://cmrsbiponso2x"
+MusicManager="*uid://cqyvuiy53044b"
+EventBus="*uid://b6dknxqooos2w"
 
 [display]
 
@@ -44,16 +45,12 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg")
 
 [global_group]
 
 game=""
 enemy=""
-coin_icon=""
-store_button=""
-screen_blur=""
-settings_button=""
 
 [importer_defaults]
 
