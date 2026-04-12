@@ -7,6 +7,7 @@
 script = ExtResource("1_3m3rh")
 base_price = 500
 price_multiplier = 6.0
+level = 1
 max_level = 10
 upgrade_name_key = "drooper_cooldown_name"
 description_key = "drooper_cooldown_desc"

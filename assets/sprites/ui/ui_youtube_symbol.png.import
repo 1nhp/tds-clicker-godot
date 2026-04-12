@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxv6toh226e86"
-path="res://.godot/imported/ui_cash.png-2cd230261e3cc88af8c0278008626432.ctex"
+uid="uid://cmhvhbvjvxcbv"
+path="res://.godot/imported/ui_youtube_symbol.png-6a1ff46402471d4c3cc3f4d6bc956ef9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/ui_cash.png"
-dest_files=["res://.godot/imported/ui_cash.png-2cd230261e3cc88af8c0278008626432.ctex"]
+source_file="res://assets/sprites/ui/ui_youtube_symbol.png"
+dest_files=["res://.godot/imported/ui_youtube_symbol.png-6a1ff46402471d4c3cc3f4d6bc956ef9.ctex"]
 
 [params]
 
@@ -36,5 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=430
 detect_3d/compress_to=1

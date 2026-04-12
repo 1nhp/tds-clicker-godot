@@ -23,14 +23,16 @@ func _ready() -> void:
 	if Globals.game.settings["ui_animations"]:
 		anim_player.play("anim")
 
+	update_music_dlc_button_text()
+
 func update_ui():
 	audio_volume_slider.value = SettingsLogicNode.audio_volume_key
 	music_volume_slider.value = SettingsLogicNode.music_volume_key
 	coin_particles_dropdown.selected = SettingsLogicNode.coin_particles_key
 	language_dropdown.selected = SettingsLogicNode.language_key
-
+	
 func _on_close_button_clicked(_button: FancyButton) -> void:
-	closing = Globals.game.menu(Globals.game.actions.CLOSE, "ui_settings", closing, anim_player, root)
+	closing = Globals.game.menu(true, Globals.game.actions.CLOSE, "ui_settings", closing, anim_player, root)
 	
 func _on_menu_closing():
 	Globals.game.settings_button.disabled = false
@@ -48,10 +50,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if closing: root.queue_free()
 	
 func update_music_dlc_button_text():
-	if Dlc.dlc.has(true):
+	if Dlc.dlc.has(false):
 		download_music_dlc_button.text = tr("download_music_dlc_btn")
 	else:
 		download_music_dlc_button.text = tr("redownload_music_dlc_btn")
 
 func _on_settings_logic_update_dlc_button() -> void: update_music_dlc_button_text()
-func _on_settings_logic_update_data_finished() -> void: update_ui()
+func _on_settings_logic_update_data_finished() -> void: 
+	update_ui()
+
+
+func _on_credits_clicked(_button: FancyButton) -> void:
+	Globals.game.menu(false, Globals.game.actions.SHOW, "ui_credits")

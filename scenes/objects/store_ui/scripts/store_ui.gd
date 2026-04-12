@@ -6,6 +6,12 @@ var closing = false
 @export var loading_text: Node
 @export var anim_player: Node
 @export var list_anim_player: Node
+@export var content_anim_player: Node
+@export var tab_buttons_anim_player: Node
+@export var store_header_anim: Node
+
+@export var store_window: Node
+
 @export var store_root: Node
 @export var StoreManager: Node
 @export var StoreLogic: Node
@@ -24,10 +30,26 @@ var closing = false
 
 # Object scene references
 var store_button_scene = preload("res://scenes/objects/store_ui/store_select_button.tscn")
-var upgrade_container_scene = preload("res://scenes/objects/notification/store_upgrade_container.tscn")
+var upgrade_container_scene = preload("res://scenes/objects/store_ui/store_upgrade_container.tscn")
+
+func play_ui_anim(anim = "default"):
+	if StoreManager.game.settings["ui_animations"]:
+		match anim:
+			"default":
+					list_anim_player.stop()
+					content_anim_player.stop()
+					content_anim_player.play("ContentAnim/content_anim")
+					list_anim_player.play("ListAnim/list_fade")
+			
+			"content": 
+				content_anim_player.stop()
+				content_anim_player.play("ContentAnim/content_anim")	
+			"header":
+				store_header_anim.play("StoreHeaderAnim/anim")
 
 # Initialization function
 func _ready():
+	
 	# Show loading text and connect MenuClosing Function
 	loading_text.visible = true
 	Globals.game.MenuClosing.connect(_on_menu_closing)
@@ -35,7 +57,8 @@ func _ready():
 	# If ui animations are turned on play opening animation
 	if StoreManager.game.settings["ui_animations"]:
 		anim_player.play("anim")
-	
+		play_ui_anim("header")
+		
 	# Set all tab visibility to false
 	EnemiesTab.visible = false
 	DroopersTab.visible = false
@@ -50,8 +73,7 @@ func _on_menu_closing():
 func create_button(item, container):
 	# Create button
 	var button = store_button_scene.instantiate()
-	container.add_child(button)
-	
+	container.call_deferred("add_child", button) 
 	# Set button icon
 	button.icon = item.texture
 	
@@ -85,11 +107,15 @@ func create_upgrade(item):
 	container.custom_minimum_size = Vector2(50,75)
 	update_upgrade_container(container,item)
 
-# 
 func _on_item_clicked(button):
 	StoreManager.current_item = button.get_meta("item")
 	update_content(StoreManager.current_item)
-
+	play_ui_anim("content")
+				
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "anim":
+		if closing: store_root.queue_free()
+	
 func fill_content(container, item, rate_text):
 	container.get_node("name").text = item.name
 	container.get_node("coinaward").text = rate_text
@@ -102,6 +128,7 @@ func fill_content(container, item, rate_text):
 	
 	var display_item_price = NumFormat.format_number(item.price)
 	container.get_node("price").text = tr("price") + str(display_item_price)
+
 	
 func update_content(item):
 	match item.type:
@@ -135,23 +162,21 @@ func update_enemy_button():
 		enemy_content_container.get_node("buy").text = tr("enemy_change_btn")
 	else:
 		enemy_content_container.get_node("buy").text = tr("buy_btn")
-
-func _on_animation_player_animation_finished(anim_name):
-	if closing: store_root.queue_free()
-	if anim_name == "anim":
-		list_anim_player.play("ListAnim/content_fade")
 		
 func switch_tab(tab):
+	play_ui_anim("default")
+
 	for t in [DroopersTab,EnemiesTab,UpgradesTab]:
 		t.visible = false
 	tab.visible = true
+
 
 func _on_enemies_button_clicked(_button): switch_tab(EnemiesTab)
 func _on_droopers_button_clicked(_button): switch_tab(DroopersTab)
 func _on_upgrades_button_clicked(_button): switch_tab(UpgradesTab)
 
 func _on_close_button_clicked(_button):
-	closing = Globals.game.menu(Globals.game.actions.CLOSE, "ui_store", closing, anim_player, store_root)
+	closing = Globals.game.menu(true, Globals.game.actions.CLOSE, "ui_store", closing, anim_player, store_root)
 
 func _on_store_manager_finished_loading() -> void:
 	for item in StoreManager.store_items:
@@ -161,12 +186,19 @@ func _on_store_manager_finished_loading() -> void:
 			"Upgrade":create_upgrade(item)
 		await get_tree().process_frame
 
+	SoundManager.play_sound("StoreOpen")
 	EnemiesTab.visible = true
-	list_anim_player.play("ListAnim/content_fade")
+	play_ui_anim()
+
+	if StoreManager.game.settings["ui_animations"]:
+		tab_buttons_anim_player.play("TabButtons/tab_buttons_fade")
+	else:
+		store_root.get_node("Window/Buttons/EnemiesButton").modulate.a = 1
+		store_root.get_node("Window/Buttons/DroopersButton").modulate.a = 1
+		store_root.get_node("Window/Buttons/UpgradesButton").modulate.a = 1
+
 	loading_text.visible = false
 
-func _on_store_logic_show_error(msg = "not_enough_coins") -> void:
-	EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
 func _on_store_logic_update_enemy_button() -> void:
 	update_enemy_button()
 func _on_store_logic_update_upgrade_container(item):

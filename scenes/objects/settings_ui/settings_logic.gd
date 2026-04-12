@@ -49,12 +49,13 @@ func _on_download_music_dlc_clicked(button: FancyButton) -> void:
 	SettingsUI.remove_music_dlc_button.disabled = true
 	Dlc.DownloadSuccesful.connect(func(): _on_download_succesful(button))
 	
+	
 func _on_remove_music_dlc_clicked(button: FancyButton) -> void:
 	Dlc.remove()
 	UpdateDLCButton.emit()
 	
 func _on_download_succesful(_button):	
 	SettingsUI.remove_music_dlc_button.disabled = false
-	SettingsUI.download_music_dlc_button.disabled = false
+	SettingsUI.download_music_dlc_button.disabled = false	
 	UpdateDLCButton.emit()
 	MusicManager.reset()

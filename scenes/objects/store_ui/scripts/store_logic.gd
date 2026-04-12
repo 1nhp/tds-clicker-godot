@@ -6,7 +6,6 @@ extends Node
 
 signal update_upgrade_container
 signal update_enemy_button
-signal show_error
 signal update_drooper_content
 
 func transaction(price, container = StoreUI.drooper_content_container):
@@ -22,7 +21,7 @@ func _on_buy_clicked(_button):
 		return
 	
 	if StoreManager.game.coins < StoreManager.current_item.price:
-		show_error.emit()
+		EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
 		return
 
 	match StoreManager.current_item.type:
@@ -55,11 +54,11 @@ func buy_drooper():
 func buy_upgrade(item, button):
 	var price = int(item.base_price * pow(item.price_multiplier,item.level))
 	if StoreManager.game.coins < price:
-		show_error.emit()
+		EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
 		return
 	
 	if item.level >= item.max_level:
-		show_error.emit("upgrade_maxxed")
+		EventBus.show_notification("upgrade_maxxed", EventBus.types.ERROR)
 		return
 			
 	transaction(price, button)
@@ -75,6 +74,9 @@ func apply_upgrade_effect(id):
 			StoreManager.game.drooper_cooldown = max(0.0,StoreManager.game.drooper_cooldown - 0.1)
 		"enemy_multiplier":
 			StoreManager.game.enemy_multiplier += 1
+		"autoclicker":
+			StoreManager.game.autoclickers += 1
+			object.create("autoclicker", Vector2.ZERO, "/root/game/FG/Control/AutoClickerGrid")
 
 func update_item_state(item):
 	match item.type:

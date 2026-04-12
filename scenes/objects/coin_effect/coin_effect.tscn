@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oicwn1vmnre3" path="res://assets/sprites/ui/ui_coin_low.png" id="2_5orlh"]
 
 [node name="CoinEffect" type="Node2D" unique_id=1468992777]
-z_index = 9
+z_index = 90
 script = ExtResource("1_5orlh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435891349]

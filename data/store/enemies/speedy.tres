@@ -8,6 +8,6 @@ script = ExtResource("1_tefh3")
 id = "speedy"
 name = "Speedy"
 texture = ExtResource("2_anfbn")
-price = 1000
+price = 1000.0
 type = "Enemy"
 coin_award = 5

@@ -1,12 +1,13 @@
 [gd_resource type="Resource" format=3 uid="uid://m2j3es8jba06"]
 
 [ext_resource type="Script" uid="uid://dyckhxk7r1sj5" path="res://data/store/upgrades/scripts/enemy_multiplier.upgrade.gd" id="1_c4jpv"]
-[ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui/ui_cash.png" id="2_nvjtg"]
+[ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://assets/sprites/ui/ui_income.png" id="2_nvjtg"]
 
 [resource]
 script = ExtResource("1_c4jpv")
 base_price = 32000
 price_multiplier = 2.0
+level = 1
 max_level = 45
 upgrade_name_key = "enemy_multiplier_name"
 description_key = "enemy_multiplier_desc"

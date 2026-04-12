@@ -20,7 +20,6 @@ func _ready() -> void:
 	mutex = Mutex.new()
 	thread.start(_start_loading)
 
-
 func _start_loading():
 	# Folder array that will later be used for
 	# store item enumeration
@@ -31,12 +30,11 @@ func _start_loading():
 	]
 	# Loop according to the folders array
 	for folder in folders:
-		for i in range(1):
-			# Set items variable and append store_items to items
-			var items = _enumerate_store_items(folder)
-			mutex.lock()
-			store_items.append_array(items)
-			mutex.unlock()
+		# Set items variable and append store_items to items
+		var items = _enumerate_store_items(folder)
+		mutex.lock()
+		store_items.append_array(items)
+		mutex.unlock()
 	
 	# When store items enumeration finishes
 	emit_signal("FinishedLoading")
@@ -55,9 +53,11 @@ func _enumerate_store_items(folder):
 			var item = ResourceLoader.load(folder + "/" + file)
 			items.append(item)
 	
+	print(items)
+	
 	# Sort function
 	items.sort_custom(func(a,b): 
 		return a.price < b.price)
-		
+	
 	return items
 	thread.wait_to_finish()

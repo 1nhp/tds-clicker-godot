@@ -1,17 +1,16 @@
 extends Control
 
-@export var message = "You do not have enough coins to buy this item!"
+var message
+enum types {NORMAL, WARNING, ERROR, GOOD}
+var type_var = types.ERROR
+var notification_sound = "Notification"
+
 @export var text_node: Node
 
 var text_color = Color(1,1,1)
 var text_outline_color = Color(0,0,0)
 
-var notification_sound = "Notification"
-
 var tween: Tween
-enum types {NORMAL, WARNING, ERROR, GOOD}
-
-var type_var
 
 func setup_text(type = types.NORMAL):
 	type = type_var
@@ -27,10 +26,10 @@ func setup_text(type = types.NORMAL):
 		text_outline_color = Color(0.282, 0.282, 0.282, 1.0)
 
 	SoundManager.play_sound(notification_sound)
-	_update_text()
 	text_node.set("theme_override_colors/font_color", text_color)
 	text_node.set("theme_override_colors/font_outline_color", text_outline_color)
-
+	text_node.text = message
+	
 func _ready() -> void:
 	EventBus.notification.connect(setup_text)
 
@@ -54,5 +53,3 @@ func animate_text():
 	tween.tween_property(text_node, "scale", Vector2(0, 0), 0.4)
 	await tween.finished
 	queue_free()
-func _update_text():
-	text_node.text = message

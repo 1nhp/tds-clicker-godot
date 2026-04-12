@@ -1,0 +1,125 @@
+key,en,ru,
+store_btn,Store,Магазин,
+settings_btn,Settings,Настройки,
+settings_graphics_btn,Graphics,Графика,
+settings_audio_btn,Audio,Звук,
+settings_game_btn,Game,Игра,
+coin_particles_amount,Coin particles,Кол. частиц монет,
+coin_amount_dropdown_1,High,Много,
+coin_amount_dropdown_2,Medium,Середина,
+coin_amount_dropdown_3,Low,Мало,
+coin_amount_dropdown_4,Very Low,Очень мало,
+coin_amount_dropdown_5,OFF,Отключено,
+coin_particles_amount_description,"Changes the amount of coins on screen,\n can improve performance on low-end devices.","Меняет количество монет на екране, может увеличить\nпроизводительность на слабых устройствах.",
+enemy_animations,Enemy animations,Анимация противника,
+enemy_animations_description,"Toggles enemy animations,\n can improve performance on low-end devices.","Включает или отключает анимации противника, может увеличить\nпроизводительность на слабых устройствах.",
+ui_animations,UI Animations,Анимация пол. интерфейса,
+ui_animations_description,"Toggles ui animations,\n can improve performance on low-end devices.","Включает или отключает анимации интерфейса, может увеличить\nпроизводительность на слабых устройствах.",
+blur_bg,BG Blur,Размития фона,
+blur_bg_description,"Toggles background blur on menus,\n can improve performance on low-end devices.","Включает или отключает размития фона в меню, может увеличить\nпроизводительность на слабых устройствах.",
+sound_volume,Sound Volume,Громкость Звука,
+music_volume,Music Volune,Громкость Музики,
+download_music_dlc_btn,Download Additional Music DLC,Скачать доп. музыкальное DLC ,
+redownload_music_dlc_btn,Redownload Additional Music DLC,Перекачать доп. музыкальное DLC ,
+remove_music_dlc_btn,Remove Additional Music DLC,Удалить доп. музыкальное DLC ,
+download_music_dlc_description,"Downloads Additional Music DLC from Google Drive 
+Requires free 51mb of space on disk
+NOTE:
+If the download has too much traffic it may not download.","Загружает дополнотельное музыкальное DLC с Google Drive
+Требуется 51 МБ свободного места на диске
+ПРИМЕЧАНИЕ:
+Если загрузка с сервера будет слишком интенсивной, она может не работать. ",
+remove_music_dlc_description,"Deletes Additional Music DLC,\nbut you will lose additional music.","Удаляет дополнительную музику DLC,\n но ты потеряешь дополнительную музыку. ",
+language,Language,Язик,
+credits,Credits,Благодарности,
+credits_content,"[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Original Creators[/wave][/color]
+       BelowNatural: Original game, enemies
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Soundtrack[/wave][/color]
+              Phoqus
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Graphic Designer[/wave][/color]
+       Jaaz
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Programmer[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]UI/UX Design[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Enemy Creation and Balancing[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Plugins[/wave][/color]
+MellowDye: StyleBoxFancy
+SmoothScroll: Fabian Keßler (SpyrexDE)
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Programs[/wave][/color]
+Godot
+Affinity
+Libreoffice Calc
+Audacity","[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Оригинальные Создатели[/wave][/color]
+       BelowNatural: Оригинальная игра, враги
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Музыка[/wave][/color]
+              Phoqus
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Графичний Дизайнер[/wave][/color]
+       Jaaz
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Программист[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]UI/UX Дизайн[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Созадие врагов и их Баланс[/wave][/color]
+Maritosu
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Плагины[/wave][/color]
+MellowDye: StyleBoxFancy
+SmoothScroll: Fabian Keßler (SpyrexDE)
+
+[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Программы[/wave][/color]
+Godot
+Affinity
+Libreoffice Calc
+Audacity",
+droopers,Droopers,Дроперы,
+coins,Coins,Монеты,
+income,Income,Доход ,
+enemies,Enemies,Враги,
+upgrades,Upgrades,Прокачка,
+buy_btn,Buy,Купить,
+upgrade_btn,Upgrade Level ,Улучшить уровень ,
+enemy_change_btn,Change,Сменить,
+price,Price: ,Цена: ,
+drooper_cooldown_name,Faster droopers,Ускоренния дроперов,
+enemy_multiplier_name,Enemy multiplier,Множитель врагов,
+drooper_cooldown_desc,Speeds up droopers by 0.1 second,Ускоряет скорость дроперов на 0.1 секунд,
+enemy_multiplier_desc,Multiplies amount of coins from enemy,Враги дают монеты на раза больше,
+autoclicker_name,Autoclicker,Автокликер,
+autoclicker_desc,Autoclicks the enemy each 5 seconds,Автоматически нажамает на врага каждие 5 секунд,
+autoclicker_amount,Amount,Шт:,
+enemy_multiplier_text,x Mult,x Множ,
+drooper_cooldown_text,Cooldown: ,Задержка,
+per_second,per second,за секунду,
+per_click,per kill,за убивание,
+disclaimer_content,"This fan project is not endorsored
+or afflitiated with Paradoxum Games,
+and its developers in any way, as well with Roblox
+Corporation and others, do not sell or distribute this project
+in a paid manner this and will always be free of charge
+If you want to support me Follow me on social media!
+Maritosu.bsky.social
+@Maritosu on YouTube","Этот фанатский проект не связан с Paradoxum Games,
+и её разработчиками каким-либо образом, а также с Roblox Corporation и другими компаниями. Не продавайте и не распространяйте этот проект
+платно, он всегда будет бесплатным.
+Если вы хотите поддержать меня, подписывайтесь на меня в социальных сетях!
+Maritosu.bsky.social
+@Maritosu на YouTube ",
+disclaimer_btn,Warning,Внимание!,
+disclaimer_indev,This game is still in development expect short playtime and less content.,Эта игра еще в разработке и поэтому игровое\nвремя и контента может быть мало.,
+disclaimer_dev_version,"You might be either playing or testing an version from the project’s source code, be warned that this version is unstable and most content is not finished you are warned.","Ви играете или тестируете версию з исходного кода, ви можете увидеть баги и не завершенний контент ви били предупреждены.",
+not_enough_coins,You don’t have enough coins to buy this item!,У тебя недостаточно монет чтобы купить это!,
+upgrade_maxxed,You have reached maximum level for this upgrade!,Уровень улучшения уже на полном уровне!,

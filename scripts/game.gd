@@ -6,10 +6,12 @@ var income: int = 0
 var total_droopers: int = 0
 var drooper_cooldown: float = 1
 var enemy_multiplier: float = 1
+var autoclickers: float = 0
 
 var enemies = {}
 var upgrades = {}
 var droopers = {}
+
 var settings = {
 	"blur_bg": true,
 	"coin_particles": 100,
@@ -39,11 +41,11 @@ var enemy_name = "Normal"
 @export var screen_blur_anim: Node
 @export var store_button: Node
 @export var settings_button: Node
+@onready var enemy = get_tree().get_first_node_in_group("enemy")
 
 var spawnCoins = SpawnCoins.new()
 
 func _ready():
-	
 	SavingSystem.load_data()
 	Globals._get_game()
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.get("musicvolume", 0.5)))
@@ -51,7 +53,8 @@ func _ready():
 	
 	update_coin_count()
 	start_loops()
-	get_tree().get_first_node_in_group("enemy")._update_enemy(enemy_name)
+	create_autoclicker()
+	enemy._update_enemy(enemy_name)
 
 func start_loops():
 	income_loop()
@@ -81,37 +84,40 @@ func update_coin_count():
 	
 func _on_enemy_enemy_clicked() -> void:
 	SoundManager.play_sound("Coin", randf_range(0.8, 1.3))
-	coins += get_tree().get_first_node_in_group("enemy").coin_award * enemy_multiplier
+	coins += enemy.coin_award * enemy_multiplier
 	update_coin_count()
 
 enum actions {SHOW, CLOSE}
 signal MenuClosing
 signal MenuOpening
 
-func menu(action = actions.SHOW, name = "ui_store", closingvar = false, anim_player = Node, root = self):
+func menu(blur = true, action = actions.SHOW, name = "ui_store", closingvar = false, anim_player = Node, root = self, anim_name = "anim", backwards = true):
 	var closing = closingvar
 	
 	if action == actions.SHOW:
 		object.create(name, Vector2.ZERO, "/root/game/UI")
-		blur_screen()
+		if blur:
+			blur_screen()
 		print_debug("Opening menu")
 		emit_signal("MenuOpening")
 
 	if action == actions.CLOSE:
-		blur_screen(false)
+		if blur:
+			blur_screen(false)
 		print_debug("Closing menu")
 		closing = true
-		print("aaa" + str(anim_player))
 		if settings["ui_animations"]:
-			anim_player.play_backwards("anim")
+			if backwards:
+				anim_player.play_backwards(anim_name)
+			else:
+				anim_player.play(anim_name)
 		else:
 			root.queue_free()
 		emit_signal("MenuClosing")
 	return closing
 
-
-func _on_store_button_clicked(_button: FancyButton) -> void: menu(actions.SHOW, "ui_store")
-func _on_settings_button_clicked(_button: FancyButton) -> void: menu(actions.SHOW, "ui_settings")
+func _on_store_button_clicked(_button: FancyButton) -> void: menu(true, actions.SHOW, "ui_store")
+func _on_settings_button_clicked(_button: FancyButton) -> void: menu(true, actions.SHOW, "ui_settings")
 
 func blur_screen(transition = true):
 	if settings["blur_bg"] == true:
@@ -140,3 +146,10 @@ func income_loop():
 				create_tween().tween_property(drooper_icon, "scale", Vector2(1, 1), 0.05)
 			
 			SoundManager.play_sound("Coin2", randf_range(0.8, 1.3))
+			
+func create_autoclicker(amount = autoclickers):
+	for i in range(amount):
+		await get_tree().create_timer(0.05).timeout
+		var autoclicker = object.create("autoclicker", Vector2.ZERO, "/root/game/FG/Control/AutoClickerGrid")
+		if i >= 10:
+			autoclicker.visible = false

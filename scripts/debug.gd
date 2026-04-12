@@ -17,7 +17,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if Input.is_key_pressed(KEY_D):
 			Dlc.load()
 		if Input.is_key_pressed(KEY_N):
-			EventBus.show_notification("not_enough_coins", EventBus.types.ERROR)
+			EventBus.show_notification("upgrade_maxxed", EventBus.types.ERROR)
+			
 			
 func _ready() -> void:
 	if not OS.is_debug_build():

@@ -2,7 +2,6 @@ extends Node2D
 
 func _enter_tree() -> void:
 	scale = Vector2(0, 0)
-
 func _ready() -> void:
 	var node = Globals.game.coin_icon
 	var tween = create_tween()

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="5_gee14"]
 [ext_resource type="Theme" uid="uid://d2i15xaik5s3x" path="res://data/themes/store_button.tres" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://cxv6toh226e86" path="res://assets/sprites/ui/ui_cash.png" id="6_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://assets/sprites/ui/ui_income.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://crrqh831cvy5i" path="res://assets/sprites/ui/ui_store.png" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="6_u5sy4"]
 [ext_resource type="Theme" uid="uid://ctwo7iarpgsqu" path="res://data/themes/settings_button.tres" id="10_kvpfn"]
@@ -181,10 +181,23 @@ mouse_filter = 2
 position = Vector2(0, 8)
 type = "Normal"
 
+[node name="AutoClickerGrid" type="HBoxContainer" parent="FG/Control" unique_id=641705629]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = 29.0
+offset_right = -72.0
+offset_bottom = 99.0
+grow_vertical = 2
+alignment = 2
+
 [node name="Objects" type="Node" parent="FG" unique_id=263302088]
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=191480564]
+layer = 0
 
 [node name="ScreenBlur" type="ColorRect" parent="UI" unique_id=1494572352]
 visible = false
@@ -233,6 +246,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Counter" type="Control" parent="UI/TL/CoinCounter" unique_id=442910942]
 layout_mode = 1
+anchors_preset = 0
 offset_left = 52.0
 offset_top = 32.0
 offset_right = 92.0

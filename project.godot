@@ -13,7 +13,7 @@ config_version=5
 config/name="TDS Clicker"
 config/description="An fangame clicker made in Godot!"
 config/version="1.2 Beta indev"
-run/main_scene="uid://duuee8bvyllsp"
+run/main_scene="uid://beaahem6rjcru"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [audio]
@@ -83,10 +83,10 @@ texture={
 [internationalization]
 
 locale/translation_remaps={
-"res://data/languages/en.en.translation": PackedStringArray(),
-"res://data/languages/ru.ru.translation": PackedStringArray()
+"res://data/languages/languages.en.translation": PackedStringArray("res://data/languages/languages.en.translation:en"),
+"res://data/languages/languages.ru.translation": PackedStringArray("res://data/languages/languages.ru.translation:ru")
 }
-locale/translations=PackedStringArray("res://data/languages/en.en.translation", "res://data/languages/ru.ru.translation")
+locale/translations=PackedStringArray("res://data/languages/languages.en.translation", "res://data/languages/languages.ru.translation")
 
 [physics]
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://rvu631ykb0tj"]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dlg4d6ybfctie"]
 
 [ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_7lq41"]
 [ext_resource type="Texture2D" uid="uid://ogwh6p07wfj7" path="res://assets/sprites/enemies/abnormal.png" id="2_7lq41"]
@@ -8,6 +8,6 @@ script = ExtResource("1_7lq41")
 id = "abnormal"
 name = "Abnormal"
 texture = ExtResource("2_7lq41")
-price = 500
+price = 500.0
 type = "Enemy"
-coin_award = 2
+coin_award = 3

@@ -13,7 +13,8 @@ func save_data():
 		"income": game.income,
 		"enemy_name": game.enemy_name,
 		"drooper_cooldown": game.drooper_cooldown,
-		"enemy_multiplier": game.enemy_multiplier,	
+		"enemy_multiplier": game.enemy_multiplier,
+		"autoclickers": game.autoclickers,	
 		"droopers": game.droopers,
 		"enemies": game.enemies,
 		"upgrades": game.upgrades,
@@ -51,6 +52,7 @@ func load_data():
 		game.income = saved_data.get("income", 0)
 		game.drooper_cooldown = saved_data.get("drooper_cooldown", 0)
 		game.enemy_multiplier = saved_data.get("enemy_multiplier", 1)	
+		game.autoclickers = saved_data.get("autoclickers", 1)		
 		game.droopers = saved_data.get("droopers", {})
 		game.enemies = saved_data.get("enemies", {})
 		game.upgrades = saved_data.get("upgrades", {})

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://qiljplou4plo"]
+
+[ext_resource type="Script" uid="uid://od6ktihq3042" path="res://scenes/objects/autoclicker/autoclicker.gd" id="1_80uqw"]
+[ext_resource type="Texture2D" uid="uid://bvubtscpjnfjn" path="res://assets/sprites/scout.webp" id="2_7h7bt"]
+
+[node name="Autoclicker" type="Control" unique_id=2103569337]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_80uqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=740838487]
+position = Vector2(-4.7683716e-07, 0)
+rotation = -3.1415927
+scale = Vector2(0.2621879, -0.26218787)
+texture = ExtResource("2_7h7bt")

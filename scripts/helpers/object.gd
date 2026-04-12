@@ -5,9 +5,12 @@ var scenes := {
 	"debug_info": "res://scenes/objects/debug_info/debug_info.tscn",
 	"ui_store": "res://scenes/objects/store_ui/store.tscn",
 	"ui_settings": "res://scenes/objects/settings_ui/settings.tscn",
-	"notification": "res://scenes/objects/notification/notification.tscn",
-	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn"
+	"ui_credits": "res://scenes/objects/credits_ui/credits.tscn",
+	"notification": "res://scenes/objects/error_notification/error_notification.tscn",
+	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn",
+	"autoclicker": "res://scenes/objects/autoclicker/autoclicker.tscn"
 }
+
 
 var cache := {}
 
@@ -20,6 +23,7 @@ func create(scene_name: String, position: Vector2 = Vector2.ZERO, parent_path: N
 		cache[scene_name] = load(scenes[scene_name])
 
 	var instance = cache[scene_name].instantiate()
+	
 	if not instance is CanvasLayer:
 		instance.position = position
 	else:
