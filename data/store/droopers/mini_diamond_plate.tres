@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://b1iysu1x0uy0q"]
+
+[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://data/store/store_item_data.gd" id="1_qlys6"]
+[ext_resource type="Texture2D" uid="uid://bye75nnfben44" path="res://assets/sprites/droopers/drooper_6.png" id="2_qlys6"]
+
+[resource]
+script = ExtResource("1_qlys6")
+id = "mini_diamond_plate"
+name = "Mini Diamond Plate Drooper"
+texture = ExtResource("2_qlys6")
+price = 12000.0
+price_addition = 3000.0
+type = "Drooper"
+coin_award = 60

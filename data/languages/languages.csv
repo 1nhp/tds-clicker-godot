@@ -31,6 +31,16 @@ If the download has too much traffic it may not download.","Загружает �
 Если загрузка с сервера будет слишком интенсивной, она может не работать. ",
 remove_music_dlc_description,"Deletes Additional Music DLC,\nbut you will lose additional music.","Удаляет дополнительную музику DLC,\n но ты потеряешь дополнительную музыку. ",
 language,Language,Язик,
+skip_disclaimer,Skip Disclaimer,Пропустить дисклеймер,
+skip_disclaimer_description,If turned on Skips the disclaimer screen,Если включено то екран дисклеймера будет пропущен,
+changelog,Сhangelog,Изменения,
+stats,Stats,Статистика,
+enemies_killed,Enemies killed: ,Врагов убито: ,
+droopers_bought,Droopers bought: ,Дроперов куплено:,
+upgrades_bought,Upgrades bought: ,Улучшенний куплено: ,
+enemies_bought,Enemies bought: ,Врагов куплено: ,
+coins_earned,Coins earned: ,Монет накоплено: ,
+time_played,Time played: ,Наиграно:,
 credits,Credits,Благодарности,
 credits_content,"[color=#dbd9d9][wave amp=30.0 freq=4.0 connected=1]Original Creators[/wave][/color]
        BelowNatural: Original game, enemies

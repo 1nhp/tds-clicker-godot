@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://54ta5cp8qhqt"]
+
+[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://data/store/store_item_data.gd" id="1_hwng3"]
+[ext_resource type="Texture2D" uid="uid://c7n76gu1einxq" path="res://assets/sprites/droopers/drooper_5.png" id="2_is0j1"]
+
+[resource]
+script = ExtResource("1_hwng3")
+id = "cobblestone"
+name = "Cobblestone Drooper"
+texture = ExtResource("2_is0j1")
+price = 8000.0
+price_addition = 1000.0
+type = "Drooper"
+coin_award = 30

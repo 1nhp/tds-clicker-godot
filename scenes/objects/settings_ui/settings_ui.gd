@@ -17,7 +17,6 @@ extends Node
 var closing: bool
 
 func _ready() -> void:
-	Globals.game.MenuClosing.connect(_on_menu_closing)
 	game_version.text = Globals.version
 	
 	if Globals.game.settings["ui_animations"]:
@@ -32,11 +31,8 @@ func update_ui():
 	language_dropdown.selected = SettingsLogicNode.language_key
 	
 func _on_close_button_clicked(_button: FancyButton) -> void:
-	closing = Globals.game.menu(true, Globals.game.actions.CLOSE, "ui_settings", closing, anim_player, root)
+	pass
 	
-func _on_menu_closing():
-	Globals.game.settings_button.disabled = false
-
 func _switch_tab(tab):
 	for t in [graphics_tab,audio_tab,game_tab]:
 		t.visible = false
@@ -61,4 +57,9 @@ func _on_settings_logic_update_data_finished() -> void:
 
 
 func _on_credits_clicked(_button: FancyButton) -> void:
-	Globals.game.menu(false, Globals.game.actions.SHOW, "ui_credits")
+	var credits = object.create("credits", Vector2.ZERO, "/root/game/UI")
+	Globals.game.menuController.open_menu(credits, credits.get_node("AnimationPlayer"), false)
+
+func _on_close_button_pressed() -> void:
+	Globals.game.menuController.close_menu(root, anim_player, "anim", true, true)
+	Globals.game.settings_button.disabled = false

@@ -20,7 +20,7 @@ func load():
 
 
 @onready var http_request: HTTPRequest
-@onready var music_dlc_url: String = "https://drive.usercontent.google.com/download?id=135GkZjRHGZCR9g2y7cmxY6TKaRm5STv3&export=download&authuser=0"
+@onready var music_dlc_url: String = "https://drive.usercontent.google.com/download?id=1O6cmhbV1Yq41rgzpXBhmpvqutI1dUfD8&export=download&authuser=0"
 
 func download():
 	http_request = HTTPRequest.new()

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://dgi3g3pd3u3w2"]
+
+[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://data/store/store_item_data.gd" id="1_pt8m7"]
+[ext_resource type="Texture2D" uid="uid://ccyg38gni7ymt" path="res://assets/sprites/droopers/drooper_4.png" id="2_pt8m7"]
+
+[resource]
+script = ExtResource("1_pt8m7")
+id = "ceramic"
+name = "Ceramic Drooper"
+texture = ExtResource("2_pt8m7")
+price = 4000.0
+price_addition = 600.0
+type = "Drooper"
+coin_award = 20

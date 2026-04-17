@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://di4v8x1cbrx5x"]
+
+[ext_resource type="Script" uid="uid://c84sdlu7sungj" path="res://scenes/objects/stats_ui/stats.gd" id="1_b7d2i"]
+[ext_resource type="Theme" uid="uid://s6oi1i0rcove" path="res://data/themes/store_gui_panel1.tres" id="2_o8l5a"]
+[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="4_co5t7"]
+[ext_resource type="Theme" uid="uid://cf3r6joitnq0p" path="res://data/themes/store_exit_button.tres" id="7_c3j4v"]
+[ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://data/themes/store_gui_panel2.tres" id="10_3qx1o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71ul8"]
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.32156864)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_vd8q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [56.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Window:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_du62b"]
+resource_name = "anim"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [130.0, 120.0, 100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Window:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1nn02"]
+resource_name = "anim_closing"
+length = 0.26666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [49.9, 650.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vd8q5"]
+_data = {
+&"RESET": SubResource("Animation_vd8q5"),
+&"anim": SubResource("Animation_du62b"),
+&"anim_closing": SubResource("Animation_1nn02")
+}
+
+[node name="Stats" type="Control" unique_id=1904586818 node_paths=PackedStringArray("enemies_killed_label", "droopers_bought_label", "upgrades_bought_label", "enemies_bought_label", "coins_earned_label", "time_played_label", "anim_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7d2i")
+enemies_killed_label = NodePath("Window/enemies_killed")
+droopers_bought_label = NodePath("Window/droopers_bought")
+upgrades_bought_label = NodePath("Window/upgrades_bought")
+enemies_bought_label = NodePath("Window/enemies_bought")
+coins_earned_label = NodePath("Window/coins_earned")
+time_played_label = NodePath("Window/time_played")
+anim_player = NodePath("AnimationPlayer")
+metadata/_edit_vertical_guides_ = [8.0]
+
+[node name="Window" type="Panel" parent="." unique_id=683103007]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.0
+offset_top = -244.0
+offset_right = 287.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(277, 214)
+mouse_behavior_recursive = 2
+theme = ExtResource("2_o8l5a")
+theme_override_styles/panel = SubResource("StyleBoxFlat_71ul8")
+
+[node name="CloseButton" type="Button" parent="Window" unique_id=1092347869]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 56.872726
+grow_horizontal = 0
+pivot_offset = Vector2(24, 24)
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_c3j4v")
+theme_override_constants/outline_size = 0
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 30
+text = "X"
+script = ExtResource("4_co5t7")
+hover_scale = Vector2(1.1, 1.1)
+
+[node name="Header" type="Panel" parent="Window" unique_id=1455460292]
+z_index = 6
+layout_mode = 1
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 284.0
+offset_bottom = 53.0
+theme = ExtResource("10_3qx1o")
+
+[node name="header" type="Label" parent="Window/Header" unique_id=644410707]
+z_index = 3
+layout_mode = 0
+offset_left = 2.0
+offset_right = 179.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14622861, 0.14622879, 0.1462287, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "stats"
+
+[node name="enemies_killed" type="Label" parent="Window" unique_id=1720496771]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 185.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Enemies killed:"
+
+[node name="droopers_bought" type="Label" parent="Window" unique_id=1873940869]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 82.0
+offset_right = 185.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Droopers bought:"
+
+[node name="upgrades_bought" type="Label" parent="Window" unique_id=123029760]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 108.0
+offset_right = 185.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Upgrades bought:"
+
+[node name="enemies_bought" type="Label" parent="Window" unique_id=945535858]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 134.0
+offset_right = 185.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Enemies bought:"
+
+[node name="coins_earned" type="Label" parent="Window" unique_id=1251022653]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 160.0
+offset_right = 185.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Coins earned:"
+
+[node name="time_played" type="Label" parent="Window" unique_id=1333219953]
+z_index = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 184.0
+offset_right = 185.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Time played:"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=835746052]
+libraries/ = SubResource("AnimationLibrary_vd8q5")
+
+[connection signal="pressed" from="Window/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

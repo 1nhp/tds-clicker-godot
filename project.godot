@@ -47,6 +47,28 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/StyleboxFancy/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "red",
+"res://assets/": "yellow",
+"res://assets/music/": "green",
+"res://assets/shaders/": "pink",
+"res://assets/sounds/": "green",
+"res://assets/sprites/": "yellow",
+"res://build/": "gray",
+"res://data/": "orange",
+"res://data/changelog_ui/": "green",
+"res://data/languages/": "teal",
+"res://data/store/": "pink",
+"res://data/store/droopers/": "gray",
+"res://data/store/enemies/": "green",
+"res://data/store/upgrades/": "red",
+"res://data/themes/": "gray",
+"res://scenes/": "purple",
+"res://scripts/": "blue"
+}
+
 [global_group]
 
 game=""

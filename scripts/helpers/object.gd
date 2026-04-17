@@ -3,9 +3,11 @@ extends Node
 var scenes := {
 	"coin_effect": "res://scenes/objects/coin_effect/coin_effect.tscn",
 	"debug_info": "res://scenes/objects/debug_info/debug_info.tscn",
-	"ui_store": "res://scenes/objects/store_ui/store.tscn",
-	"ui_settings": "res://scenes/objects/settings_ui/settings.tscn",
-	"ui_credits": "res://scenes/objects/credits_ui/credits.tscn",
+	"store": "res://scenes/objects/store_ui/store.tscn",
+	"settings": "res://scenes/objects/settings_ui/settings.tscn",
+	"credits": "res://scenes/objects/credits_ui/credits.tscn",
+	"changelog": "res://scenes/objects/changelog_ui/changelog.tscn",	
+	"stats": "res://scenes/objects/stats_ui/stats.tscn",		
 	"notification": "res://scenes/objects/error_notification/error_notification.tscn",
 	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn",
 	"autoclicker": "res://scenes/objects/autoclicker/autoclicker.tscn"

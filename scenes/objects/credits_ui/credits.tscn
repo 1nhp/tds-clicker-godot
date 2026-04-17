@@ -236,8 +236,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsUI" type="Node" parent="." unique_id=954337641]
+[node name="CreditsUI" type="Node" parent="." unique_id=954337641 node_paths=PackedStringArray("anim_player", "credits_root")]
 script = ExtResource("1_1nn02")
+anim_player = NodePath("../AnimationPlayer")
+credits_root = NodePath("..")
 
 [node name="CreditsLogic" type="Node" parent="." unique_id=2103275895]
 script = ExtResource("2_q36k7")
@@ -473,9 +475,9 @@ text = "credits"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=835746052]
 libraries/ = SubResource("AnimationLibrary_vd8q5")
 
-[connection signal="clicked" from="Window/CloseButton" to="." method="_on_close_button_clicked"]
+[connection signal="pressed" from="Window/CloseButton" to="CreditsUI" method="_on_close_button_pressed"]
 [connection signal="clicked" from="Window/SmoothScrollContainer2/Control/view_on_roblox_1" to="CreditsLogic" method="_on_view_on_roblox_1_clicked"]
 [connection signal="clicked" from="Window/SmoothScrollContainer2/Control/view_on_roblox_2" to="CreditsLogic" method="_on_view_on_roblox_2_clicked"]
 [connection signal="clicked" from="Window/SmoothScrollContainer2/Control/view_on_youtube1" to="CreditsLogic" method="_on_view_on_youtube_1_clicked"]
 [connection signal="clicked" from="Window/SmoothScrollContainer2/Control/view_on_roblox_3" to="CreditsLogic" method="_on_view_on_roblox_3_clicked"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CreditsUI" method="_on_animation_player_animation_finished"]

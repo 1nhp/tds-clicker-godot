@@ -38,7 +38,7 @@ func _on_musicvolume_value_changed(value: float) -> void:
 
 func _on_language_item_selected(index: int) -> void:
 	TranslationServer.set_locale(language_options[index])
-	Globals.language = language_options[index]
+	Globals.global_settings["language"] = language_options[index]
 	Globals.game.settings["dropdown_selection"]["language"] = index
 
 func _on_download_music_dlc_clicked(button: FancyButton) -> void:

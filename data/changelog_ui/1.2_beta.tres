@@ -1,0 +1,167 @@
+[gd_resource type="Resource" format=3 uid="uid://3i7a16m5hc2y"]
+
+[ext_resource type="Script" uid="uid://qcwmjlmksys3" path="res://data/changelog_ui/changelog_data.gd" id="1_taira"]
+
+[resource]
+script = ExtResource("1_taira")
+name = "1.2 Beta"
+text_en = "[font_size=32]1.2 Spring Of Something[/font_size]
+April 14, 2026
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+[font_size=32]Features[/font_size]
+[ul]
+Added Autoclicker upgrade: [img=25]res://assets/sprites/ui/ui_autoclicker.png[/img] that creates an autoclicker when bought, automatically clicks the enemy each 5 seconds
+Added Amount of Coins you get/10 seconds
+Added Language support (Currently 🇺🇸, 🇷🇺) more languages planned to be added!
+Added Credits menu in settings menu
+Added More music as an optional Additional Music DLC that can be downloaded from settings menu!
+Added Android version!
+Added changelog menu! (you are here)
+Added statistics menu!
+[/ul]
+
+[font_size=32]New Droopers![/font_size]
+Plastic Drooper                [img=30]res://assets/sprites/droopers/drooper_2.png[/img]
+  5 [img=20]res://assets/sprites/ui/ui_coin.png[/img] per second
+Wooden Drooper             [img=30]res://assets/sprites/droopers/drooper_3.png[/img]
+  10 [img=20]res://assets/sprites/ui/ui_coin.png[/img] per second
+Ceramic Drooper             [img=30]res://assets/sprites/droopers/drooper_4.png[/img]
+  20 [img=20]res://assets/sprites/ui/ui_coin.png[/img] per second
+Cobblestone Drooper     [img=30]res://assets/sprites/droopers/drooper_5.png[/img]
+  30 [img=20]res://assets/sprites/ui/ui_coin.png[/img] per second
+Diamond Plate Drooper [img=30]res://assets/sprites/droopers/drooper_6.png[/img]
+  60 [img=20]res://assets/sprites/ui/ui_coin.png[/img] per second
+
+[font_size=32]New Enemies![/font_size]
+Brute Enemy:                         [img=80]res://assets/sprites/enemies/brute.webp[/img]
+Tanker Enemy:                       [img=70]res://assets/sprites/enemies/tanker.webp[/img]
+Armored Enemy:                    [img=70]res://assets/sprites/enemies/armored.webp[/img]
+Bulwark Enemy:                     [img=70]res://assets/sprites/enemies/bulwark.webp[/img]
+Enraged Enemy:                     [img=70]res://assets/sprites/enemies/enraged.webp[/img]
+Skeleton Enemy:                     [img=70]res://assets/sprites/enemies/skeleton.webp[/img]
+Slow Boss Enemy:                  [img=70]res://assets/sprites/enemies/slow_boss.webp[/img]
+Necromancer Enemy:             [img=70]res://assets/sprites/enemies/necromancer.webp[/img]
+Elite Molten Enemy:                [img=70]res://assets/sprites/enemies/elite_molten.webp[/img]
+Grave Digger Enemy:              [img=70]res://assets/sprites/enemies/grave_digger.webp[/img]
+Molten Titan Enemy:               [img=70]res://assets/sprites/enemies/molten_titan.webp[/img]
+Molten Warlord Enemy:          [img=70]res://assets/sprites/enemies/molten_warlord.webp[/img]
+Molten Summoner Enemy:     [img=70]res://assets/sprites/enemies/molten_summoner.webp[/img]
+Molten Executioner Enemy:    [img=70]res://assets/sprites/enemies/molten_executioner.webp[/img]
+Elite Boomer Enemy:                [img=70]res://assets/sprites/enemies/elite_boomer.webp[/img]
+
+[font_size=32]Improvements[/font_size]
+[ul]
+Settings menu now has animation
+Improved Store Menu animations
+Notification splash text is improved with better animation
+Improved Store Loading with async threads
+[/ul]
+
+[font_size=32]Changes[/font_size]
+[ul]
+Removed placeholder song (Sonic Unleashed Boss Battle)
+Base game now only includes 8 songs due to size constraints for some platforms
+Added still in development warning in disclaimer screen
+Added Skip disclaimer option in settings menu
+[font_size=24]Balancing[/font_size]
+[ul]
+Added Price scaling for droopers
+Hidden Boss price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]30K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]45K
+Normal Boss price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]10K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]13K
+  Coin award: [img=20]res://assets/sprites/ui/ui_coin.png[/img]10 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]13
+Elite Hazmat coin award: [img=20]res://assets/sprites/ui/ui_coin.png[/img]160 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]145
+Elite Abnormal price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]50K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]70K
+Molten Necromancer price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]55K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]750K
+Drooper Cooldown level: 8 => 10
+  Price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]500 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]3K
+Added maximum level to Enemy Multiplier 
+  Price: [img=20]res://assets/sprites/ui/ui_coin.png[/img]2K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]64K
+[/ul]
+[/ul]
+
+[font_size=32]Fixes[/font_size]
+[ul]
+Fixed bug that caused Enemy Multiplier price go negative
+Fixed dropdown menu remembering behavior bug
+Default savedata music volume is less now
+Added drooper price scaling
+I agree button text is changed from I agree to OK
+Corrected disclaimer description text in Russian translation
+[/ul]"
+text_ru = "[font_size=32]1.2 Весна чего-то[/font_size]
+14 апреля 2026 г.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+[font_size=32]Особенности[/font_size]
+[ul]
+Добавлено улучшение автокликера: [img=25]res://assets/sprites/ui/ui_autoclicker.png[/img], которое создает автокликер при покупке и автоматически кликает на врага каждые 5 секунд.
+Добавлена ​​поддержка языков (в настоящее время 🇺🇸, 🇷🇺), планируется добавление других языков!
+
+Добавлено меню «Авторы» в настройках.
+Добавлена ​​дополнительная музыка в виде DLC, которое можно загрузить из меню настроек!
+Добавлена ​​версия для Android!
+
+Добавлено меню списка изменений (вы здесь)
+[/ul]
+
+[font_size=32]Новые дропперы![/font_size]
+Пластиковый дроппер [img=30]res://assets/sprites/droopers/drooper_2.png[/img]
+5 [img=20]res://assets/sprites/ui/ui_coin.png[/img] в секунду
+Деревянный дроппер [img=30]res://assets/sprites/droopers/drooper_3.png[/img]
+10 [img=20]res://assets/sprites/ui/ui_coin.png[/img] в секунду
+
+[font_size=32]Новые враги![/font_size]
+Враг-громила: [img=80]res://assets/sprites/enemies/brute.webp[/img]
+Враг-танк: [img=70]res://assets/sprites/enemies/tanker.webp[/img]
+Бронированный враг: [img=70]res://assets/sprites/enemies/armored.webp[/img]
+Враг-укрепитель: [img=70]res://assets/sprites/enemies/bulwark.webp[/img]
+Разъяренный враг: [img=70]res://assets/sprites/enemies/enraged.webp[/img]
+Враг-скелет: [img=70]res://assets/sprites/enemies/skeleton.webp[/img]
+Медленный босс: [img=70]res://assets/sprites/enemies/slow_boss.webp[/img]
+Враг-некромант: [img=70]res://assets/sprites/enemies/necromancer.webp[/img]
+Элитный враг из Расплавленного рудника: [img=70]res://assets/sprites/enemies/elite_molten.webp[/img]
+Враг-могильщик: [img=70]res://assets/sprites/enemies/grave_digger.webp[/img]
+Враг-расплавленный титан: [img=70]res://assets/sprites/enemies/molten_titan.webp[/img]
+Враг-расплавленный военачальник: [img=70]res://assets/sprites/enemies/molten_warlord.webp[/img]
+Враг Расплавленный Призыватель: [img=70]res://assets/sprites/enemies/molten_summoner.webp[/img]
+Враг Расплавленный Палач: [img=70]res://assets/sprites/enemies/molten_executioner.webp[/img]
+Враг Элитный Бумер: [img=70]res://assets/sprites/enemies/elite_boomer.webp[/img]
+
+И многое другое...
+
+[font_size=32]Улучшения[/font_size]
+[ul]
+Меню настроек теперь имеет анимацию
+Улучшена анимация меню магазина
+Улучшен текст заставки уведомлений с лучшей анимацией
+Улучшена загрузка магазина с асинхронным режимом темы
+[/ul]
+
+[font_size=32]Изменения[/font_size]
+[ul]
+Удалена песня-заглушка (Битва с боссом в Sonic Unleashed)
+Базовая игра теперь включает только 8 песен из-за ограничений по размеру для некоторых платформ
+Добавлено предупреждение о том, что игра все еще находится в разработке, на экране с отказом от ответственности
+[font_size=24]Балансировка[/font_size]
+[ul]
+Цена скрытого босса: [img=20]res://assets/sprites/ui/ui_coin.png[/img]30K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]45K
+Цена обычного босса: [img=20]res://assets/sprites/ui/ui_coin.png[/img]10K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]13K
+Награда в виде монет: [img=20]res://assets/sprites/ui/ui_coin.png[/img]10 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]13
+Награда в виде монет элитного защитного костюма: [img=20]res://assets/sprites/ui/ui_coin.png[/img]160 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]145
+Аномальная цена элитного костюма: [img=20]res://assets/sprites/ui/ui_coin.png[/img]50K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]70K
+Цена Расплавленного Некроманта: [img=20]res://assets/sprites/ui/ui_coin.png[/img]55K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]750K
+Уровень перезарядки Друпера: 8 => 10
+Цена: [img=20]res://assets/sprites/ui/ui_coin.png[/img]500 => [img=20]res://assets/sprites/ui/ui_coin.png[/img]3K
+Добавлен максимальный уровень к Множителю Врагов
+Цена: [img=20]res://assets/sprites/ui/ui_coin.png[/img]2K => [img=20]res://assets/sprites/ui/ui_coin.png[/img]64K
+[/ul]
+[/ul]
+
+[font_size=32]Исправления[/font_size]
+[ul]
+Исправлена ​​ошибка, из-за которой цена множителя врага становилась отрицательной
+Исправлена ​​ошибка запоминания поведения выпадающего меню
+Громкость музыки в сохраненных данных по умолчанию теперь меньше
+Добавлено масштабирование цены дропапера
+Текст кнопки «Я согласен» изменен с «Я согласен» на «ОК»
+Исправлен текст описания отказа от ответственности в русском переводе
+[/ul]"

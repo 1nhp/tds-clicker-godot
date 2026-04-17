@@ -11,15 +11,19 @@ func save_data():
 		"coins": game.coins,
 		"total_droopers": game.total_droopers,
 		"income": game.income,
+		"enemies_killed": game.enemies_killed,
+		"coins_earned": game.coins_earned,
+		"total_playtime_seconds": game.total_playtime_seconds,
 		"enemy_name": game.enemy_name,
 		"drooper_cooldown": game.drooper_cooldown,
 		"enemy_multiplier": game.enemy_multiplier,
-		"autoclickers": game.autoclickers,	
+		"autoclickers": game.autoclickers,
+		"first_time": game.first_time,	
 		"droopers": game.droopers,
 		"enemies": game.enemies,
 		"upgrades": game.upgrades,
 		"settings": game.settings,
-		"language": Globals.language,
+		"global_settings": Globals.global_settings,
 	}
 
 	var data = JSON.stringify(saved_data, "\t")
@@ -50,9 +54,13 @@ func load_data():
 		game.total_droopers = saved_data.get("total_droopers", 0)
 		game.enemy_name = saved_data.get("enemy_name", "")
 		game.income = saved_data.get("income", 0)
+		game.enemies_killed = saved_data.get("enemies_killed", 0)
+		game.coins_earned = saved_data.get("coins_earned", 0)
+		game.total_playtime_seconds = saved_data.get("total_playtime_seconds", 0)
 		game.drooper_cooldown = saved_data.get("drooper_cooldown", 0)
 		game.enemy_multiplier = saved_data.get("enemy_multiplier", 1)	
-		game.autoclickers = saved_data.get("autoclickers", 1)		
+		game.autoclickers = saved_data.get("autoclickers", 1)
+		game.first_time = saved_data.get("first_time", 1)
 		game.droopers = saved_data.get("droopers", {})
 		game.enemies = saved_data.get("enemies", {})
 		game.upgrades = saved_data.get("upgrades", {})
@@ -68,5 +76,10 @@ func load_data():
 				"language": 1,
 			}
 	})
-	Globals.language = saved_data.get("language")
+	
+	Globals.global_settings = saved_data.get("global_settings", {
+		"skipDisclaimer": false,
+		"language": "ru",
+	})
+	
 	print("Save loaded")

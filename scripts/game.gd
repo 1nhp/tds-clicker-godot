@@ -6,7 +6,12 @@ var income: int = 0
 var total_droopers: int = 0
 var drooper_cooldown: float = 1
 var enemy_multiplier: float = 1
+var enemies_killed: float = 0
 var autoclickers: float = 0
+var first_time: bool = true
+
+@export var total_income: float
+@export var coins_earned: float
 
 var enemies = {}
 var upgrades = {}
@@ -32,6 +37,10 @@ var enemy_name = "Normal"
 @export var coin_counter3: Control
 @export var income_counter: Label
 @export var income_counter2: Label
+@export var total_income_counter: Label
+@export var total_income_counter2: Label
+@export var total_income_timer: Timer
+
 
 @export var droopers_counter: Label
 @export var droopers_counter2: Label
@@ -41,19 +50,36 @@ var enemy_name = "Normal"
 @export var screen_blur_anim: Node
 @export var store_button: Node
 @export var settings_button: Node
+@export var changelog_button: Node
+@export var stats_button: Node
+
 @onready var enemy = get_tree().get_first_node_in_group("enemy")
+@export var ui_container: Node
 
 var spawnCoins = SpawnCoins.new()
+var menuController = MenuController.new()
 
 func _ready():
-	SavingSystem.load_data()
 	Globals._get_game()
+	SavingSystem.load_data()
 	AudioServer.set_bus_volume_db(1, linear_to_db(settings.get("musicvolume", 0.5)))
 	AudioServer.set_bus_volume_db(2, linear_to_db(settings.get("soundvolume", 1)))
 	
+	if first_time:
+		object.create("changelog", Vector2.ZERO, "/root/game/UI")
+		menuController.open_menu(
+			ui_container.get_node("Changelog"),
+			ui_container.get_node("Changelog/AnimationPlayer")
+		)
+		first_time = false
+		SavingSystem.save_data()
+		
 	update_coin_count()
 	start_loops()
 	create_autoclicker()
+	playtime()
+	var store = object.create("store", Vector2.ZERO, "/root/game/UI")
+	store.visible = false
 	enemy._update_enemy(enemy_name)
 
 func start_loops():
@@ -65,13 +91,22 @@ func savedata_loop():
 		await get_tree().create_timer(4).timeout
 		SavingSystem.save_data()
 
+func update_total_income():
+	total_income_counter.text = "+" + str(NumFormat.format_number(total_income))
+	total_income_counter2.text = "+" + str(NumFormat.format_number(total_income))
+
+func _on_total_income_timer_timeout() -> void:
+	total_income = 0
+
 func update_coin_count():
+	update_total_income()
 	coin_counter.text = NumFormat.format_number(coins)
 	coin_counter2.text = NumFormat.format_number(coins)
-	droopers_counter.text = str(total_droopers)
-	droopers_counter2.text = str(total_droopers)
+	droopers_counter.text = NumFormat.format_number(total_droopers)
+	droopers_counter2.text = NumFormat.format_number(total_droopers)
 	income_counter.text = NumFormat.format_number(income)
-	income_counter2.text = str(income)
+	income_counter2.text = NumFormat.format_number(income)
+
 	
 	if settings["ui_animations"]:
 		var tween = create_tween()
@@ -85,48 +120,45 @@ func update_coin_count():
 func _on_enemy_enemy_clicked() -> void:
 	SoundManager.play_sound("Coin", randf_range(0.8, 1.3))
 	coins += enemy.coin_award * enemy_multiplier
+	total_income += enemy.coin_award * enemy_multiplier
+	coins_earned += enemy.coin_award * enemy_multiplier
+	enemies_killed += 1
 	update_coin_count()
 
-enum actions {SHOW, CLOSE}
-signal MenuClosing
-signal MenuOpening
+func _on_store_button_clicked(_button: FancyButton) -> void: 
+	menuController.open_menu(
+		ui_container.get_node("Store"),
+		ui_container.get_node("Store/WindowAnim")
+	)
+	SoundManager.play_sound("StoreOpen")
+func _on_settings_button_clicked(_button: FancyButton) -> void: 
+	object.create("settings", Vector2.ZERO, "/root/game/UI")
+	menuController.open_menu(
+		ui_container.get_node("Settings"),
+		ui_container.get_node("Settings/AnimationPlayer")
+	)
+func _on_changelog_button_pressed() -> void:
+	object.create("changelog", Vector2.ZERO, "/root/game/UI")
+	menuController.open_menu(
+		ui_container.get_node("Changelog"),
+		ui_container.get_node("Changelog/AnimationPlayer")
+	)
+func _on_stats_button_pressed() -> void:
+	object.create("stats", Vector2.ZERO, "/root/game/UI")
+	menuController.open_menu(
+		ui_container.get_node("Stats"),
+		ui_container.get_node("Stats/AnimationPlayer")
+	)
 
-func menu(blur = true, action = actions.SHOW, name = "ui_store", closingvar = false, anim_player = Node, root = self, anim_name = "anim", backwards = true):
-	var closing = closingvar
-	
-	if action == actions.SHOW:
-		object.create(name, Vector2.ZERO, "/root/game/UI")
-		if blur:
-			blur_screen()
-		print_debug("Opening menu")
-		emit_signal("MenuOpening")
-
-	if action == actions.CLOSE:
-		if blur:
-			blur_screen(false)
-		print_debug("Closing menu")
-		closing = true
-		if settings["ui_animations"]:
-			if backwards:
-				anim_player.play_backwards(anim_name)
-			else:
-				anim_player.play(anim_name)
-		else:
-			root.queue_free()
-		emit_signal("MenuClosing")
-	return closing
-
-func _on_store_button_clicked(_button: FancyButton) -> void: menu(true, actions.SHOW, "ui_store")
-func _on_settings_button_clicked(_button: FancyButton) -> void: menu(true, actions.SHOW, "ui_settings")
-
-func blur_screen(transition = true):
-	if settings["blur_bg"] == true:
-		if transition:
-			screen_blur_anim.play("blur")
-		else:
-			screen_blur_anim.play_backwards("blur")
-	else:
+func set_blur(state: bool) -> void:
+	if not settings.get("blur_bg", true):
 		screen_blur_canvas.visible = false
+		return
+
+	if state:
+		screen_blur_anim.play("blur")
+	else:
+		screen_blur_anim.play_backwards("blur")
 		
 # Drooper logic
 func income_loop():
@@ -135,6 +167,8 @@ func income_loop():
 		
 		if income > 0:
 			coins += income
+			coins_earned += income
+			total_income += income
 			
 			spawnCoins.spawn(income, settings["coin_particles"])
 			
@@ -153,3 +187,15 @@ func create_autoclicker(amount = autoclickers):
 		var autoclicker = object.create("autoclicker", Vector2.ZERO, "/root/game/FG/Control/AutoClickerGrid")
 		if i >= 10:
 			autoclicker.visible = false
+
+var total_playtime_seconds : float = 0.0
+
+func playtime():
+	while true:
+		await get_tree().create_timer(1).timeout
+		total_playtime_seconds += 1
+
+func get_playtime_formatted() -> String:
+	var hours = int(total_playtime_seconds) / 3600
+	var minutes = (int(total_playtime_seconds) % 3600) / 60
+	return "%02d hours, %02d minutes" % [hours, minutes]

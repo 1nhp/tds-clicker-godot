@@ -81,7 +81,7 @@ func _play_anim(anim_type):
 				AnimationType.SCALE:
 					tween.tween_property(node, "scale", Vector2(0.95, 0.95), 0.05)
 				AnimationType.POSITION:
-					tween.tween_property(node, "position", original_position + Vector2(0, -3), 0.05)
+					tween.tween_property(node, "position", original_position + Vector2(0, -10), 0.05)
 
 func _on_button_down():
 	_play_anim(Anim.CLICK)

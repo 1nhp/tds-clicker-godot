@@ -60,7 +60,7 @@ func click():
 		
 		# Click animation
 		spawnCoins.spawn(coin_award, Globals.game.settings["coin_particles"], global_position)
-			
+		
 		if Globals.game.settings["enemy_animations"]:
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play("hurt")
