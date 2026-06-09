@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cpvgs5pte1x8n"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_hqyvj"]
+[ext_resource type="Texture2D" uid="uid://cts40r1kc57gx" path="res://assets/sprites/enemies/fallen_skeleton.webp" id="2_hqyvj"]
+
+[resource]
+script = ExtResource("1_hqyvj")
+id = "fallen_skeleton"
+name = "Fallen Skeleton"
+texture = ExtResource("2_hqyvj")
+price = 3800.0
+type = "Enemy"
+coin_award = 13

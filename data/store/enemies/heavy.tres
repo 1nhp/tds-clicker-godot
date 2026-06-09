@@ -10,4 +10,4 @@ name = "Heavy"
 texture = ExtResource("2_pb83x")
 price = 7000.0
 type = "Enemy"
-coin_award = 18
+coin_award = 25

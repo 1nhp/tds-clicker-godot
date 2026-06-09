@@ -10,4 +10,4 @@ name = "Necromancer"
 texture = ExtResource("2_htmne")
 price = 18000.0
 type = "Enemy"
-coin_award = 25
+coin_award = 35

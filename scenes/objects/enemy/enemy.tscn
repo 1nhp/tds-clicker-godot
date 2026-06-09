@@ -118,6 +118,7 @@ _data = {
 }
 
 [node name="enemy" type="Node2D" unique_id=668506333]
+z_index = 12
 script = ExtResource("1_g3su0")
 
 [node name="area2d" type="Area2D" parent="." unique_id=952466624]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://8oomgi7mdkj2"]
+
+[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_u078f"]
+[ext_resource type="Texture2D" uid="uid://ducag00hgsa2u" path="res://assets/sprites/enemies/fallen_dreg.webp" id="2_u078f"]
+
+[resource]
+script = ExtResource("1_u078f")
+id = "fallen_dreg"
+name = "Fallen Dreg"
+texture = ExtResource("2_u078f")
+price = 6500.0
+type = "Enemy"
+coin_award = 20

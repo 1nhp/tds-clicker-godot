@@ -16,6 +16,7 @@ func _ready() -> void:
 		var data = child.get_meta("data")
 		child.text = data["name"]
 		child.clicked.connect(func(button): _on_changelog_button_pressed(button, data))
+		
 	GoToTopButton.modulate.a = 0
 	switch_article(current_article)
 	SoundManager.play_sound("ChangelogOpen")

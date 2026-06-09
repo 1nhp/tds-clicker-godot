@@ -12,9 +12,11 @@ extends Node
 @export var language_dropdown: OptionButton
 @export var download_music_dlc_button: Button
 @export var remove_music_dlc_button: Button
+@export var reset_savedata_button: Button
 @export var root: Node
 
 var closing: bool
+var resetdata_confirmation: int
 
 func _ready() -> void:
 	game_version.text = Globals.version
@@ -29,10 +31,7 @@ func update_ui():
 	music_volume_slider.value = SettingsLogicNode.music_volume_key
 	coin_particles_dropdown.selected = SettingsLogicNode.coin_particles_key
 	language_dropdown.selected = SettingsLogicNode.language_key
-	
-func _on_close_button_clicked(_button: FancyButton) -> void:
-	pass
-	
+
 func _switch_tab(tab):
 	for t in [graphics_tab,audio_tab,game_tab]:
 		t.visible = false
@@ -63,3 +62,36 @@ func _on_credits_clicked(_button: FancyButton) -> void:
 func _on_close_button_pressed() -> void:
 	Globals.game.menuController.close_menu(root, anim_player, "anim", true, true)
 	Globals.game.settings_button.disabled = false
+	SoundManager.stop_sound("PolicePatrol")
+	SoundManager.stop_sound("PolicePatrol2")
+	SoundManager.stop_sound("PolicePatrol3")
+
+func _on_resetsavedata_pressed() -> void:
+	match resetdata_confirmation:
+		0: 
+			reset_savedata_button.text = "U sure?"
+			SoundManager.play_sound("Huh")
+		1: 
+			reset_savedata_button.text = "Really really?"
+			SoundManager.play_sound("Nope")
+		2: 
+			reset_savedata_button.text = "Think you can slip it?"
+			SoundManager.play_sound("PolicePatrol")
+		3:  
+			reset_savedata_button.text = "It does NOT grow on trees u know?"
+			SoundManager.stop_sound("PolicePatrol")
+			SoundManager.play_sound("PolicePatrol2", 0, 0, false)
+		4:
+			reset_savedata_button.text = "THIS IS UNRECOVERABLE"
+			SoundManager.stop_sound("PolicePatrol2")
+			SoundManager.play_sound("PolicePatrol3", 0, 0, false)
+		5:
+			SoundManager.stop_sound("PolicePatrol3")
+			resetdata_confirmation = -1
+			reset_savedata_button.disabled = true
+			SoundManager.play_sound("Explosion")
+			reset_savedata_button.text = "Resetting..."
+			SavingSystem.reset_data()
+			SceneManager.reload()
+			
+	resetdata_confirmation += 1

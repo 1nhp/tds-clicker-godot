@@ -10,7 +10,8 @@ var scenes := {
 	"stats": "res://scenes/objects/stats_ui/stats.tscn",		
 	"notification": "res://scenes/objects/error_notification/error_notification.tscn",
 	"coin_particles": "res://scenes/objects/coin_particles/coin_particles.tscn",
-	"autoclicker": "res://scenes/objects/autoclicker/autoclicker.tscn"
+	"coin_burst_particles": "res://scenes/objects/coin_burst_particles/coin_burst_particles.tscn",
+	"autoclicker": "res://scenes/objects/autoclicker/autoclicker.tscn",
 }
 
 

@@ -187,7 +187,13 @@ mouse_filter = 2
 
 [node name="enemy" parent="FG/Control" unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 8)
+coin_award = 1
 type = "Normal"
+speed = 3.0
+amplitude = 0.3
+final_scale = Vector2(0.5, 0.5)
+normal_scale = Vector2(0.4, 0.4)
+hover_scale = Vector2(0.3, 0.3)
 
 [node name="AutoClickerGrid" type="HBoxContainer" parent="FG/Control" unique_id=641705629]
 layout_mode = 1
@@ -362,9 +368,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.6884779
-anchor_top = -0.60045344
-anchor_right = 0.6884779
-anchor_bottom = -0.6004531
+anchor_top = -0.67662215
+anchor_right = 0.7443562
+anchor_bottom = 0.3670762
 offset_left = 207.97156
 offset_top = 27.415417
 offset_right = 227.95212

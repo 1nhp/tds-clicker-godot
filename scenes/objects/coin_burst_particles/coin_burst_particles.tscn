@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dmqt7rcle7fpq"]
+
+[ext_resource type="Script" uid="uid://uqsty1rj4hb1" path="res://scenes/objects/coin_burst_particles/coin_burst_particles.gd" id="1_qxfbi"]
+[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="2_p1tdw"]
+
+[sub_resource type="Curve" id="Curve_qxfbi"]
+_data = [Vector2(0.06779661, 0.29488498), 0.0, 0.0, 0, 0, Vector2(0.34745765, 0.66083074), 0.0, 0.0, 0, 0, Vector2(0.90677965, 0.22348094), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_p1tdw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CoinParticles" type="Node2D" unique_id=1875352197]
+script = ExtResource("1_qxfbi")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=373928889]
+modulate = Color(1, 1, 1, 0.9372549)
+z_index = 11
+z_as_relative = false
+emitting = false
+amount = 7
+texture = ExtResource("2_p1tdw")
+lifetime = 1.12
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.78
+randomness = 0.15
+draw_order = 1
+emission_shape = 3
+emission_rect_extents = Vector2(64, 64)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 900)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_qxfbi")
+color_ramp = SubResource("Gradient_p1tdw")
+
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

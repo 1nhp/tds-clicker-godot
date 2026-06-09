@@ -38,12 +38,12 @@ func download_file(url: String, save_path: String):
 
 func _http_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
-		print("File downloaded successfully to: ", http_request.download_file)
+		print("DLC downloaded successfully to: ", http_request.download_file)
 		SoundManager.play_sound("Upgrade")
 		self.load()
 		emit_signal("DownloadSuccesful")
 	else:
-		push_error("Download failed with response code: ", response_code)
+		push_error("DLC Download failed with response code: ", response_code)
 
 
 func remove():

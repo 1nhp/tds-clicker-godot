@@ -13,7 +13,7 @@ config_version=5
 config/name="TDS Clicker"
 config/description="An fangame clicker made in Godot!"
 config/version="1.2 Beta indev"
-run/main_scene="uid://beaahem6rjcru"
+run/main_scene="uid://duuee8bvyllsp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [audio]
@@ -33,6 +33,7 @@ Globals="*uid://cw86eq4fddktl"
 Dlc="*uid://cmrsbiponso2x"
 MusicManager="*uid://cqyvuiy53044b"
 EventBus="*uid://b6dknxqooos2w"
+CloudSaving="*uid://bdodu7psw28lj"
 
 [display]
 

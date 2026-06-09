@@ -61,6 +61,9 @@ func click():
 		# Click animation
 		spawnCoins.spawn(coin_award, Globals.game.settings["coin_particles"], global_position)
 		
+		# Create coin burst particles
+		var coin_burst_particles = object.create("coin_burst_particles", self.position, "/root/game/FG/Control")
+		
 		if Globals.game.settings["enemy_animations"]:
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play("hurt")

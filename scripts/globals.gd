@@ -1,8 +1,8 @@
 extends Node
 var game
 var language = "ru"
-var version = "1.2 Beta indev"
-var running_from_source = false
+var version = "1.3 Beta indev"
+var running_from_source = true
 var global_settings = {
 	"skipDisclaimer": false,
 	"language": "en",

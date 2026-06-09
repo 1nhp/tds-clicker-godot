@@ -10,4 +10,4 @@ name = "Hidden"
 texture = ExtResource("2_jrhh0")
 price = 20000
 type = "Enemy"
-coin_award = 30
+coin_award = 38

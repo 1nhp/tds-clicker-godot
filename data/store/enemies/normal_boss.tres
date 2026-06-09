@@ -10,4 +10,4 @@ name = "Normal Boss"
 texture = ExtResource("2_di8sk")
 price = 13000.0
 type = "Enemy"
-coin_award = 22
+coin_award = 30
