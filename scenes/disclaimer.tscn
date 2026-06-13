@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duuee8bvyllsp"]
 
-[ext_resource type="Script" uid="uid://bl2l2qwjac3da" path="res://scenes/disclaimer.gd" id="1_ph5s3"]
+[ext_resource type="Script" uid="uid://81ysamvwiog0" path="res://scenes/disclaimer.cs" id="1_54uv0"]
 [ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://data/themes/buy_button.tres" id="2_54uv0"]
 [ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="3_tqk0k"]
 
@@ -242,8 +242,12 @@ _data = {
 &"anim3": SubResource("Animation_tqk0k")
 }
 
-[node name="Disclaimer" type="CanvasLayer" unique_id=1367077071]
-script = ExtResource("1_ph5s3")
+[node name="Disclaimer" type="CanvasLayer" unique_id=1367077071 node_paths=PackedStringArray("animPlayer", "agree_button", "agree_button2", "agree_button3")]
+script = ExtResource("1_54uv0")
+animPlayer = NodePath("AnimationPlayer")
+agree_button = NodePath("Control/DisclaimerText/agree")
+agree_button2 = NodePath("Control/DisclaimerText2/agree2")
+agree_button3 = NodePath("Control/DisclaimerText3/agree3")
 
 [node name="Control" type="Control" parent="." unique_id=1950421362]
 layout_mode = 3

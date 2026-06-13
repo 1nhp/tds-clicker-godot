@@ -187,13 +187,7 @@ mouse_filter = 2
 
 [node name="enemy" parent="FG/Control" unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 8)
-coin_award = 1
 type = "Normal"
-speed = 3.0
-amplitude = 0.3
-final_scale = Vector2(0.5, 0.5)
-normal_scale = Vector2(0.4, 0.4)
-hover_scale = Vector2(0.3, 0.3)
 
 [node name="AutoClickerGrid" type="HBoxContainer" parent="FG/Control" unique_id=641705629]
 layout_mode = 1
