@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c1qw1flexg5ji"]
 
-[ext_resource type="Script" uid="uid://tjr1lbbfo3x5" path="res://scenes/sound_manager.gd" id="1_ef7im"]
+[ext_resource type="Script" uid="uid://fsvy8edc8ul7" path="res://scripts/SoundManager.cs" id="1_mj6ls"]
 [ext_resource type="AudioStream" uid="uid://cqja5nrthvoog" path="res://assets/sounds/enemy_kill1.ogg" id="2_7jm8v"]
 [ext_resource type="AudioStream" uid="uid://dpurgcjrhsfum" path="res://assets/sounds/coin.ogg" id="3_shlr6"]
 [ext_resource type="AudioStream" uid="uid://dx102q8q72o6a" path="res://assets/sounds/coin_collect.ogg" id="4_5lwbd"]
@@ -27,7 +27,7 @@ sampling_rate = 44100.0
 packet_sequence = SubResource("OggPacketSequence_mc4oe")
 
 [node name="SoundManager" type="Node2D" unique_id=1483975434]
-script = ExtResource("1_ef7im")
+script = ExtResource("1_mj6ls")
 
 [node name="EnemyKill1" type="AudioStreamPlayer" parent="." unique_id=1957363689]
 stream = ExtResource("2_7jm8v")

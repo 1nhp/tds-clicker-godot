@@ -1,0 +1,17 @@
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/TDS Clicker.deps.json
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/TDS Clicker.runtimeconfig.json
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/TDS Clicker.dll
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/TDS Clicker.pdb
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.csproj.AssemblyReference.cache
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.AssemblyInfoInputs.cache
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.AssemblyInfo.cs
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.csproj.CoreCompileInputs.cache
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clic.74F7F8A4.Up2Date
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.dll
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/refint/TDS Clicker.dll
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.pdb
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.genruntimeconfig.cache
+/home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/ref/TDS Clicker.dll

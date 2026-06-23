@@ -1,0 +1,28 @@
+res://default_bus_layout.tres
+res://scripts/helpers/FancyButton.cs
+res://scenes/Disclaimer.cs
+res://scripts/Globals.cs
+res://scenes/disclaimer.tscn
+res://data/themes/buy_button.tres
+res://data/themes/section_button.tres
+res://data/themes/store_gui_panel1.tres
+res://data/themes/store_exit_button.tres
+res://data/themes/store_gui_panel2.tres
+res://addons/StyleboxFancy/plugin.gd
+res://addons/StyleboxFancy/StyleBorder.gd
+res://addons/StyleboxFancy/StyleBoxFancy.gd
+res://addons/StyleboxFancy/inspector/inspector_plugin.gd
+res://addons/StyleboxFancy/inspector/corner editor container/corner_editor_container.gd
+res://addons/StyleboxFancy/inspector/corner editor container/curvature_preset_button.gd
+res://addons/StyleboxFancy/inspector/corner editor container/link_button.gd
+res://addons/StyleboxFancy/inspector/corner editor container/tooltip.gd
+res://addons/StyleboxFancy/inspector/corner editor container/tooltip_button.gd
+res://scenes/game.tscn
+res://data/themes/store_button.tres
+res://data/themes/settings_button.tres
+res://scripts/music_manager.gd
+res://scenes/music_manager.tscn
+res://scripts/MusicManager.cs
+res://scripts/SoundManager.cs
+res://scenes/sound_manager.tscn
+res://scenes/objects/enemy/Enemy.cs

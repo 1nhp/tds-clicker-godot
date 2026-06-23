@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://duuee8bvyllsp"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://81ysamvwiog0" path="res://scenes/disclaimer.cs" id="1_54uv0"]
+=======
+[ext_resource type="Script" uid="uid://b66um7gsae270" path="res://scenes/Disclaimer.cs" id="1_tqk0k"]
+>>>>>>> Stashed changes
 [ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://data/themes/buy_button.tres" id="2_54uv0"]
-[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="3_tqk0k"]
+[ext_resource type="Script" uid="uid://cv45mjfpcml4t" path="res://scripts/helpers/FancyButton.cs" id="3_tly5r"]
 
 [sub_resource type="Animation" id="Animation_ph5s3"]
 length = 0.001
@@ -242,12 +246,21 @@ _data = {
 &"anim3": SubResource("Animation_tqk0k")
 }
 
+<<<<<<< Updated upstream
 [node name="Disclaimer" type="CanvasLayer" unique_id=1367077071 node_paths=PackedStringArray("animPlayer", "agree_button", "agree_button2", "agree_button3")]
 script = ExtResource("1_54uv0")
 animPlayer = NodePath("AnimationPlayer")
 agree_button = NodePath("Control/DisclaimerText/agree")
 agree_button2 = NodePath("Control/DisclaimerText2/agree2")
 agree_button3 = NodePath("Control/DisclaimerText3/agree3")
+=======
+[node name="Disclaimer" type="CanvasLayer" unique_id=1367077071 node_paths=PackedStringArray("_animPlayer", "_agreeButton", "_agreeButton2", "_agreeButton3")]
+script = ExtResource("1_tqk0k")
+_animPlayer = NodePath("AnimationPlayer")
+_agreeButton = NodePath("Control/DisclaimerText/agree")
+_agreeButton2 = NodePath("Control/DisclaimerText2/agree2")
+_agreeButton3 = NodePath("Control/DisclaimerText3/agree3")
+>>>>>>> Stashed changes
 
 [node name="Control" type="Control" parent="." unique_id=1950421362]
 layout_mode = 3
@@ -343,7 +356,7 @@ theme_override_font_sizes/font_size = 26
 text = "disclaimer_content"
 autowrap_mode = 3
 
-[node name="agree" type="Button" parent="Control/DisclaimerText" unique_id=829860304]
+[node name="agree" type="Button" parent="Control/DisclaimerText" unique_id=829860304 node_paths=PackedStringArray("ButtonNode")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -365,8 +378,8 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "OK"
-script = ExtResource("3_tqk0k")
-one_click = true
+script = ExtResource("3_tly5r")
+ButtonNode = NodePath(".")
 
 [node name="DisclaimerText2" type="Control" parent="Control" unique_id=762762533]
 visible = false
@@ -425,7 +438,7 @@ text = "disclaimer_indev"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="agree2" type="Button" parent="Control/DisclaimerText2" unique_id=1583878659]
+[node name="agree2" type="Button" parent="Control/DisclaimerText2" unique_id=1583878659 node_paths=PackedStringArray("ButtonNode")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -447,8 +460,8 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "OK"
-script = ExtResource("3_tqk0k")
-one_click = true
+script = ExtResource("3_tly5r")
+ButtonNode = NodePath(".")
 
 [node name="DisclaimerText3" type="Control" parent="Control" unique_id=826716594]
 visible = false
@@ -504,7 +517,7 @@ text = "disclaimer_dev_version"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="agree3" type="Button" parent="Control/DisclaimerText3" unique_id=526460337]
+[node name="agree3" type="Button" parent="Control/DisclaimerText3" unique_id=526460337 node_paths=PackedStringArray("ButtonNode")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -526,12 +539,8 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "OK"
-script = ExtResource("3_tqk0k")
-one_click = true
+script = ExtResource("3_tly5r")
+ButtonNode = NodePath(".")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266875827]
 libraries/ = SubResource("AnimationLibrary_ph5s3")
-
-[connection signal="clicked" from="Control/DisclaimerText/agree" to="." method="_on_agree_clicked"]
-[connection signal="clicked" from="Control/DisclaimerText2/agree2" to="." method="_on_agree_2_clicked"]
-[connection signal="clicked" from="Control/DisclaimerText3/agree3" to="." method="_on_agree_3_clicked"]

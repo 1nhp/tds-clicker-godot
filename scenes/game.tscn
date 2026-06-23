@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://assets/sprites/bg_crossroads.jpg" id="2_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://is1mdatpinro" path="res://scenes/objects/enemy/enemy.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://dl0wccqnv84nr" path="res://scenes/objects/enemy/Enemy.cs" id="4_trtic"]
 [ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="5_gee14"]
 [ext_resource type="Theme" uid="uid://d2i15xaik5s3x" path="res://data/themes/store_button.tres" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://assets/sprites/ui/ui_income.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://crrqh831cvy5i" path="res://assets/sprites/ui/ui_store.png" id="6_p57ef"]
-[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="6_u5sy4"]
+[ext_resource type="Script" path="res://scripts/helpers/fancybutton.gd" id="6_u5sy4"]
 [ext_resource type="Theme" uid="uid://ctwo7iarpgsqu" path="res://data/themes/settings_button.tres" id="10_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bya1yjsgfvc8" path="res://assets/sprites/ui/ui_settings.png" id="10_vtaks"]
 [ext_resource type="Texture2D" uid="uid://iblv4yi4fd0y" path="res://assets/sprites/ui/ui_changelog.png" id="12_dinhu"]
@@ -187,7 +188,11 @@ mouse_filter = 2
 
 [node name="enemy" parent="FG/Control" unique_id=668506333 groups=["enemy"] instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 8)
+<<<<<<< Updated upstream
 type = "Normal"
+=======
+script = ExtResource("4_trtic")
+>>>>>>> Stashed changes
 
 [node name="AutoClickerGrid" type="HBoxContainer" parent="FG/Control" unique_id=641705629]
 layout_mode = 1
@@ -629,7 +634,7 @@ offset_right = 40.0
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="StoreButton" type="Button" parent="UI/BL" unique_id=1158544405]
+[node name="StoreButton" type="Button" parent="UI/BL" unique_id=1158544405 node_paths=PackedStringArray("node")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.17500001
@@ -649,6 +654,7 @@ icon = ExtResource("6_p57ef")
 expand_icon = true
 script = ExtResource("6_u5sy4")
 one_click = true
+node = NodePath(".")
 metadata/_edit_use_anchors_ = true
 
 [node name="BTR" type="Control" parent="UI" unique_id=2128361516]
@@ -739,7 +745,6 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[connection signal="EnemyClicked" from="FG/Control/enemy" to="." method="_on_enemy_enemy_clicked"]
 [connection signal="timeout" from="UI/TL/CoinCounter/Counter/TotalIncomeTimer" to="." method="_on_total_income_timer_timeout"]
 [connection signal="clicked" from="UI/BR/SettingsButton" to="." method="_on_settings_button_clicked"]
 [connection signal="pressed" from="UI/BR/SettingsButton" to="." method="_on_settings_button_pressed"]

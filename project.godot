@@ -14,7 +14,11 @@ config/name="TDS Clicker"
 config/description="An fangame clicker made in Godot!"
 config/version="1.2 Beta indev"
 run/main_scene="uid://duuee8bvyllsp"
+<<<<<<< Updated upstream
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+=======
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+>>>>>>> Stashed changes
 
 [audio]
 
@@ -26,7 +30,6 @@ Debug="*uid://b48cy4htieo13"
 SceneManager="*uid://vyn72swd38dp"
 object="*uid://c42lri0p7u7bv"
 DebugInfo="*uid://b0wfwstlxjqk2"
-SoundManager="*uid://c1qw1flexg5ji"
 SavingSystem="*uid://cjxhjmcl8qedi"
 NumFormat="*uid://q4gvjsg70unp"
 Dlc="*uid://cmrsbiponso2x"
@@ -34,6 +37,10 @@ MusicManager="*uid://cqyvuiy53044b"
 EventBus="*uid://b6dknxqooos2w"
 CloudSaving="*uid://bdodu7psw28lj"
 Globals="*uid://b05e8ddl2igw6"
+<<<<<<< Updated upstream
+=======
+SoundManager="*uid://c1qw1flexg5ji"
+>>>>>>> Stashed changes
 
 [display]
 
