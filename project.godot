@@ -14,11 +14,7 @@ config/name="TDS Clicker"
 config/description="An fangame clicker made in Godot!"
 config/version="1.2 Beta indev"
 run/main_scene="uid://duuee8bvyllsp"
-<<<<<<< Updated upstream
-config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
-=======
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
->>>>>>> Stashed changes
 
 [audio]
 
@@ -26,21 +22,13 @@ buses/default_bus_layout="uid://coff4sliwpyid"
 
 [autoload]
 
-Debug="*uid://b48cy4htieo13"
-SceneManager="*uid://vyn72swd38dp"
-object="*uid://c42lri0p7u7bv"
-DebugInfo="*uid://b0wfwstlxjqk2"
-SavingSystem="*uid://cjxhjmcl8qedi"
-NumFormat="*uid://q4gvjsg70unp"
-Dlc="*uid://cmrsbiponso2x"
 MusicManager="*uid://cqyvuiy53044b"
-EventBus="*uid://b6dknxqooos2w"
-CloudSaving="*uid://bdodu7psw28lj"
-Globals="*uid://b05e8ddl2igw6"
-<<<<<<< Updated upstream
-=======
 SoundManager="*uid://c1qw1flexg5ji"
->>>>>>> Stashed changes
+Globals="*uid://cj001wqsuj7fg"
+ObjectHelper="*uid://dwsb1x63sw3hy"
+SavingSystem="*uid://cwtffhsi3bj8l"
+Debug="*uid://bbkkb0f2llesq"
+MenuManager="*uid://cvverpfhol2eb"
 
 [display]
 
@@ -120,7 +108,7 @@ locale/translation_remaps={
 "res://data/languages/languages.en.translation": PackedStringArray("res://data/languages/languages.en.translation:en"),
 "res://data/languages/languages.ru.translation": PackedStringArray("res://data/languages/languages.ru.translation:ru")
 }
-locale/translations=PackedStringArray("res://data/languages/languages.en.translation", "res://data/languages/languages.ru.translation")
+locale/translations=PackedStringArray("res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation")
 
 [physics]
 

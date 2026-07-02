@@ -15,3 +15,4 @@
 /home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.pdb
 /home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.genruntimeconfig.cache
 /home/user/Stuff/MEGA Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/ref/TDS Clicker.dll
+/home/user/Stuff/Mega Files/Personal/01 Projects/Games/tds-clicker-godot/.godot/mono/temp/obj/Debug/TDS Clicker.sourcelink.json

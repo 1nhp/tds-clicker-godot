@@ -1,1 +1,5 @@
-res://scenes/
+res://src/Core/Systems/
+res://src/Core/Autoloads/
+res://src/Utils/
+res://Resources/
+res://Resources/Languages/

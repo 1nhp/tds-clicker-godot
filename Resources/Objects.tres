@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ObjectData" format=3 uid="uid://bokhbc4rs4evd"]
+
+[ext_resource type="Script" uid="uid://bnpflxewatp2f" path="res://Resources/ObjectData.cs" id="1_gt5kf"]
+
+[resource]
+script = ExtResource("1_gt5kf")
+Object = {
+"Autoclicker": "res://Scenes/Objects/Autoclicker/Autoclicker.tscn",
+"Changelog": "res://Scenes/UI/Changelog.tscn",
+"CoinBurstParticles": "res://Scenes/VFX/CoinBurstParticles.tscn",
+"CoinEffect": "res://Scenes/VFX/CoinEffect.tscn",
+"Credits": "res://Scenes/UI/Credits.tscn",
+"DebugInfo": "res://Scenes/UI/DebugInfo.tscn",
+"Notification": "res://Scenes/UI/Notification.tscn",
+"Settings": "res://Scenes/UI/Settings.tscn",
+"Stats": "res://Scenes/UI/Stats.tscn",
+"Store": "res://Scenes/UI/Store/Store.tscn"
+}

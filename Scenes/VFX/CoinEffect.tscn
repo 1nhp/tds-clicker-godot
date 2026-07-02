@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dpax6fy6givp7"]
+
+[ext_resource type="Script" uid="uid://dhricxw8bysxf" path="res://src/VFX/CoinEffect.cs" id="1_lme1x"]
+[ext_resource type="Texture2D" uid="uid://oicwn1vmnre3" path="res://Assets/Sprites/UI/UiCoinLow.png" id="2_5orlh"]
+[ext_resource type="Texture2D" uid="uid://bp0xlwpaed3v8" path="res://Assets/Sprites/Circle.png" id="2_qkwmx"]
+
+[sub_resource type="Curve" id="Curve_5orlh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5169492, 0.9464469), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="CoinEffect" type="Node2D" unique_id=1468992777]
+z_index = 90
+script = ExtResource("1_lme1x")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=203209355]
+amount = 60
+texture = ExtResource("2_qkwmx")
+lifetime = 1.39
+speed_scale = 4.99
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.03
+scale_amount_curve = SubResource("Curve_5orlh")
+color = Color(1, 0.7529412, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435891349]
+scale = Vector2(0.38095233, 0.38095212)
+texture = ExtResource("2_5orlh")

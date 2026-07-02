@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dvgniv7nvcmb8"
+
+[deps]
+
+files=["res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation"]
+
+source_file="res://Resources/Languages/Languages.csv"
+dest_files=["res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
