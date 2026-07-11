@@ -1,6 +1,7 @@
 using Godot;
 using System.Text.Json;
 using Core.Systems;
+using Godot.Collections;
 using TDSClicker.Core.Autoloads;
 using TDSClicker.Entities;
 
@@ -10,10 +11,12 @@ public class SaveData
 {
 	public int Version { get; set; } = 1;
 	public float Coins { get; set; } = 0;
-	public float Droopers { get; set; } = 0;
+	public Dictionary<string, Dictionary<string, float>> Droopers { get; set; } = new();
+	public float TotalDroopers { get; set; } = 0;
 	public float Autoclickers { get; set; } = 0;
 	public bool FirstTime { get; set; } = true;
 	public float Income { get; set; } = 0;
+	public Dictionary<string, bool> Enemies { get; set; } = new();
 	public float EnemiesKilled { get; set; } = 0;
 	public float CoinsEarned { get; set; } = 0;
 	public string CurrentEnemy { get; set; } = "Normal";
@@ -69,10 +72,12 @@ public partial class SavingSystem : Node
 		{
 			Version = 1,
 			Coins = GameManager.Coins,
-			Droopers = GameManager.TotalDroopers,
+			Droopers = GameManager.Droopers,
+			TotalDroopers = GameManager.TotalDroopers,
 			Autoclickers = GameManager.Autoclickers,
 			FirstTime = GameManager.FirstTime,
 			Income = GameManager.Income,
+			Enemies = GameManager.Enemies,
 			EnemiesKilled = GameManager.EnemiesKilled,
 			CoinsEarned = GameManager.CoinsEarned,
 			CurrentEnemy = GameManager.CurrentEnemy,

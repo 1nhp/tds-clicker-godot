@@ -1,39 +1,72 @@
 using Godot;
 using Godot.Collections;
+using TDSClicker.Utils;
+
 namespace TDSClicker.Core.Systems;
 using System.Globalization;
 using Entities;
+using TDSClicker.Utils;
 
 public partial class GameManager : Node2D
 {
     public static GameManager Instance { get; private set; }
     private bool _running = true;
 
-    public static float Coins = 0;
-    public static float Income = 0;
+    [Signal] public delegate void CoinsChangedEventHandler(float coins);
+    [Signal] public delegate void IncomeChangedEventHandler(float income);
+    [Signal] public delegate void TotalIncomeChangedEventHandler(float totalIncome);
+    [Signal] public delegate void TotalDroopersChangedEventHandler(float totalDroopers);
 
-    public static float TotalDroopers = 0;
+    
+    private static float _coins;
+    public static float Coins
+    {
+        get => _coins;
+        set => PropertyHelper.Set(Instance, ref _coins, value, SignalName.CoinsChanged);
+    }
+    private static float _income;
+    public static float Income
+    {
+        get => _income;
+        set => PropertyHelper.Set(Instance, ref _income, value, SignalName.IncomeChanged);
+    }
+    private static float _totalIncome;
+    public static float TotalIncome
+    {
+        get => _totalIncome;
+        set => PropertyHelper.Set(Instance, ref _totalIncome, value, SignalName.TotalIncomeChanged);
+    }
+    private static float _totalDroopers;
+    public static float TotalDroopers
+    {
+        get => _totalDroopers;
+        set => PropertyHelper.Set(Instance, ref _totalDroopers, value, SignalName.TotalDroopersChanged);
+    }
+    
+    
     public static float DrooperCooldown = 0;
     public static float EnemiesKilled = 0;
     public static float Autoclickers = 0;
     public static bool FirstTime;
     
-    public static float TotalIncome;
     public static float CoinsEarned;
 
-    public static Dictionary Enemies = new Dictionary();
-    public static Dictionary Upgrades = new Dictionary();
-    public static Dictionary Droopers = new Dictionary();
+    public static Dictionary<string, bool> Enemies { get; set; } = new();
+    public static Dictionary<string, bool> Upgrades { get; set; } = new();
+    public static Dictionary<string, Dictionary<string, float>> Droopers { get; set; } = new();
 
+    
     public static void ApplySave(SaveData data)
     {
-        Coins = data.Coins;
-        TotalDroopers = data.Droopers;
+        Coins = data.Coins; 
+        Droopers = data.Droopers;
+        TotalDroopers = data.TotalDroopers;
         Autoclickers = data.Autoclickers;
         FirstTime = data.FirstTime;
         Income = data.Income;
         EnemiesKilled = data.EnemiesKilled;
         CoinsEarned = data.CoinsEarned;
+        Enemies = data.Enemies;
         CurrentEnemy = data.CurrentEnemy;
         DrooperCooldown = data.DrooperCooldown;
     }
@@ -90,6 +123,10 @@ public partial class GameManager : Node2D
     [Export] public Button ChangeLogButton;
     [Export] public Button StatsButton;
     
+    
+    [Export] public Node Store { get; set; }
+    [Export] private AnimationPlayer _storeAnim;
+    
     [Export] public Enemy Enemy;
     [Export] public Node UiContainer;
 
@@ -101,15 +138,27 @@ public partial class GameManager : Node2D
         Enemy.EnemyHurt += _onEnemyHurt;
         TotalIncomeTimer.Timeout += _onTotalIncomeReset;
         SavingSystem.LoadGame();
+        Enemy.Instance.Update(CurrentEnemy, false);
         UpdateCounter(CounterTypes.All);
         _saveGameLoop();
 
         StatsButton.Pressed += _onStatsButtonPressed;
+        ChangeLogButton.Pressed += _onChangeLogButtonPressed;
+        StoreButton.Pressed += _onStoreButtonPressed;
     }
 
+    private static void _onStoreButtonPressed()
+    {
+        MenuManager.Instance.OpenMenu(Instance.Store, Instance._storeAnim);
+    }
+    
     private static void _onStatsButtonPressed()
     {
         MenuManager.Instance.OpenMenu("Stats");
+    }
+    private static void _onChangeLogButtonPressed()
+    {
+        MenuManager.Instance.OpenMenu("Changelog");
     }
     
     private async void _saveGameLoop()
@@ -137,13 +186,10 @@ public partial class GameManager : Node2D
      TotalIncome += Enemy.CoinAward * Enemy.CoinMultiplier;
      CoinsEarned += Enemy.CoinAward * Enemy.CoinMultiplier;
      EnemiesKilled += 1;
-     UpdateCounter();
     }
     
     public void UpdateCounter(CounterTypes type = CounterTypes.Coins)
     {
-        // Check for ui animations
-        
         if (type == CounterTypes.All)
         {
             UpdateCounter();

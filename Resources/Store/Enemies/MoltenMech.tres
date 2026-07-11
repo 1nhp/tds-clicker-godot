@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cduiji8fl2dh1"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://cduiji8fl2dh1"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_gsq04"]
-[ext_resource type="Texture2D" uid="uid://cbptrm0nhuc5m" path="res://assets/sprites/enemies/moltenmech.webp" id="2_gsq04"]
+[ext_resource type="Texture2D" uid="uid://cbptrm0nhuc5m" path="res://Assets/Sprites/Enemies/Moltenmech.webp" id="2_gsq04"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_lj5t5"]
 
 [resource]
-script = ExtResource("1_gsq04")
-id = "molten_mech"
-name = "Molten Mech"
-texture = ExtResource("2_gsq04")
-price = 6500000
-type = "Enemy"
-coin_award = 370
+script = ExtResource("2_lj5t5")
+Id = "MoltenMech"
+Name = "Molten Mech"
+Texture = ExtResource("2_gsq04")
+Price = 6500000.0
+Type = "Enemy"
+CoinAward = 370

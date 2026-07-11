@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dd1vq88jo4l58"]
+
+[ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://Resources/Themes/SectionButton.tres" id="1_dvonf"]
+[ext_resource type="Script" uid="uid://c86uwn2f4uvkp" path="res://src/UI/FancyButton.cs" id="2_3w24g"]
+[ext_resource type="Resource" uid="uid://3i7a16m5hc2y" path="res://Resources/Changelogs/1.2Beta.tres" id="3_ayslp"]
+
+[node name="button" type="Button" unique_id=1647413850]
+offset_right = 140.0
+offset_bottom = 38.0
+pivot_offset = Vector2(64, 21.899994)
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_dvonf")
+theme_override_colors/font_outline_color = Color(0.3172787, 0.31727865, 0.31727865, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 23
+text = "Test"
+script = ExtResource("2_3w24g")
+metadata/data = ExtResource("3_ayslp")

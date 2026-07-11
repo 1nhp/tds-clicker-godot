@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dr0xibhk1op48"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://dr0xibhk1op48"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_jo1lv"]
-[ext_resource type="Texture2D" uid="uid://qdqqwthj4jl7" path="res://assets/sprites/enemies/molten.webp" id="2_thais"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_hyjsh"]
+[ext_resource type="Texture2D" uid="uid://qdqqwthj4jl7" path="res://Assets/Sprites/Enemies/Molten.webp" id="2_thais"]
 
 [resource]
-script = ExtResource("1_jo1lv")
-id = "molten"
-name = "Molten"
-texture = ExtResource("2_thais")
-price = 75000.0
-type = "Enemy"
-coin_award = 70
+script = ExtResource("2_hyjsh")
+Id = "Molten"
+Name = "Molten"
+Texture = ExtResource("2_thais")
+Price = 75000.0
+Type = "Enemy"
+CoinAward = 75000

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cwrvk6f01cee6"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://cwrvk6f01cee6"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_1ix0c"]
-[ext_resource type="Texture2D" uid="uid://bmcu10ulswxya" path="res://assets/sprites/enemies/hidden.webp" id="2_jrhh0"]
+[ext_resource type="Texture2D" uid="uid://bmcu10ulswxya" path="res://Assets/Sprites/Enemies/Hidden.webp" id="2_jrhh0"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_vm7qc"]
 
 [resource]
-script = ExtResource("1_1ix0c")
-id = "hidden"
-name = "Hidden"
-texture = ExtResource("2_jrhh0")
-price = 20000
-type = "Enemy"
-coin_award = 38
+script = ExtResource("2_vm7qc")
+Id = "Hidden"
+Name = "Hidden"
+Texture = ExtResource("2_jrhh0")
+Price = 20000.0
+Type = "Enemy"
+CoinAward = 38

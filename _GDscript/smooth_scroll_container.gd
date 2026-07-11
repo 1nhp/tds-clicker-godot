@@ -762,7 +762,7 @@ func should_scroll_horizontal() -> bool:
 
 
 ## Overrides built-in method to use smooth scrolling.
-func ensure_control_visible(control: Control) -> void:
+func scroll_to_element(control: Control) -> void:
 	ensure_control_visible_smooth(control)
 
 

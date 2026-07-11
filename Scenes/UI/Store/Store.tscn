@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://20eji1avgssy"]
 
-[ext_resource type="Theme" uid="uid://s6oi1i0rcove" path="res://data/themes/store_gui_panel1.tres" id="1_2kfr3"]
-[ext_resource type="Texture2D" uid="uid://ceft1du7jh6si" path="res://assets/sprites/ui/ui_store_small.png" id="1_adcba"]
-[ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://data/themes/store_gui_panel2.tres" id="1_n4xxd"]
-[ext_resource type="Script" uid="uid://c15onmgcjcpqv" path="res://scenes/objects/store_ui/scripts/store_ui.gd" id="1_ri5nt"]
-[ext_resource type="Script" uid="uid://bblyn2ilwbgn5" path="res://scripts/helpers/fancybutton.gd" id="2_adcba"]
-[ext_resource type="Script" uid="uid://cnhanq11ux3mc" path="res://scenes/objects/store_ui/scripts/store_manager.gd" id="2_gh8kj"]
-[ext_resource type="Script" uid="uid://b2fw1k1g2g153" path="res://scenes/objects/store_ui/scripts/store_logic.gd" id="2_wgssr"]
-[ext_resource type="Theme" uid="uid://cf3r6joitnq0p" path="res://data/themes/store_exit_button.tres" id="3_gh8kj"]
-[ext_resource type="Texture2D" uid="uid://ccv8tr7sqp5v5" path="res://assets/sprites/enemies/normal.png" id="3_n4xxd"]
-[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://assets/sprites/droopers/drooper_1.png" id="7_5v5xw"]
-[ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://data/themes/section_button.tres" id="7_ag4xe"]
-[ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="10_4qb5x"]
-[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://assets/sprites/ui/ui_coin.png" id="11_1fad6"]
-[ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://assets/sprites/bg_crossroads.jpg" id="12_ag4xe"]
-[ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://assets/sprites/ui/ui_income.png" id="12_b6ikj"]
-[ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://data/themes/buy_button.tres" id="15_gh8kj"]
-[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="17_bowtv"]
-[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="18_cxhn8"]
-[ext_resource type="PackedScene" uid="uid://dmnf55b1ukndn" path="res://scenes/objects/store_ui/store_select_button.tscn" id="19_cxhn8"]
+[ext_resource type="Script" uid="uid://u7mfo2twcr6s" path="res://src/Core/Store/StoreManager.cs" id="1_2jbit"]
+[ext_resource type="Theme" uid="uid://s6oi1i0rcove" path="res://Resources/Themes/StoreGuiPanel1.tres" id="1_2kfr3"]
+[ext_resource type="Texture2D" uid="uid://ceft1du7jh6si" path="res://Assets/Sprites/UI/UiStoreSmall.png" id="1_adcba"]
+[ext_resource type="Theme" uid="uid://dv8sa5d2ga8gw" path="res://Resources/Themes/StoreGuiPanel2.tres" id="1_n4xxd"]
+[ext_resource type="Script" uid="uid://c0it1pjar42du" path="res://src/UI/Menus/Store/StoreUi.cs" id="1_ub0ju"]
+[ext_resource type="Script" uid="uid://du7pis6cpsgjk" path="res://src/Core/Store/StoreLogic.cs" id="2_23pl1"]
+[ext_resource type="Theme" uid="uid://cf3r6joitnq0p" path="res://Resources/Themes/StoreExitButton.tres" id="3_gh8kj"]
+[ext_resource type="Texture2D" uid="uid://ccv8tr7sqp5v5" path="res://Assets/Sprites/Enemies/Normal.png" id="3_n4xxd"]
+[ext_resource type="Script" uid="uid://c86uwn2f4uvkp" path="res://src/UI/FancyButton.cs" id="3_pv3mv"]
+[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://Assets/Sprites/Droopers/Drooper_1.png" id="7_5v5xw"]
+[ext_resource type="Theme" uid="uid://cjncq3twcu1la" path="res://Resources/Themes/SectionButton.tres" id="7_ag4xe"]
+[ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://Assets/Sprites/Droopers/Drooper_2.png" id="10_4qb5x"]
+[ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://Assets/Sprites/UI/UiCoin.png" id="11_1fad6"]
+[ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://Assets/Sprites/BgCrossroads.jpg" id="12_ag4xe"]
+[ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://Assets/Sprites/UI/UiIncome.png" id="12_b6ikj"]
+[ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://Resources/Themes/BuyButton.tres" id="15_gh8kj"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://_GDscript/smooth_scroll_container.gd" id="17_bowtv"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://_GDscript/expo_scroll_damper.gd" id="18_cxhn8"]
+[ext_resource type="PackedScene" uid="uid://dmnf55b1ukndn" path="res://Scenes/UI/Store/StoreSelectButton.tscn" id="19_cxhn8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v5xw"]
 bg_color = Color(0.14044744, 0.14044744, 0.14044744, 0.68235296)
@@ -187,7 +187,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Window/EnemiesTab/EnemyContent/buy:modulate")
+tracks/12/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -199,7 +199,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Window/EnemiesTab/EnemyContent/buy:position:y")
+tracks/13/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -211,7 +211,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Window/DroopersTab/DrooperContent/buy:modulate")
+tracks/14/path = NodePath("Window/DroopersTab/DrooperContent/Buy:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -247,7 +247,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Window/Panel/icon:position")
+tracks/17/path = NodePath("Window/Panel/Icon:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -259,7 +259,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Window/Panel/header:position")
+tracks/18/path = NodePath("Window/Panel/Name:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -307,7 +307,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Window/Panel/icon:modulate")
+tracks/22/path = NodePath("Window/Panel/Icon:modulate")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -319,7 +319,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Window/Panel/icon:position")
+tracks/23/path = NodePath("Window/Panel/Icon:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -351,6 +351,18 @@ tracks/25/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Window/Panel/Icon:rotation")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_adcba"]
@@ -590,7 +602,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Window/EnemiesTab/EnemyContent/buy:modulate")
+tracks/4/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:modulate")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -602,7 +614,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Window/EnemiesTab/EnemyContent/buy:position:y")
+tracks/5/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:position:y")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -614,7 +626,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Window/DroopersTab/DrooperContent/buy:position:y")
+tracks/6/path = NodePath("Window/DroopersTab/DrooperContent/Buy:position:y")
 tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -626,7 +638,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Window/DroopersTab/DrooperContent/buy:modulate")
+tracks/7/path = NodePath("Window/DroopersTab/DrooperContent/Buy:modulate")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -667,11 +679,11 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_b6ikj"]
 resource_name = "anim"
-length = 1.0333333
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Window/Panel/icon:modulate")
+tracks/0/path = NodePath("Window/Panel/Icon:modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -683,19 +695,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Window/Panel/icon:position:y")
+tracks/1/path = NodePath("Window/Panel/Icon:position:y")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.33333337, 0.50000006, 0.70000005),
+"times": PackedFloat32Array(0.33333337, 0.50000006, 0.8666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [10.0, -6.0, -2.0]
+"values": [10.0, -16.475, -2.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Window/Panel/header:position:y")
+tracks/2/path = NodePath("Window/Panel/Name:position:y")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -707,7 +719,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Window/Panel/header:modulate")
+tracks/3/path = NodePath("Window/Panel/Name:modulate")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -728,13 +740,27 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Window/Panel/Icon:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.26666668, 0.43333334, 0.6333333, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.8011061266653968, -0.8621926504851984, 0.4310963252425992, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_18lph"]
 _data = {
 &"anim": SubResource("Animation_b6ikj")
 }
 
-[node name="Store" type="Control" unique_id=681208218 groups=["store_root"]]
+[node name="Store" type="CanvasLayer" unique_id=927865320]
+
+[node name="Control" type="Control" parent="." unique_id=1167153524]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -742,44 +768,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StoreManager" type="Node" parent="." unique_id=551330596 groups=["StoreManager"]]
-script = ExtResource("2_gh8kj")
+[node name="StoreManager" type="Node" parent="." unique_id=551330596]
+script = ExtResource("1_2jbit")
 
-[node name="StoreLogic" type="Node" parent="." unique_id=587713049 groups=["StoreLogic"]]
-script = ExtResource("2_wgssr")
+[node name="StoreLogic" type="Node" parent="." unique_id=587713049 node_paths=PackedStringArray("BuyEnemyButton", "BuyDrooperButton")]
+script = ExtResource("2_23pl1")
+BuyEnemyButton = NodePath("../Window/EnemiesTab/EnemyContent/Buy")
+BuyDrooperButton = NodePath("../Window/DroopersTab/DrooperContent/Buy")
 
-[node name="StoreUI" type="Node" parent="." unique_id=1112595495 node_paths=PackedStringArray("loading_text", "anim_player", "list_anim_player", "content_anim_player", "tab_buttons_anim_player", "store_header_anim", "store_window", "store_root", "StoreManager", "StoreLogic", "enemy_container", "drooper_container", "upgrade_container", "enemy_content_container", "drooper_content_container", "EnemiesTab", "DroopersTab", "UpgradesTab") groups=["StoreUI"]]
-script = ExtResource("1_ri5nt")
-loading_text = NodePath("../Window/LoadingText")
-anim_player = NodePath("../WindowAnim")
-list_anim_player = NodePath("../ListAnim")
-content_anim_player = NodePath("../ContentAnim")
-tab_buttons_anim_player = NodePath("../TabButtonsAnim")
-store_header_anim = NodePath("../StoreHeaderAnim")
-store_window = NodePath("../Window")
-store_root = NodePath("..")
-StoreManager = NodePath("../StoreManager")
+[node name="StoreUI" type="Node" parent="." unique_id=1112595495 node_paths=PackedStringArray("ListAnimPlayer", "ContentAnimPlayer", "TabButtonsAnimPlayer", "HeaderAnimPlayer", "StoreWindow", "StoreRoot", "StoreManagerNode", "StoreLogic", "EnemyContainer", "DrooperContainer", "UpgradeContainer", "EnemyContentContainer", "DrooperContentContainer", "EnemiesTab", "DroopersTab", "UpgradesTab", "EnemiesButton", "DroopersButton", "UpgradesButton", "AnimPlayer", "MenuRoot", "CloseButton")]
+script = ExtResource("1_ub0ju")
+ListAnimPlayer = NodePath("../ListAnim")
+ContentAnimPlayer = NodePath("../ContentAnim")
+TabButtonsAnimPlayer = NodePath("../TabButtonsAnim")
+HeaderAnimPlayer = NodePath("../StoreHeaderAnim")
+StoreWindow = NodePath("../Window")
+StoreRoot = NodePath("..")
+StoreManagerNode = NodePath("../StoreManager")
 StoreLogic = NodePath("../StoreLogic")
-enemy_container = NodePath("../Window/EnemiesTab/EnemyList/BoxContainer/GridContainer")
-drooper_container = NodePath("../Window/DroopersTab/DrooperList/BoxContainer/GridContainer")
-upgrade_container = NodePath("../Window/UpgradesTab/UpgradeList/BoxContainer")
-enemy_content_container = NodePath("../Window/EnemiesTab/EnemyContent")
-drooper_content_container = NodePath("../Window/DroopersTab/DrooperContent")
+EnemyContainer = NodePath("../Window/EnemiesTab/EnemyList/GridContainer")
+DrooperContainer = NodePath("../Window/DroopersTab/DrooperList/GridContainer")
+UpgradeContainer = NodePath("../Window/UpgradesTab/UpgradeList")
+EnemyContentContainer = NodePath("../Window/EnemiesTab/EnemyContent")
+DrooperContentContainer = NodePath("../Window/DroopersTab/DrooperContent")
 EnemiesTab = NodePath("../Window/EnemiesTab")
 DroopersTab = NodePath("../Window/DroopersTab")
 UpgradesTab = NodePath("../Window/UpgradesTab")
+EnemiesButton = NodePath("../Window/Buttons/EnemiesButton")
+DroopersButton = NodePath("../Window/Buttons/DroopersButton")
+UpgradesButton = NodePath("../Window/Buttons/UpgradesButton")
+AnimPlayer = NodePath("../WindowAnim")
+MenuRoot = NodePath("..")
+CloseButton = NodePath("../Window/CloseButton")
 
 [node name="Window" type="Panel" parent="." unique_id=1396775829]
 z_as_relative = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.0
+offset_left = -339.0
 offset_top = -240.0
-offset_right = 340.0
+offset_right = 341.0
 offset_bottom = 224.0014
 grow_horizontal = 2
 grow_vertical = 2
@@ -792,7 +823,7 @@ layout_mode = 0
 offset_left = 616.0
 offset_top = 4.0
 offset_right = 671.0
-offset_bottom = 59.999985
+offset_bottom = 60.0
 pivot_offset = Vector2(28, 28)
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_gh8kj")
@@ -801,8 +832,7 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 37
 text = "X"
-script = ExtResource("2_adcba")
-hover_scale = Vector2(1.1, 1.1)
+script = ExtResource("3_pv3mv")
 
 [node name="Panel" type="Panel" parent="Window" unique_id=1980867441]
 layout_mode = 1
@@ -812,7 +842,7 @@ offset_right = 196.0
 offset_bottom = 44.0
 theme = ExtResource("1_n4xxd")
 
-[node name="header" type="Label" parent="Window/Panel" unique_id=717552273]
+[node name="Name" type="Label" parent="Window/Panel" unique_id=717552273]
 z_index = 3
 layout_mode = 0
 offset_left = 44.0
@@ -827,7 +857,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 30
 text = "store_btn"
 
-[node name="icon" type="TextureRect" parent="Window/Panel" unique_id=1662270983 groups=["coin_icon"]]
+[node name="Icon" type="TextureRect" parent="Window/Panel" unique_id=1662270983]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
@@ -838,6 +868,7 @@ offset_top = -19.0
 offset_right = 39.0
 offset_bottom = 16.0
 grow_vertical = 2
+pivot_offset = Vector2(18, 17.477104)
 texture = ExtResource("1_adcba")
 expand_mode = 1
 
@@ -865,11 +896,11 @@ theme_override_constants/outline_size = 12
 theme_override_constants/line_spacing = -209
 theme_override_font_sizes/font_size = 26
 text = "enemies"
-script = ExtResource("2_adcba")
-click_animation = 1
-hover_animation = 1
+script = ExtResource("3_pv3mv")
+ClickAnimation = 1
+HoverAnimation = 1
 
-[node name="icon" type="TextureRect" parent="Window/Buttons/EnemiesButton" unique_id=1285996899 groups=["coin_icon"]]
+[node name="Icon" type="TextureRect" parent="Window/Buttons/EnemiesButton" unique_id=1285996899]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
@@ -899,11 +930,11 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "droopers"
 alignment = 2
-script = ExtResource("2_adcba")
-click_animation = 1
-hover_animation = 1
+script = ExtResource("3_pv3mv")
+ClickAnimation = 1
+HoverAnimation = 1
 
-[node name="icon" type="TextureRect" parent="Window/Buttons/DroopersButton" unique_id=1317452741 groups=["coin_icon"]]
+[node name="Icon" type="TextureRect" parent="Window/Buttons/DroopersButton" unique_id=1317452741]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
@@ -933,11 +964,11 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "upgrades"
 alignment = 2
-script = ExtResource("2_adcba")
-click_animation = 1
-hover_animation = 1
+script = ExtResource("3_pv3mv")
+ClickAnimation = 1
+HoverAnimation = 1
 
-[node name="icon" type="TextureRect" parent="Window/Buttons/UpgradesButton" unique_id=1603857454 groups=["coin_icon"]]
+[node name="icon" type="TextureRect" parent="Window/Buttons/UpgradesButton" unique_id=1603857454]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
@@ -951,7 +982,7 @@ grow_vertical = 2
 texture = ExtResource("12_b6ikj")
 expand_mode = 1
 
-[node name="DroopersTab" type="Panel" parent="Window" unique_id=2038745410 groups=["DroopersTab"]]
+[node name="DroopersTab" type="Panel" parent="Window" unique_id=2038745410]
 z_index = 1
 layout_mode = 1
 offset_left = 5.0
@@ -970,9 +1001,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -329.5
-offset_top = -173.0
+offset_top = -170.0
 offset_right = 96.0
-offset_bottom = 171.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(224, 172)
@@ -994,27 +1025,23 @@ follow_focus_margin = 50
 allow_horizontal_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="BoxContainer" type="BoxContainer" parent="Window/DroopersTab/DrooperList" unique_id=20240095]
-layout_mode = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="GridContainer" type="GridContainer" parent="Window/DroopersTab/DrooperList/BoxContainer" unique_id=1064754246 groups=["DrooperContainer"]]
+[node name="GridContainer" type="GridContainer" parent="Window/DroopersTab/DrooperList" unique_id=1064754246]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 6
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DrooperContent" type="Panel" parent="Window/DroopersTab" unique_id=592111257 groups=["DrooperContentContainer"]]
+[node name="DrooperContent" type="Panel" parent="Window/DroopersTab" unique_id=592111257]
 layout_mode = 0
 offset_left = 431.0
 offset_top = 8.0
-offset_right = 666.0034
+offset_right = 666.0037
 offset_bottom = 344.0
 mouse_filter = 2
 theme = ExtResource("1_2kfr3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5v5xw")
 
-[node name="name" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=147715904]
+[node name="Name" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=147715904]
 z_index = 3
 layout_mode = 0
 offset_top = 144.0
@@ -1030,7 +1057,7 @@ text = "Rusty Drooper"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="bg_image" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=328393975]
+[node name="BgImage" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=328393975]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1047,7 +1074,7 @@ texture = ExtResource("12_ag4xe")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="image" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1050283728]
+[node name="Image" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1050283728]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1064,7 +1091,7 @@ texture = ExtResource("7_5v5xw")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="coin_icon" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1873877799 groups=["coin_icon"]]
+[node name="CoinIcon" type="TextureRect" parent="Window/DroopersTab/DrooperContent" unique_id=1873877799]
 texture_filter = 2
 layout_mode = 0
 offset_left = 12.0
@@ -1074,7 +1101,7 @@ offset_bottom = 231.42636
 texture = ExtResource("11_1fad6")
 expand_mode = 1
 
-[node name="coinaward" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=2059113932]
+[node name="CoinAward" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=2059113932]
 z_index = 3
 layout_mode = 0
 offset_left = 38.0
@@ -1089,7 +1116,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
 text = "1 per second"
 
-[node name="price" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=728156160]
+[node name="Price" type="Label" parent="Window/DroopersTab/DrooperContent" unique_id=728156160]
 z_index = 3
 layout_mode = 0
 offset_left = 12.0
@@ -1104,7 +1131,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 24
 text = "Price: 100 Coins"
 
-[node name="buy" type="Button" parent="Window/DroopersTab/DrooperContent" unique_id=199861673]
+[node name="Buy" type="Button" parent="Window/DroopersTab/DrooperContent" unique_id=199861673]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 264.0
@@ -1119,10 +1146,9 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "buy_btn"
-script = ExtResource("2_adcba")
+script = ExtResource("3_pv3mv")
 
-[node name="EnemiesTab" type="Panel" parent="Window" unique_id=2104058131 groups=["EnemiesTab"]]
-visible = false
+[node name="EnemiesTab" type="Panel" parent="Window" unique_id=2104058131]
 z_index = 4
 z_as_relative = false
 layout_mode = 0
@@ -1137,7 +1163,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5v5xw")
 [node name="EnemyList" type="ScrollContainer" parent="Window/EnemiesTab" unique_id=818530879]
 z_index = 5
 z_as_relative = false
-custom_minimum_size = Vector2(32, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1146,8 +1171,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -329.5
 offset_top = -173.0
-offset_right = 96.0
-offset_bottom = 171.0
+offset_right = 92.5
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(224, 172)
@@ -1155,7 +1180,6 @@ focus_mode = 2
 focus_behavior_recursive = 2
 mouse_filter = 0
 follow_focus = true
-draw_focus_border = true
 scroll_horizontal_custom_step = 23.0
 scroll_vertical_custom_step = 23.0
 scroll_hint_mode = 1
@@ -1169,15 +1193,8 @@ follow_focus_margin = 50
 allow_horizontal_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="BoxContainer" type="BoxContainer" parent="Window/EnemiesTab/EnemyList" unique_id=1249704194]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="GridContainer" type="GridContainer" parent="Window/EnemiesTab/EnemyList/BoxContainer" unique_id=501712527 groups=["EnemyContainer"]]
+[node name="GridContainer" type="GridContainer" parent="Window/EnemiesTab/EnemyList" unique_id=501712527]
+propagate_maximum_size = false
 layout_mode = 2
 focus_mode = 2
 mouse_filter = 2
@@ -1185,36 +1202,39 @@ mouse_behavior_recursive = 2
 columns = 6
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="StoreSelectButton" parent="Window/EnemiesTab/EnemyList/BoxContainer/GridContainer" unique_id=463436673 instance=ExtResource("19_cxhn8")]
+[node name="StoreSelectButton" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=463436673 instance=ExtResource("19_cxhn8")]
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+script = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="StoreSelectButton2" parent="Window/EnemiesTab/EnemyList/BoxContainer/GridContainer" unique_id=790404094 instance=ExtResource("19_cxhn8")]
+[node name="StoreSelectButton2" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=790404094 instance=ExtResource("19_cxhn8")]
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+script = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="StoreSelectButton3" parent="Window/EnemiesTab/EnemyList/BoxContainer/GridContainer" unique_id=1227523314 instance=ExtResource("19_cxhn8")]
+[node name="StoreSelectButton3" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=1227523314 instance=ExtResource("19_cxhn8")]
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+script = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="EnemyContent" type="Panel" parent="Window/EnemiesTab" unique_id=1034859504 groups=["EnemyContentContainer"]]
+[node name="EnemyContent" type="Panel" parent="Window/EnemiesTab" unique_id=1034859504]
 z_index = 1
 layout_mode = 0
 offset_left = 431.0
 offset_top = 8.0
-offset_right = 666.0033
+offset_right = 666.00385
 offset_bottom = 344.0
 mouse_filter = 2
 theme = ExtResource("1_2kfr3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5v5xw")
 
-[node name="name" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=46408610]
+[node name="Name" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=46408610]
 z_index = 3
 layout_mode = 0
 offset_left = 8.0
@@ -1232,7 +1252,7 @@ text = "Abnormal"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="bg_image" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=1643979803]
+[node name="BgImage" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=1643979803]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1249,7 +1269,7 @@ texture = ExtResource("12_ag4xe")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="image" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=277976640]
+[node name="Image" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=277976640]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 35.384613
@@ -1258,7 +1278,7 @@ offset_bottom = 140.0
 texture = ExtResource("3_n4xxd")
 expand_mode = 1
 
-[node name="coin_icon" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=1933079587 groups=["coin_icon"]]
+[node name="CoinImage" type="TextureRect" parent="Window/EnemiesTab/EnemyContent" unique_id=1933079587]
 texture_filter = 2
 layout_mode = 0
 offset_left = 12.0
@@ -1268,7 +1288,7 @@ offset_bottom = 232.42636
 texture = ExtResource("11_1fad6")
 expand_mode = 1
 
-[node name="coinaward" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=886893671]
+[node name="CoinAward" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=886893671]
 z_index = 3
 layout_mode = 0
 offset_left = 38.0
@@ -1283,7 +1303,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
 text = "5 per click"
 
-[node name="price" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=535257403]
+[node name="Price" type="Label" parent="Window/EnemiesTab/EnemyContent" unique_id=535257403]
 z_index = 3
 layout_mode = 0
 offset_left = 12.0
@@ -1298,7 +1318,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 24
 text = "Price: 500 Coins"
 
-[node name="buy" type="Button" parent="Window/EnemiesTab/EnemyContent" unique_id=234224996]
+[node name="Buy" type="Button" parent="Window/EnemiesTab/EnemyContent" unique_id=234224996]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 264.0
@@ -1313,9 +1333,9 @@ theme_override_constants/align_to_largest_stylebox = 0
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "buy_btn"
-script = ExtResource("2_adcba")
+script = ExtResource("3_pv3mv")
 
-[node name="UpgradesTab" type="Panel" parent="Window" unique_id=1665559203 groups=["UpgradesTab"]]
+[node name="UpgradesTab" type="Panel" parent="Window" unique_id=1665559203]
 z_index = 1
 layout_mode = 0
 offset_left = 5.0
@@ -1333,10 +1353,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.0
+offset_left = -332.5
 offset_top = -173.0
 offset_right = 327.5
-offset_bottom = 171.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(330.5, 329)
@@ -1358,7 +1378,8 @@ follow_focus_margin = 50
 allow_horizontal_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="BoxContainer" type="BoxContainer" parent="Window/UpgradesTab/UpgradeList" unique_id=127690616 groups=["UpgradeContainer"]]
+[node name="BoxContainer" type="BoxContainer" parent="Window/UpgradesTab/UpgradeList" unique_id=127690616]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1366,7 +1387,7 @@ size_flags_stretch_ratio = 0.0
 vertical = true
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="LoadingText" type="Label" parent="Window" unique_id=1899490369 groups=["LoadingText"]]
+[node name="LoadingText" type="Label" parent="Window" unique_id=1899490369]
 visible = false
 z_index = 3
 layout_mode = 1
@@ -1412,16 +1433,8 @@ libraries/ContentAnim = SubResource("AnimationLibrary_cxhn8")
 libraries/ListAnim = SubResource("AnimationLibrary_bowtv")
 libraries/StoreHeaderAnim = SubResource("AnimationLibrary_18lph")
 
-[connection signal="FinishedLoading" from="StoreManager" to="StoreUI" method="_on_store_manager_finished_loading"]
-[connection signal="update_drooper_content" from="StoreLogic" to="StoreUI" method="_on_store_logic_update_drooper_content"]
-[connection signal="update_enemy_button" from="StoreLogic" to="StoreUI" method="_on_store_logic_update_enemy_button"]
-[connection signal="update_upgrade_container" from="StoreLogic" to="StoreUI" method="_on_store_logic_update_upgrade_container"]
 [connection signal="pressed" from="Window/CloseButton" to="StoreUI" method="_on_close_button_pressed"]
-[connection signal="clicked" from="Window/Buttons/EnemiesButton" to="StoreUI" method="_on_enemies_button_clicked"]
-[connection signal="clicked" from="Window/Buttons/DroopersButton" to="StoreUI" method="_on_droopers_button_clicked"]
-[connection signal="clicked" from="Window/Buttons/UpgradesButton" to="StoreUI" method="_on_upgrades_button_clicked"]
-[connection signal="clicked" from="Window/DroopersTab/DrooperContent/buy" to="StoreLogic" method="_on_buy_clicked"]
-[connection signal="clicked" from="Window/EnemiesTab/EnemyContent/buy" to="StoreLogic" method="_on_buy_clicked"]
+[connection signal="pressed" from="Window/Buttons/EnemiesButton" to="StoreUI" method="OnEnemiesButtonClicked"]
 [connection signal="animation_finished" from="WindowAnim" to="StoreUI" method="_on_window_anim_animation_finished"]
 [connection signal="animation_finished" from="TabButtonsAnim" to="StoreUI" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="ListAnim" to="StoreUI" method="_on_list_anim_animation_finished"]

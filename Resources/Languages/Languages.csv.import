@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://dvgniv7nvcmb8"
+uid="uid://budpxr1nprc7e"
 
 [deps]
 
-files=["res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation"]
+files=["res://Resources/Languages/Languages.En.translation", "res://Resources/Languages/Languages.Ru.translation"]
 
 source_file="res://Resources/Languages/Languages.csv"
-dest_files=["res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation"]
+dest_files=["res://Resources/Languages/Languages.En.translation", "res://Resources/Languages/Languages.Ru.translation"]
 
 [params]
 

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://wlxbv3ownvht"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://wlxbv3ownvht"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_ieq7f"]
-[ext_resource type="Texture2D" uid="uid://diwwfgv8worad" path="res://assets/sprites/enemies/slow_boss.webp" id="2_ieq7f"]
+[ext_resource type="Texture2D" uid="uid://diwwfgv8worad" path="res://Assets/Sprites/Enemies/SlowBoss.webp" id="2_ieq7f"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_uq13c"]
 
 [resource]
-script = ExtResource("1_ieq7f")
-id = "slow_boss"
-name = "Slow Boss"
-texture = ExtResource("2_ieq7f")
-price = 90000.0
-type = "Enemy"
-coin_award = 90
+script = ExtResource("2_uq13c")
+Id = "SlowBoss"
+Name = "Slow Boss"
+Texture = ExtResource("2_ieq7f")
+Price = 90000.0
+Type = "Enemy"
+CoinAward = 90

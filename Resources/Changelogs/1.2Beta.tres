@@ -1,11 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://3i7a16m5hc2y"]
+[gd_resource type="Resource" script_class="ChangeLogData" format=3 uid="uid://3i7a16m5hc2y"]
 
-[ext_resource type="Script" uid="uid://qcwmjlmksys3" path="res://data/changelog_ui/changelog_data.gd" id="1_taira"]
+[ext_resource type="Script" uid="uid://dgtmk6pe4pxt1" path="res://Resources/ChangeLogData.cs" id="1_3ny10"]
 
 [resource]
-script = ExtResource("1_taira")
-name = "1.2 Beta"
-text_en = "[font_size=32]1.2 Spring Of Something[/font_size]
+script = ExtResource("1_3ny10")
+Name = "1.2 Beta"
+TextEn = "[font_size=32]1.2 Spring Of Something[/font_size]
 April 14, 2026
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
 [font_size=32]Features[/font_size]
@@ -90,8 +90,9 @@ Default savedata music volume is less now
 Added drooper price scaling
 I agree button text is changed from I agree to OK
 Corrected disclaimer description text in Russian translation
-[/ul]"
-text_ru = "[font_size=32]1.2 Весна чего-то[/font_size]
+[/ul]
+"
+TextRu = "[font_size=32]1.2 Весна чего-то[/font_size]
 14 апреля 2026 г.
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
 [font_size=32]Особенности[/font_size]
@@ -168,3 +169,4 @@ text_ru = "[font_size=32]1.2 Весна чего-то[/font_size]
 Текст кнопки «Я согласен» изменен с «Я согласен» на «ОК»
 Исправлен текст описания отказа от ответственности в русском переводе
 [/ul]"
+TextByLanguage = Dictionary[String, String]({})

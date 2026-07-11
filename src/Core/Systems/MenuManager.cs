@@ -6,65 +6,66 @@ namespace TDSClicker.Core.Systems;
 
 public partial class MenuManager : Node
 {
-    public static MenuManager Instance { get; private set; }
+	public static MenuManager Instance { get; private set; }
 
-    
-    [Signal]
-    public delegate void MenuOpeningEventHandler();
-    [Signal]
-    public delegate void MenuClosingEventHandler();
+	[Signal]
+	public delegate void MenuOpeningEventHandler();
 
-    public override void _Ready()
-    {
-        Instance = this;
-    }
+	[Signal]
+	public delegate void MenuClosingEventHandler();
 
-    public void OpenMenu(Control menu, AnimationPlayer player)
-    {
-        menu.Visible = true;
-        player.Play("anim");
-        EmitSignal(SignalName.MenuOpening);
-    }
+	public override void _Ready()
+	{
+		Instance = this;
+	}
 
-    public Control OpenMenu(string sceneName)
-    {
-        var menu = ObjectHelper.Create<Control>(sceneName, Vector2.Zero, "/root/Game/UI");
-        var player = menu.GetNode<AnimationPlayer>("AnimationPlayer");
+	public void OpenMenu(Node menu, AnimationPlayer player)
+	{
+		if (menu is CanvasLayer canvasItem)
+			canvasItem.Visible = true;
+			
+		player.Play("anim");
+		EmitSignal(SignalName.MenuOpening);
+	}
 
-        menu.Visible = true;
-        player.Play("anim");
-        EmitSignal(SignalName.MenuOpening);
+	public Node OpenMenu(string sceneName)
+	{
+		var menu = ObjectHelper.Create<Control>(sceneName, Vector2.Zero, "/root/Game/UI");
+		var player = menu.GetNode<AnimationPlayer>("AnimationPlayer");
 
-        return menu;
-    }
+		menu.Visible = true;
+		player.Play("anim");
+		EmitSignal(SignalName.MenuClosing);
 
-    public async Task CloseMenu(Control menuNode, AnimationPlayer animPlayer, string animation = "anim", bool destroy = false, bool backwards = true)
-    {
-        if (backwards)
-        {
-            animPlayer.PlayBackwards(animation);
-        }
-        else
-        {
-            animPlayer.Play(animation);
-        }
+		return menu;
+	}
 
-        await ToSignal(animPlayer, AnimationPlayer.SignalName.AnimationFinished);
+	public async Task CloseMenu(
+		Node menuNode,
+		AnimationPlayer animPlayer,
+		string animation = "anim",
+		bool destroy = false,
+		bool backwards = true)
+	{
+		if (backwards)
+			animPlayer.PlayBackwards(animation);
+		else
+			animPlayer.Play(animation);
 
-        foreach (var child in menuNode.GetChildren())
-        {
-            if (child is AnimationPlayer animationPlayer)
-            {
-                animationPlayer.Play("RESET");
-            }
-        }
-        
-        menuNode.Visible = false;
-        EmitSignal(SignalName.MenuClosing);
+		await ToSignal(animPlayer, AnimationPlayer.SignalName.AnimationFinished);
 
-        if (destroy)
-        {
-            menuNode.QueueFree();
-        }
-    }
+		foreach (Node child in menuNode.GetChildren())
+		{
+			if (child is AnimationPlayer player)
+				player.Play("RESET");
+		}
+
+		if (menuNode is CanvasLayer canvasItem)
+			canvasItem.Visible = false;
+
+		EmitSignal(SignalName.MenuClosing);
+
+		if (destroy)
+			menuNode.QueueFree();
+	}
 }

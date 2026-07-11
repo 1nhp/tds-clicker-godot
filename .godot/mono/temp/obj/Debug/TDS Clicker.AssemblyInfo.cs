@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TDS Clicker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcefb080c1e9af1e5f72bcaaab1d3d212eacf356")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6fbf14c16c75bc1370facb37b91fb8415faa366")]
 [assembly: System.Reflection.AssemblyProductAttribute("TDS Clicker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TDS Clicker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

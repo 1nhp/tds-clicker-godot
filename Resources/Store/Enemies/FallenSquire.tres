@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cc5sv6lyr4ovv"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://cc5sv6lyr4ovv"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_t31qf"]
-[ext_resource type="Texture2D" uid="uid://bvcax3a4bslfn" path="res://assets/sprites/enemies/fallen_squire.webp" id="2_t31qf"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_qrcme"]
+[ext_resource type="Texture2D" uid="uid://bvcax3a4bslfn" path="res://Assets/Sprites/Enemies/FallenSquire.webp" id="2_t31qf"]
 
 [resource]
-script = ExtResource("1_t31qf")
-id = "fallen_squire"
-name = "Fallen Squire"
-texture = ExtResource("2_t31qf")
-price = 14000.0
-type = "Enemy"
-coin_award = 33
+script = ExtResource("2_qrcme")
+Id = "FallenSquire"
+Name = "Fallen Squire"
+Texture = ExtResource("2_t31qf")
+Price = 14000.0
+Type = "Enemy"
+CoinAward = 33

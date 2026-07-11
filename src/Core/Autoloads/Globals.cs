@@ -10,8 +10,8 @@ public partial class Globals : Node
 
 	public class GlobalSettings
 	{
-		public bool SkipDisclaimer { get; set; } = false;
-		public string Language { get; set; } = "en";
+		public bool SkipDisclaimer { get; set; } = true;
+		public string Language { get; set; } = "En";
 	}
 
 	public static GlobalSettings Settings = new();

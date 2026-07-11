@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bcgx684psacen"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://bcgx684psacen"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_v8b21"]
-[ext_resource type="Texture2D" uid="uid://6hsganfirteq" path="res://assets/sprites/enemies/molten_golem.webp" id="2_dw4kt"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_817rv"]
+[ext_resource type="Texture2D" uid="uid://6hsganfirteq" path="res://Assets/Sprites/Enemies/MoltenGolem.webp" id="2_dw4kt"]
 
 [resource]
-script = ExtResource("1_v8b21")
-id = "molten_golem"
-name = "Molten Golem"
-texture = ExtResource("2_dw4kt")
-price = 200000
-type = "Enemy"
-coin_award = 130
+script = ExtResource("2_817rv")
+Id = "MoltenGolem"
+Name = "Molten Golem"
+Texture = ExtResource("2_dw4kt")
+Price = 200000.0
+Type = "Enemy"
+CoinAward = 130

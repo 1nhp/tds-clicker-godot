@@ -29,12 +29,12 @@ ObjectHelper="*uid://dwsb1x63sw3hy"
 SavingSystem="*uid://cwtffhsi3bj8l"
 Debug="*uid://bbkkb0f2llesq"
 MenuManager="*uid://cvverpfhol2eb"
+SignalBus="*uid://jas1mpkl0yyq"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
@@ -69,11 +69,6 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
-[global_group]
-
-game=""
-enemy=""
-
 [importer_defaults]
 
 texture={
@@ -104,11 +99,8 @@ texture={
 
 [internationalization]
 
-locale/translation_remaps={
-"res://data/languages/languages.en.translation": PackedStringArray("res://data/languages/languages.en.translation:en"),
-"res://data/languages/languages.ru.translation": PackedStringArray("res://data/languages/languages.ru.translation:ru")
-}
-locale/translations=PackedStringArray("res://Resources/Languages/Languages.en.translation", "res://Resources/Languages/Languages.ru.translation")
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://Resources/Languages/Languages.En.translation", "res://Resources/Languages/Languages.Ru.translation")
 
 [physics]
 

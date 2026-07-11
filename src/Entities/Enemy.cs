@@ -1,4 +1,5 @@
 using Godot;
+using TDSClicker.Core.Autoloads;
 using TDSClicker.Core.Systems;
 using TDSClicker.Utils;
 
@@ -22,6 +23,8 @@ public partial class Enemy : Node2D
 		Hurt,
 	}
 
+	public bool EnemyUpdating;
+	
 	  [Signal] public delegate void EnemyHurtEventHandler();
 	  [Export] public int CoinAward { get; set; } = 1;
 	  [Export] public int CoinMultiplier { get; set; } = 1;
@@ -41,8 +44,6 @@ public partial class Enemy : Node2D
 	  [Export] public Sprite2D SpriteHurt { get; set; }
 	  [Export] public Area2D Hit { get; set; }
 	  [Export] public AnimationPlayer HurtAnim { get; set; }
-
-	  // Update enemy code here
 	  
 	  private Tween _enemyTween;
 
@@ -52,8 +53,44 @@ public partial class Enemy : Node2D
 		  Hit.MouseEntered += OnMouseEntered;
 		  Hit.MouseExited += OnMouseExited;
 		  Hit.InputEvent += OnMouseClicked;
+		  
+		  SignalBus.Instance.EnemyPurchased += (name) => Update(name);
 	  }
-	  
+
+	  public async void Update(string name, bool animate = true)
+	  {
+		  if (EnemyUpdating) return;
+		  var enemy = GD.Load<StoreData>("res://Resources/Store/Enemies/" + name + ".tres");
+		  if (enemy == null) return;
+
+		  EnemyUpdating = true;
+
+		  if (animate)
+		  {
+			  _enemyTween?.Kill();
+			  _enemyTween = CreateTween();
+			  _enemyTween.SetTrans(Tween.TransitionType.Quad);
+			  _enemyTween.TweenProperty(this, "scale", Vector2.Zero, 0.3f);
+			  await ToSignal(_enemyTween, Tween.SignalName.Finished);
+
+			  CoinAward = enemy.CoinAward;
+			  Sprite.Texture = enemy.Texture;
+			  SpriteHurt.Texture = enemy.Texture;
+
+			  _enemyTween = CreateTween();
+			  _enemyTween.SetTrans(Tween.TransitionType.Quad);
+			  _enemyTween.TweenProperty(this, "scale", Vector2.One, 0.2f);
+			  await ToSignal(_enemyTween, Tween.SignalName.Finished);
+		  }
+		  else
+		  {
+			  CoinAward = enemy.CoinAward;
+			  Sprite.Texture = enemy.Texture;
+			  SpriteHurt.Texture = enemy.Texture;
+		  }
+
+		  EnemyUpdating = false;
+	  }
 
 	  public override void _Process(double delta)
 	  {

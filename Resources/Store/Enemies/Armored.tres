@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://1sotqjrqdxj3"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://1sotqjrqdxj3"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_col3u"]
-[ext_resource type="Texture2D" uid="uid://b75ovwwycsato" path="res://assets/sprites/enemies/armored.webp" id="2_col3u"]
+[ext_resource type="Texture2D" uid="uid://b75ovwwycsato" path="res://Assets/Sprites/Enemies/Armored.webp" id="2_col3u"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_xxbfq"]
 
 [resource]
-script = ExtResource("1_col3u")
-id = "armored"
-name = "Armored"
-texture = ExtResource("2_col3u")
-price = 5000.0
-type = "Enemy"
-coin_award = 15
+script = ExtResource("2_xxbfq")
+Id = "Armored"
+Name = "Armored"
+Texture = ExtResource("2_col3u")
+Price = 5000.0
+Type = "Enemy"
+CoinAward = 15

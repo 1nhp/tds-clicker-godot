@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dnceaawrlnffb"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://dnceaawrlnffb"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_di8sk"]
-[ext_resource type="Texture2D" uid="uid://ofusahdeq76w" path="res://assets/sprites/enemies/normal_boss.webp" id="2_di8sk"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_1g1s3"]
+[ext_resource type="Texture2D" uid="uid://ofusahdeq76w" path="res://Assets/Sprites/Enemies/NormalBoss.webp" id="2_di8sk"]
 
 [resource]
-script = ExtResource("1_di8sk")
-id = "normal_boss"
-name = "Normal Boss"
-texture = ExtResource("2_di8sk")
-price = 13000.0
-type = "Enemy"
-coin_award = 30
+script = ExtResource("2_1g1s3")
+Id = "NormalBoss"
+Name = "Normal Boss"
+Texture = ExtResource("2_di8sk")
+Price = 13000.0
+Type = "Enemy"
+CoinAward = 30

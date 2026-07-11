@@ -1,5 +1,6 @@
 using Godot;
 using TDSClicker.Core.Systems;
+using TDSClicker.Entities;
 
 namespace Core.Systems;
 
@@ -25,6 +26,9 @@ public partial class Debug : Node
             GameManager.Coins += 10000000000;
             GameManager.Instance.UpdateCounter();
         }
-        
+        if (Input.IsKeyPressed(Key.E))
+        {
+            Enemy.Instance.Update("Abnormal");
+        }
     }
 }

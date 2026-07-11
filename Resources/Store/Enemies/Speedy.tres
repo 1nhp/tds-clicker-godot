@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c3aodjmkra3oe"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://c3aodjmkra3oe"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_tefh3"]
-[ext_resource type="Texture2D" uid="uid://bqoofxsjk03hp" path="res://assets/sprites/enemies/speedy.webp" id="2_anfbn"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_1iych"]
+[ext_resource type="Texture2D" uid="uid://bqoofxsjk03hp" path="res://Assets/Sprites/Enemies/Speedy.webp" id="2_anfbn"]
 
 [resource]
-script = ExtResource("1_tefh3")
-id = "speedy"
-name = "Speedy"
-texture = ExtResource("2_anfbn")
-price = 1000.0
-type = "Enemy"
-coin_award = 5
+script = ExtResource("2_1iych")
+Id = "Speedy"
+Name = "Speedy"
+Texture = ExtResource("2_anfbn")
+Price = 1000.0
+Type = "Enemy"
+CoinAward = 5

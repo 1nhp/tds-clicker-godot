@@ -1,2 +1,2 @@
-﻿36883
+﻿39885
 /usr/lib/godot/Godot_v4.7-stable_mono_linux.x86_64

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dq36pdtm02lwu"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://dq36pdtm02lwu"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_3aa1a"]
-[ext_resource type="Texture2D" uid="uid://dih4e4jfmcayw" path="res://assets/sprites/enemies/corpse.webp" id="2_3reho"]
+[ext_resource type="Texture2D" uid="uid://dih4e4jfmcayw" path="res://Assets/Sprites/Enemies/Corpse.webp" id="2_3reho"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_sqtcr"]
 
 [resource]
-script = ExtResource("1_3aa1a")
-id = "corpse"
-name = "Corpse"
-texture = ExtResource("2_3reho")
-price = 80000.0
-type = "Enemy"
-coin_award = 80
+script = ExtResource("2_sqtcr")
+Id = "Corpse"
+Name = "Corpse"
+Texture = ExtResource("2_3reho")
+Price = 80000.0
+Type = "Enemy"
+CoinAward = 80

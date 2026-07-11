@@ -1,4 +1,6 @@
 using Godot;
+using TDSClicker.Core.Autoloads;
+
 namespace TDSClicker.UI;
 
 public partial class Disclaimer : Node
@@ -15,6 +17,11 @@ public partial class Disclaimer : Node
         _agreeButton.Pressed += OnAgreeClicked;
         _agreeButton2.Pressed += OnAgree2Clicked;
         _agreeButton3.Pressed += OnAgree3Clicked;
+
+        if (Globals.Settings.SkipDisclaimer)
+        {
+            GetTree().ChangeSceneToFile("res://Scenes/Game.tscn");
+        }
     }
 
     private void OnAgreeClicked()

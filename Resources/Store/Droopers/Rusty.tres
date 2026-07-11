@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="StoreItemData" format=3 uid="uid://cfa3alvcj1yos"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://cfa3alvcj1yos"]
 
-[ext_resource type="Script" uid="uid://iq8rd6a7gv5o" path="res://data/store/store_item_data.gd" id="1_7lq41"]
-[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://assets/sprites/droopers/drooper_1.png" id="2_aoric"]
+[ext_resource type="Texture2D" uid="uid://vdflyjgi83b2" path="res://Assets/Sprites/Droopers/Drooper_1.png" id="2_aoric"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_m3lcx"]
 
 [resource]
-script = ExtResource("1_7lq41")
-id = "rusty"
-name = "Rusty Drooper"
-texture = ExtResource("2_aoric")
-price = 100.0
-price_addition = 30.0
-type = "Drooper"
-coin_award = 1
+script = ExtResource("2_m3lcx")
+Id = "Rusty"
+Name = "Rusty Drooper"
+Texture = ExtResource("2_aoric")
+Price = 100.0
+PriceAddition = 30.0
+Type = "Drooper"
+CoinAward = 1

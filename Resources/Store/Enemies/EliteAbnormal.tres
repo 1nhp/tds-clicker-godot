@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dopt0msmt6w0n"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://dopt0msmt6w0n"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_ai5r3"]
-[ext_resource type="Texture2D" uid="uid://b36io6n4il1yx" path="res://assets/sprites/enemies/elite_abnormal.webp" id="2_vpcyi"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_uslmk"]
+[ext_resource type="Texture2D" uid="uid://b36io6n4il1yx" path="res://Assets/Sprites/Enemies/EliteAbnormal.webp" id="2_vpcyi"]
 
 [resource]
-script = ExtResource("1_ai5r3")
-id = "elite_abnormal"
-name = "Elite Abnormal"
-texture = ExtResource("2_vpcyi")
-price = 70000.0
-type = "Enemy"
-coin_award = 60
+script = ExtResource("2_uslmk")
+Id = "EliteAbnormal"
+Name = "Elite Abnormal"
+Texture = ExtResource("2_vpcyi")
+Price = 70000.0
+Type = "Enemy"
+CoinAward = 60

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b7ra0f70ybue1"]
+[gd_resource type="Resource" script_class="StoreData" format=3 uid="uid://b7ra0f70ybue1"]
 
-[ext_resource type="Script" uid="uid://bscerwab5ygln" path="res://data/store/enemy_data.gd" id="1_hr0ie"]
-[ext_resource type="Texture2D" uid="uid://fo2nuikucm6n" path="res://assets/sprites/enemies/molten_titan.webp" id="2_hr0ie"]
+[ext_resource type="Script" uid="uid://co1o8gfsaurd" path="res://Resources/StoreData.cs" id="2_gvpsn"]
+[ext_resource type="Texture2D" uid="uid://fo2nuikucm6n" path="res://Assets/Sprites/Enemies/MoltenTitan.webp" id="2_hr0ie"]
 
 [resource]
-script = ExtResource("1_hr0ie")
-id = "molten_titan"
-name = "Molten Titan"
-texture = ExtResource("2_hr0ie")
-price = 60000000.0
-type = "Enemy"
-coin_award = 900
+script = ExtResource("2_gvpsn")
+Id = "MoltenTitan"
+Name = "Molten Titan"
+Texture = ExtResource("2_hr0ie")
+Price = 60000000.0
+Type = "Enemy"
+CoinAward = 900
