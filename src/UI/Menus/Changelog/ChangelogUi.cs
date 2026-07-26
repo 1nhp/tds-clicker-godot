@@ -1,5 +1,6 @@
 using Godot;
 using TDSClicker.Core.Autoloads;
+using TDSClicker.Core.Systems;
 using TDSClicker.Utils;
 
 namespace TDSClicker.UI.Menus.Changelog;
@@ -50,21 +51,25 @@ public partial class ChangelogUi : MenuBase
 
 	private async void _switchArticle(ChangeLogData article)
 	{
-		InfoContainerTween?.Kill();
-		InfoContainerTween = CreateTween();
-		InfoContainerTween.SetTrans(Tween.TransitionType.Quad);
+		if (GameManager.Settings.UiAnimations)
+		{
+			InfoContainerTween?.Kill();
+			InfoContainerTween = CreateTween();
+			InfoContainerTween.SetTrans(Tween.TransitionType.Quad);
 		
-		InfoContainerTween.Parallel().TweenProperty(InfoContainer, "modulate:a", 0, 0.15f);
-		InfoContainerTween.Parallel().TweenProperty(InfoContainer, "position:x", 180, 0.2f);
+			InfoContainerTween.Parallel().TweenProperty(InfoContainer, "modulate:a", 0, 0.15f);
+			InfoContainerTween.Parallel().TweenProperty(InfoContainer, "position:x", 180, 0.2f);
 		
-		await ToSignal(InfoContainerTween, Tween.SignalName.Finished);
+			await ToSignal(InfoContainerTween, Tween.SignalName.Finished);
 		
-		InfoContainerTween?.Kill();
-		InfoContainerTween = CreateTween();
-		InfoContainerTween.SetTrans(Tween.TransitionType.Quad);
-		InfoContainerTween.Parallel().TweenProperty(InfoContainer, "modulate:a", 1, 0.2f);
-		InfoContainerTween.Parallel().TweenProperty(InfoContainer, "position:x", 164.0, 0.3f);
+			InfoContainerTween?.Kill();
+			InfoContainerTween = CreateTween();
+			InfoContainerTween.SetTrans(Tween.TransitionType.Quad);
+			InfoContainerTween.Parallel().TweenProperty(InfoContainer, "modulate:a", 1, 0.2f);
+			InfoContainerTween.Parallel().TweenProperty(InfoContainer, "position:x", 164.0, 0.3f);
+		}
 		InfoText.Text = article.GetLocalizedText();
-		InfoContainer.ScrollVertical = 0;
+		InfoContainer.ScrollVertical = 0;	
+
 	}
 }

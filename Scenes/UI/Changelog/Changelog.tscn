@@ -212,6 +212,8 @@ theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Select version"
 fit_content = true
+threaded = true
+visible_characters_behavior = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Header" type="Panel" parent="Window" unique_id=1455460292]

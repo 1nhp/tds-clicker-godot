@@ -1,4 +1,5 @@
 using Godot;
+using TDSClicker.Core.Systems;
 
 namespace TDSClicker.VFX;
 
@@ -36,14 +37,17 @@ public static class ButtonAnimations
 
     public static void CustomAnimation(Tween tween, Button target, Type type)
     {
-        switch (type)
+        if (GameManager.Settings.UiAnimations)
         {
-            case Type.Tint:
-                tween.SetEase(Tween.EaseType.Out);
-                tween.SetTrans(Tween.TransitionType.Quad);
-                tween.TweenProperty(target, "modulate", new Color(2f, 2f, 2f), 0);
-                tween.TweenProperty(target, "modulate", new Color(1f, 1f, 1f), 0.5f);
-                break;
+            switch (type)
+            {
+                case Type.Tint:
+                    tween.SetEase(Tween.EaseType.Out);
+                    tween.SetTrans(Tween.TransitionType.Quad);
+                    tween.TweenProperty(target, "modulate", new Color(2f, 2f, 2f), 0);
+                    tween.TweenProperty(target, "modulate", new Color(1f, 1f, 1f), 0.5f);
+                    break;
+            } 
         }
     }
 }

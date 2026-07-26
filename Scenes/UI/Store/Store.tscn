@@ -18,7 +18,7 @@
 [ext_resource type="Theme" uid="uid://bloh7ls1jnogu" path="res://Resources/Themes/BuyButton.tres" id="15_gh8kj"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://_GDscript/smooth_scroll_container.gd" id="17_bowtv"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://_GDscript/expo_scroll_damper.gd" id="18_cxhn8"]
-[ext_resource type="PackedScene" uid="uid://dmnf55b1ukndn" path="res://Scenes/UI/Store/StoreSelectButton.tscn" id="19_cxhn8"]
+[ext_resource type="PackedScene" uid="uid://dmnf55b1ukndn" path="res://Scenes/UI/Store/StoreSelectButton.tscn" id="20_fuweh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v5xw"]
 bg_color = Color(0.14044744, 0.14044744, 0.14044744, 0.68235296)
@@ -36,6 +36,12 @@ corner_radius_bottom_left = 4
 script = ExtResource("18_cxhn8")
 
 [sub_resource type="Resource" id="Resource_4twbk"]
+script = ExtResource("18_cxhn8")
+
+[sub_resource type="Resource" id="Resource_23pl1"]
+script = ExtResource("18_cxhn8")
+
+[sub_resource type="Resource" id="Resource_fuweh"]
 script = ExtResource("18_cxhn8")
 
 [sub_resource type="Animation" id="Animation_v1cqb"]
@@ -115,31 +121,31 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Window/EnemiesTab/EnemyList:position:x")
+tracks/6/path = NodePath("Window/EnemiesTab/EnemyContent:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [6.0]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Window/EnemiesTab/EnemyList:modulate")
+tracks/7/path = NodePath("Window/EnemiesTab/EnemyContent:position:x")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [431.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Window/EnemiesTab/EnemyContent:modulate")
+tracks/8/path = NodePath("Window/DroopersTab/DrooperContent:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -151,19 +157,19 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Window/EnemiesTab/EnemyContent:position:x")
+tracks/9/path = NodePath("Window/DroopersTab/DrooperList:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [431.0]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Window/DroopersTab/DrooperContent:modulate")
+tracks/10/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -175,19 +181,19 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Window/DroopersTab/DrooperList:modulate")
+tracks/11/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [264.0]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:modulate")
+tracks/12/path = NodePath("Window/DroopersTab/DrooperContent/Buy:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -199,19 +205,19 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Window/EnemiesTab/EnemyContent/Buy:position:y")
+tracks/13/path = NodePath("Window/UpgradesTab/UpgradeList:scale")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [264.0]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Window/DroopersTab/DrooperContent/Buy:modulate")
+tracks/14/path = NodePath("Window/UpgradesTab/UpgradeList:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -223,146 +229,146 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Window/UpgradesTab/UpgradeList:scale")
+tracks/15/path = NodePath("Window/Panel/Icon:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(3, -2)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Window/UpgradesTab/UpgradeList:modulate")
+tracks/16/path = NodePath("Window/Panel/Name:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(44, -6)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Window/Panel/Icon:position")
+tracks/17/path = NodePath("Window/Panel:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3, -2)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Window/Panel/Name:position")
+tracks/18/path = NodePath("Window/Buttons/DroopersButton:position:y")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(44, -6)]
+"values": [0.0]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Window/Panel:modulate")
+tracks/19/path = NodePath("Window/Buttons/UpgradesButton:position:y")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [0.0]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Window/Buttons/DroopersButton:position:y")
+tracks/20/path = NodePath("Window/Panel/Icon:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Window/Buttons/UpgradesButton:position:y")
+tracks/21/path = NodePath("Window/Panel/Icon:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0]
+"values": []
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Window/Panel/Icon:modulate")
+tracks/22/path = NodePath("Window:position:y")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [60.0]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Window/Panel/Icon:position")
+tracks/23/path = NodePath("Window:modulate")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Window:position:y")
+tracks/24/path = NodePath("Window/Panel/Icon:rotation")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [60.0]
+"values": [0.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Window:modulate")
+tracks/25/path = NodePath("Window/EnemiesTab/EnemiesList:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(8, 3)]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Window/Panel/Icon:rotation")
+tracks/26/path = NodePath("Window/EnemiesTab/EnemiesList:modulate")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_adcba"]
@@ -498,11 +504,11 @@ length = 0.6333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Window/EnemiesTab/EnemyList:position:x")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Window/DroopersTab/DrooperList:position:x")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.03333334, 0.2, 0.36666667, 0.56666666),
+"times": PackedFloat32Array(0, 0.16666666, 0.33333334, 0.5333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-20.0, 10.0, 4.0, 6.0]
@@ -510,8 +516,8 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Window/EnemiesTab/EnemyList:modulate")
-tracks/1/interp = 2
+tracks/1/path = NodePath("Window/DroopersTab/DrooperList:modulate")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
@@ -522,7 +528,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Window/DroopersTab/DrooperList:position:x")
+tracks/2/path = NodePath("Window/EnemiesTab/EnemiesList:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -534,7 +540,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Window/DroopersTab/DrooperList:modulate")
+tracks/3/path = NodePath("Window/EnemiesTab/EnemiesList:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -786,9 +792,9 @@ StoreWindow = NodePath("../Window")
 StoreRoot = NodePath("..")
 StoreManagerNode = NodePath("../StoreManager")
 StoreLogic = NodePath("../StoreLogic")
-EnemyContainer = NodePath("../Window/EnemiesTab/EnemyList/GridContainer")
+EnemyContainer = NodePath("../Window/EnemiesTab/EnemiesList/GridContainer")
 DrooperContainer = NodePath("../Window/DroopersTab/DrooperList/GridContainer")
-UpgradeContainer = NodePath("../Window/UpgradesTab/UpgradeList")
+UpgradeContainer = NodePath("../Window/UpgradesTab/UpgradeList/BoxContainer")
 EnemyContentContainer = NodePath("../Window/EnemiesTab/EnemyContent")
 DrooperContentContainer = NodePath("../Window/DroopersTab/DrooperContent")
 EnemiesTab = NodePath("../Window/EnemiesTab")
@@ -799,6 +805,7 @@ DroopersButton = NodePath("../Window/Buttons/DroopersButton")
 UpgradesButton = NodePath("../Window/Buttons/UpgradesButton")
 AnimPlayer = NodePath("../WindowAnim")
 MenuRoot = NodePath("..")
+ClosingAnimName = "anim"
 CloseButton = NodePath("../Window/CloseButton")
 
 [node name="Window" type="Panel" parent="." unique_id=1396775829]
@@ -984,6 +991,7 @@ expand_mode = 1
 
 [node name="DroopersTab" type="Panel" parent="Window" unique_id=2038745410]
 z_index = 1
+clip_contents = true
 layout_mode = 1
 offset_left = 5.0
 offset_top = 104.0
@@ -1149,8 +1157,10 @@ text = "buy_btn"
 script = ExtResource("3_pv3mv")
 
 [node name="EnemiesTab" type="Panel" parent="Window" unique_id=2104058131]
+clip_children = 2
 z_index = 4
 z_as_relative = false
+clip_contents = true
 layout_mode = 0
 offset_left = 5.0
 offset_top = 104.0
@@ -1159,69 +1169,6 @@ offset_bottom = 456.0
 mouse_filter = 2
 theme = ExtResource("1_2kfr3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5v5xw")
-
-[node name="EnemyList" type="ScrollContainer" parent="Window/EnemiesTab" unique_id=818530879]
-z_index = 5
-z_as_relative = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -329.5
-offset_top = -173.0
-offset_right = 92.5
-offset_bottom = 174.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(224, 172)
-focus_mode = 2
-focus_behavior_recursive = 2
-mouse_filter = 0
-follow_focus = true
-scroll_horizontal_custom_step = 23.0
-scroll_vertical_custom_step = 23.0
-scroll_hint_mode = 1
-tile_scroll_hint = true
-script = ExtResource("17_bowtv")
-wheel_scroll_damper = SubResource("Resource_70ui1")
-dragging_scroll_damper = SubResource("Resource_4twbk")
-drag_with_mouse = false
-just_snap_under = 1.19
-follow_focus_margin = 50
-allow_horizontal_scroll = false
-metadata/_custom_type_script = "uid://bgqglerkcylxx"
-
-[node name="GridContainer" type="GridContainer" parent="Window/EnemiesTab/EnemyList" unique_id=501712527]
-propagate_maximum_size = false
-layout_mode = 2
-focus_mode = 2
-mouse_filter = 2
-mouse_behavior_recursive = 2
-columns = 6
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="StoreSelectButton" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=463436673 instance=ExtResource("19_cxhn8")]
-visible = false
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = null
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="StoreSelectButton2" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=790404094 instance=ExtResource("19_cxhn8")]
-visible = false
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = null
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="StoreSelectButton3" parent="Window/EnemiesTab/EnemyList/GridContainer" unique_id=1227523314 instance=ExtResource("19_cxhn8")]
-visible = false
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = null
-metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="EnemyContent" type="Panel" parent="Window/EnemiesTab" unique_id=1034859504]
 z_index = 1
@@ -1334,6 +1281,29 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 26
 text = "buy_btn"
 script = ExtResource("3_pv3mv")
+
+[node name="EnemiesList" type="ScrollContainer" parent="Window/EnemiesTab" unique_id=1239160596]
+z_index = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 428.0
+offset_bottom = 350.0
+script = ExtResource("17_bowtv")
+wheel_scroll_damper = SubResource("Resource_23pl1")
+dragging_scroll_damper = SubResource("Resource_fuweh")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="GridContainer" type="GridContainer" parent="Window/EnemiesTab/EnemiesList" unique_id=1660567336]
+layout_mode = 2
+columns = 6
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="StoreSelectButton" parent="Window/EnemiesTab/EnemiesList/GridContainer" unique_id=463436673 instance=ExtResource("20_fuweh")]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="UpgradesTab" type="Panel" parent="Window" unique_id=1665559203]
 z_index = 1

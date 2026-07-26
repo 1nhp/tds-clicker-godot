@@ -10,8 +10,10 @@ public partial class StoreManager : Node
 
     public List<Resource> StoreItems = new();
     
+    public Dictionary<string, StoreData> UpgradeData = new();
     public List<Resource> UpgradeItems = new();
-    public Dictionary<string, string> UpgradeContainers = new();
+    
+    public Dictionary<string, Control> UpgradeContainers = new();
     
     public StoreData CurrentItem;
 
@@ -23,7 +25,9 @@ public partial class StoreManager : Node
     public override void _Ready()
     {
         Instance = this;
-        _StartLoading();
+        
+        _StartLoading();   
+        
         CallDeferred(nameof(EmitLoadingFinished));
     }
 
@@ -38,7 +42,6 @@ public partial class StoreManager : Node
         foreach (var folder in _folders)
         {
             var items = _EnumerateStoreItems(folder);
-            GD.Print($"{folder}: found {items.Count} items"); // <-- add this
             StoreItems.AddRange(items);
         }
     }

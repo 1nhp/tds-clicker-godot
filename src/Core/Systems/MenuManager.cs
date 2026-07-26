@@ -19,53 +19,75 @@ public partial class MenuManager : Node
 		Instance = this;
 	}
 
+	private static void SetVisible(Node node, bool visible)
+	{
+		switch (node)
+		{
+			case CanvasItem item:
+				item.Visible = visible;
+				break;
+
+			case CanvasLayer layer:
+				layer.Visible = visible;
+				break;
+		}
+	}
+
 	public void OpenMenu(Node menu, AnimationPlayer player)
 	{
-		if (menu is CanvasLayer canvasItem)
-			canvasItem.Visible = true;
-			
-		player.Play("anim");
+		SetVisible(menu, true);
+
+		if (GameManager.Settings.UiAnimations)
+		{
+			player.Play("anim");
+		}
+
 		EmitSignal(SignalName.MenuOpening);
 	}
 
-	public Node OpenMenu(string sceneName)
+	public Node OpenMenu(string sceneName, string anim = "anim")
 	{
 		var menu = ObjectHelper.Create<Control>(sceneName, Vector2.Zero, "/root/Game/UI");
 		var player = menu.GetNode<AnimationPlayer>("AnimationPlayer");
+		
+		SetVisible(menu, true);
 
-		menu.Visible = true;
-		player.Play("anim");
-		EmitSignal(SignalName.MenuClosing);
+		if (GameManager.Settings.UiAnimations)
+		{
+			player.Play(anim);
+		}
 
+		EmitSignal(SignalName.MenuOpening, menu);
 		return menu;
 	}
 
 	public async Task CloseMenu(
-		Node menuNode,
+		Node menu,
 		AnimationPlayer animPlayer,
 		string animation = "anim",
 		bool destroy = false,
 		bool backwards = true)
 	{
-		if (backwards)
-			animPlayer.PlayBackwards(animation);
-		else
-			animPlayer.Play(animation);
-
-		await ToSignal(animPlayer, AnimationPlayer.SignalName.AnimationFinished);
-
-		foreach (Node child in menuNode.GetChildren())
+		if (GameManager.Settings.UiAnimations)
 		{
-			if (child is AnimationPlayer player)
-				player.Play("RESET");
+			if (backwards)
+				animPlayer.PlayBackwards(animation);
+			else
+				animPlayer.Play(animation);
+
+			await ToSignal(animPlayer, AnimationPlayer.SignalName.AnimationFinished);
+
+			foreach (Node child in menu.GetChildren())
+			{
+				if (child is AnimationPlayer player)
+					player.Play("RESET");
+			}
 		}
 
-		if (menuNode is CanvasLayer canvasItem)
-			canvasItem.Visible = false;
-
-		EmitSignal(SignalName.MenuClosing);
+		SetVisible(menu, false);
+		EmitSignal(SignalName.MenuClosing, menu);
 
 		if (destroy)
-			menuNode.QueueFree();
+			menu.QueueFree();
 	}
 }

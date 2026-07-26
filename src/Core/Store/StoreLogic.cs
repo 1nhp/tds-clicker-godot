@@ -1,8 +1,10 @@
+using System;
 using Godot;
 using Godot.Collections;
 using TDSClicker.Core.Autoloads;
 using TDSClicker.Core.Systems;
 using TDSClicker.Entities;
+using TDSClicker.Resources;
 
 namespace TDSClicker.Core.Store;
 
@@ -46,7 +48,6 @@ public partial class StoreLogic : Node
 	{
 		GameManager.Coins -= price;
 		SoundManager.Instance.PlaySound("Upgrade");
-		GameManager.Instance.UpdateCounter();
 		GD.Print("Purchase succesful");
 		SignalBus.Instance.EmitSignal(SignalBus.SignalName.PurchaseSuccesfull);
 	}
@@ -82,6 +83,45 @@ public partial class StoreLogic : Node
 		_Transaction(price);
 	}
 
+	public bool BuyUpgrade(UpgradeData item)
+	{
+		var price = item.BasePrice * Math.Pow(item.PriceMultiplier, item.Level);
+		if (GameManager.Coins < price)
+		{
+			return false;
+		}
+		if (item.Level >= item.MaxLevel)
+		{
+			return false;
+		}
+		_Transaction((float)price);
+		item.Level += 1;
+		
+		if (!GameManager.Upgrades.ContainsKey(item.Id))
+		{
+			GameManager.Upgrades[item.Id] = new Dictionary<string, float>
+			{
+				{ "level", 1},
+			};
+		}
+		
+		GameManager.Upgrades[item.Id]["level"] = item.Level;
+		_applyUpgradeEffect(item);
+		return true;
+	}
+
+	private void _applyUpgradeEffect(UpgradeData item)
+	{
+		switch (item.Id)
+		{
+			case "DrooperCooldown":
+			{
+				GameManager.DrooperCooldown = Mathf.Max(0.0f, GameManager.DrooperCooldown - 0.1f);
+				break;
+			}
+		}
+	}
+	
 	public void UpdateItemState()
 	{
 		var current = StoreManager.Instance.CurrentItem;

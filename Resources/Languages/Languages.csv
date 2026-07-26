@@ -18,7 +18,7 @@ ui_animations_description,"Toggles ui animations,\n can improve performance on l
 blur_bg,BG Blur,Размития фона
 blur_bg_description,"Toggles background blur on menus,\n can improve performance on low-end devices.","Включает или отключает размития фона в меню, может увеличить\nпроизводительность на слабых устройствах."
 sound_volume,Sound Volume,Громкость Звука
-music_volume,Music Volune,Громкость Музики
+music_volume,Music Volume,Громкость Музики
 download_music_dlc_btn,Download Additional Music DLC,Скачать доп. музыкальное DLC 
 redownload_music_dlc_btn,Redownload Additional Music DLC,Перекачать доп. музыкальное DLC 
 remove_music_dlc_btn,Remove Additional Music DLC,Удалить доп. музыкальное DLC 

@@ -94,8 +94,8 @@ public partial class Enemy : Node2D
 
 	  public override void _Process(double delta)
 	  {
-		  // Check for enemy animations
-
+		  if (!GameManager.Settings.EnemyAnimations) return;
+		  
 		  Time += (float) delta;
 		  Sprite.Rotation = Mathf.Sin(Time * Speed) * Amplitude;
 		  SpriteHurt.Rotation = Mathf.Sin(Time * Speed) * Amplitude;
@@ -116,7 +116,7 @@ public partial class Enemy : Node2D
 		  {
 			  EmitSignal(SignalName.EnemyHurt);
 			  
-			  for (var i = 0; i < CoinAward; i++)
+			  for (var i = 0; i < Mathf.Min(CoinAward, GameManager.Settings.CoinParticles); i++)
 			  {
 				  ObjectHelper.Create<Node2D>("CoinEffect", GlobalPosition, "/root/Game/FG/Objects/");         
 			  }
@@ -128,6 +128,8 @@ public partial class Enemy : Node2D
 	  
 	  private async void Anim(AnimTypes type)
 	  {
+		  if (!GameManager.Settings.EnemyAnimations) return;
+		  
 		  _enemyTween?.Kill();
 		  _enemyTween = CreateTween();
 		  _enemyTween.SetTrans(Tween.TransitionType.Quad);

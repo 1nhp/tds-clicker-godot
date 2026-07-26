@@ -33,7 +33,7 @@ public partial class StatsUi : MenuBase
         TimePlayedLabel.Text = Tr("time_played") + GameManager.Enemies;
         CoinsEarnedLabel.Text = Tr("coins_earned") + GameManager.CoinsEarned;
     }
-
+    
     public override void _ExitTree()
     {
         if (Instance == this)

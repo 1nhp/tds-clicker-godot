@@ -1,18 +1,16 @@
-[gd_resource type="Resource" format=3 uid="uid://m2j3es8jba06"]
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://m2j3es8jba06"]
 
-[ext_resource type="Script" uid="uid://dyckhxk7r1sj5" path="res://data/store/upgrades/scripts/enemy_multiplier.upgrade.gd" id="1_c4jpv"]
-[ext_resource type="Texture2D" uid="uid://bfd6we62eo4rb" path="res://assets/sprites/ui/ui_income.png" id="2_nvjtg"]
+[ext_resource type="Texture2D" uid="uid://ccv8tr7sqp5v5" path="res://Assets/Sprites/Enemies/Normal.png" id="1_8nj52"]
+[ext_resource type="Script" uid="uid://dok254wavop80" path="res://Resources/UpgradeData.cs" id="1_vyyn5"]
 
 [resource]
-script = ExtResource("1_c4jpv")
-base_price = 32000
-price_multiplier = 2.0
-level = 1
-max_level = 45
-upgrade_name_key = "enemy_multiplier_name"
-description_key = "enemy_multiplier_desc"
-text_color = Color(1, 0, 0, 1)
-id = "enemy_multiplier"
-name = "Enemy Multiplier"
-texture = ExtResource("2_nvjtg")
-type = "Upgrade"
+script = ExtResource("1_vyyn5")
+BasePrice = 32000
+PriceMultiplier = 2.0
+MaxLevel = 45
+UpgradeNameKey = "enemy_multiplier_name"
+DescriptionKey = "enemy_multiplier_desc"
+TextColor = Color(1, 0, 0, 1)
+Id = "EnemyMultiplier"
+Name = "Enemy Multiplier"
+Texture = ExtResource("1_8nj52")

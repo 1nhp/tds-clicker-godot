@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://beaahem6rjcru"]
 
 [ext_resource type="Script" uid="uid://dj4i2670qbpu8" path="res://src/Core/Systems/GameManager.cs" id="1_3cx6b"]
-[ext_resource type="Script" uid="uid://do3h184prbsae" path="res://src/UI/UICounter.cs" id="2_acvyw"]
+[ext_resource type="Script" uid="uid://do3h184prbsae" path="res://src/UI/UiCounter.cs" id="2_acvyw"]
 [ext_resource type="Texture2D" uid="uid://cko24kj0yo8dn" path="res://Assets/Sprites/BgCrossroads.jpg" id="2_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://is1mdatpinro" path="res://Scenes/Objects/Enemy/Enemy.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://csqs4gjcr6jci" path="res://Assets/Sprites/UI/UiCoin.png" id="4_lbhrr"]
@@ -162,8 +162,20 @@ _storeAnim = NodePath("UI/Store/WindowAnim")
 Enemy = NodePath("FG/Control/enemy")
 UiContainer = NodePath("UI")
 
-[node name="UICounter" type="Node" parent="." unique_id=1823054309]
+[node name="UICounter" type="Node" parent="." unique_id=1823054309 node_paths=PackedStringArray("CoinCounter", "CoinCounter2", "CoinCounter3", "IncomeCounter", "IncomeCounter2", "TotalIncomeCounter", "TotalIncomeCounter2", "TotalIncomeTimer", "DroopersCounter", "DroopersCounter2", "CoinIcon", "DrooperIcon")]
 script = ExtResource("2_acvyw")
+CoinCounter = NodePath("../UI/TL/CoinCounter/Counter/CoinsCounter")
+CoinCounter2 = NodePath("../UI/TL/CoinCounter/Counter/CoinsCounter2")
+CoinCounter3 = NodePath("../UI/TL/CoinCounter/Counter")
+IncomeCounter = NodePath("../UI/TL/IncomeCounter/Counter/IncomeCounter")
+IncomeCounter2 = NodePath("../UI/TL/IncomeCounter/Counter/IncomeCounter2")
+TotalIncomeCounter = NodePath("../UI/TL/CoinCounter/Counter/TotalIncome")
+TotalIncomeCounter2 = NodePath("../UI/TL/CoinCounter/Counter/TotalIncome2")
+TotalIncomeTimer = NodePath("../UI/TL/CoinCounter/Counter/TotalIncomeTimer")
+DroopersCounter = NodePath("../UI/TL/DroopersCounter/Counter/DroopersCounter")
+DroopersCounter2 = NodePath("../UI/TL/DroopersCounter/Counter/DroopersCounter2")
+CoinIcon = NodePath("../UI/TL/CoinCounter/CoinIcon")
+DrooperIcon = NodePath("../UI/TL/DroopersCounter/DrooperIcon")
 
 [node name="FG" type="CanvasLayer" parent="." unique_id=343989833]
 layer = -1

@@ -24,7 +24,6 @@ public partial class Debug : Node
         if (Input.IsKeyPressed(Key.C))
         {
             GameManager.Coins += 10000000000;
-            GameManager.Instance.UpdateCounter();
         }
         if (Input.IsKeyPressed(Key.E))
         {

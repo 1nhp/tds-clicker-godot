@@ -11,6 +11,7 @@ public partial class MusicManager : Node2D
 
 	public override void _Ready()
 	{
+		Instance = this;
 		Player ??= GetNode<AudioStreamPlayer>("music");
 		_rng.Randomize();
 		_tracks = GetTracks();

@@ -10,3 +10,4 @@ Name = "Abnormal"
 Texture = ExtResource("2_7lq41")
 Price = 500.0
 Type = "Enemy"
+CoinAward = 3

@@ -17,6 +17,7 @@ public class SaveData
 	public bool FirstTime { get; set; } = true;
 	public float Income { get; set; } = 0;
 	public Dictionary<string, bool> Enemies { get; set; } = new();
+	public Dictionary<string, Dictionary<string, float>> Upgrades { get; set; } = new();
 	public float EnemiesKilled { get; set; } = 0;
 	public float CoinsEarned { get; set; } = 0;
 	public string CurrentEnemy { get; set; } = "Normal";
@@ -78,6 +79,7 @@ public partial class SavingSystem : Node
 			FirstTime = GameManager.FirstTime,
 			Income = GameManager.Income,
 			Enemies = GameManager.Enemies,
+			Upgrades = GameManager.Upgrades,
 			EnemiesKilled = GameManager.EnemiesKilled,
 			CoinsEarned = GameManager.CoinsEarned,
 			CurrentEnemy = GameManager.CurrentEnemy,
@@ -137,6 +139,7 @@ public partial class SavingSystem : Node
 		
 
 		GameManager.ApplySave(data);
+
 		return data ?? new SaveData();
 	}
 }

@@ -1,6 +1,15 @@
+TextureRect
+SmoothScrollContainer
+Sprite2D
+MultiMeshInstance2D
 Label
+GridContainer
+ScrollContainer
+Control
+VBoxContainer
+ItemList
+VisibleOnScreenNotifier2D
 Node
 Node2D
-Control
 CanvasLayer
 Button

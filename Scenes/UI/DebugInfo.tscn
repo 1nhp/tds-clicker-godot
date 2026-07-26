@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b0wfwstlxjqk2"]
 
-[ext_resource type="Script" uid="uid://cfgjppnejgxwe" path="res://scenes/objects/debug_info/debug_info.gd" id="1_0e4su"]
+[ext_resource type="Script" uid="uid://cyi4o6dk0n1o3" path="res://src/UI/DebugInfo/DebugInfo.cs" id="1_b67hc"]
 
-[node name="DebugInfo" type="CanvasLayer" unique_id=852280272]
+[node name="DebugInfo" type="CanvasLayer" unique_id=852280272 node_paths=PackedStringArray("MusicLabel", "FpsLabel")]
 layer = 3
-script = ExtResource("1_0e4su")
+script = ExtResource("1_b67hc")
+MusicLabel = NodePath("music")
+FpsLabel = NodePath("fps")
 
 [node name="music" type="Label" parent="." unique_id=479100577]
 offset_left = 8.0

@@ -10,7 +10,7 @@ public static class PropertyHelper
         StringName signal)
     {
         field = value;
-        emitter.EmitSignal(signal, Variant.From(value));
+        emitter.EmitSignal(signal);
         GD.Print($"{signal}: {value}");
     }
 }

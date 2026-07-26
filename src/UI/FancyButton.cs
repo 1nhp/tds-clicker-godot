@@ -108,8 +108,11 @@ public partial class FancyButton : Button
 	/// </summary>
 	/// <param name="type">The type of animation e.g (Anim.HoverIn, Anim.HoverOut, Anim.Click).</param>
 	
+	
 	public void PlayAnim(Anim type = Anim.HoverIn)
 	{
+		if (!GameManager.Settings.UiAnimations) return;
+		
 		_buttonTween = InitTween(_buttonTween);
 		switch (type)
 		{

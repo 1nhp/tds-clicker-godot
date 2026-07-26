@@ -17,5 +17,6 @@ Object = Dictionary[String, String]({
 "Settings": "res://Scenes/UI/Settings.tscn",
 "Stats": "res://Scenes/UI/Stats.tscn",
 "Store": "res://Scenes/UI/Store/Store.tscn",
-"StoreSelectButton": "res://Scenes/UI/Store/StoreSelectButton.tscn"
+"StoreSelectButton": "res://Scenes/UI/Store/StoreSelectButton.tscn",
+"StoreUpgradeContainer": "res://Scenes/UI/Store/StoreUpgradeContainer.tscn"
 })

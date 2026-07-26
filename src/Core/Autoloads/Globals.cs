@@ -5,8 +5,8 @@ public partial class Globals : Node
 {
 	public static Globals Instance { get; private set; }
 
-	public readonly string Version = "1.3 Beta indev CSharp";
-	public bool RunningFromSource = true;
+	public const string Version = "1.3 Beta indev CSharp";
+	public const bool RunningFromSource = true;
 
 	public class GlobalSettings
 	{
@@ -19,12 +19,6 @@ public partial class Globals : Node
 	public override void _Ready()
 	{
 		TranslationServer.SetLocale(Settings.Language);
-
-		// if running from source (not really true)
-		if (Version.Contains("indev"))
-		{
-			RunningFromSource = true;
-		}
 
 		if (Settings.SkipDisclaimer)
 		{

@@ -6,6 +6,8 @@ public abstract partial class MenuBase : Node
 {
     [Export] public AnimationPlayer AnimPlayer { get; set; }
     [Export] public Node MenuRoot { get; set; }
+    [Export] public string ClosingAnimName { get; set; }
+    [Export] public bool Backwards { get; set; } = true;
     [Export] public FancyButton CloseButton { get; set; }
     [Export] private bool DestroyAfterClosed { get; set; }
 
@@ -25,7 +27,7 @@ public abstract partial class MenuBase : Node
     
     protected virtual async void OnCloseButtonClicked()
     {
-        await MenuManager.Instance.CloseMenu(MenuRoot, AnimPlayer, "anim", DestroyAfterClosed, true);
+        await MenuManager.Instance.CloseMenu(MenuRoot, AnimPlayer, ClosingAnimName, DestroyAfterClosed, Backwards);
     }
     
 }

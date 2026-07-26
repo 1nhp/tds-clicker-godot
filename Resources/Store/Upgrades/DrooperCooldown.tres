@@ -1,19 +1,18 @@
-[gd_resource type="Resource" format=3 uid="uid://da6tp2rcvk7uk"]
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://da6tp2rcvk7uk"]
 
-[ext_resource type="Script" uid="uid://tdd7ojv7n5h4" path="res://data/store/upgrades/scripts/drooper_cooldown_upgrade.gd" id="1_3m3rh"]
-[ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://assets/sprites/droopers/drooper_2.png" id="2_043t8"]
+[ext_resource type="Texture2D" uid="uid://be204rpewpip5" path="res://Assets/Sprites/Droopers/Drooper_2.png" id="2_043t8"]
+[ext_resource type="Script" uid="uid://dok254wavop80" path="res://Resources/UpgradeData.cs" id="2_fkalp"]
 
 [resource]
-script = ExtResource("1_3m3rh")
-base_price = 500
-price_multiplier = 6.0
-level = 1
-max_level = 10
-upgrade_name_key = "drooper_cooldown_name"
-description_key = "drooper_cooldown_desc"
-text_color = Color(0, 0.5803922, 1, 1)
-id = "drooper_cooldown"
-name = "Drooper Cooldown"
-texture = ExtResource("2_043t8")
-price = 500
-type = "Upgrade"
+script = ExtResource("2_fkalp")
+BasePrice = 4000
+PriceMultiplier = 6.0
+MaxLevel = 10
+UpgradeNameKey = "drooper_cooldown_name"
+DescriptionKey = "drooper_cooldown_desc"
+TextColor = Color(0, 0.5803922, 1, 1)
+Id = "DrooperCooldown"
+Name = "Drooper Cooldown"
+Texture = ExtResource("2_043t8")
+Price = 500.0
+Type = "Upgrade"

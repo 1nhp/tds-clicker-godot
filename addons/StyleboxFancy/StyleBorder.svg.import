@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvvu8c56q60gy"
-path="res://.godot/imported/StyleBorder.svg-a166060f8f89f97da548fb364bfe7591.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://bb36eia58knai"
+valid=false
 
 [deps]
 
 source_file="res://addons/StyleboxFancy/StyleBorder.svg"
-dest_files=["res://.godot/imported/StyleBorder.svg-a166060f8f89f97da548fb364bfe7591.ctex"]
 
 [params]
 
@@ -36,7 +32,7 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=430
 detect_3d/compress_to=1
 svg/scale=1.0
 editor/scale_with_editor_scale=false

@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dv8bxyk3jattq"]
+
+[ext_resource type="Script" uid="uid://2xlvika6fbp8" path="res://Scenes/ScrollCuller.cs" id="1_b5ayd"]
+
+[node name="TestScene" type="Control" unique_id=1900418483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1801971430]
+propagate_maximum_size = true
+clip_contents = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 272.0
+offset_bottom = 432.0
+script = ExtResource("1_b5ayd")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1543097699]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer" unique_id=824743658]
+layout_mode = 2
+text = "Test"
+
+[node name="Label2" type="Label" parent="ScrollContainer/GridContainer" unique_id=831457436]
+layout_mode = 2
+text = "Test"
+
+[node name="Label3" type="Label" parent="ScrollContainer/GridContainer" unique_id=650202555]
+layout_mode = 2
+text = "Test"
+
+[node name="Label4" type="Label" parent="ScrollContainer/GridContainer" unique_id=874823667]
+layout_mode = 2
+text = "Test"
+
+[node name="Label5" type="Label" parent="ScrollContainer/GridContainer" unique_id=268666116]
+layout_mode = 2
+text = "Test"
+
+[node name="Label6" type="Label" parent="ScrollContainer/GridContainer" unique_id=1920557934]
+layout_mode = 2
+text = "Test"
+
+[node name="Label7" type="Label" parent="ScrollContainer/GridContainer" unique_id=653130679]
+layout_mode = 2
+text = "Test"
+
+[node name="Label8" type="Label" parent="ScrollContainer/GridContainer" unique_id=1116103899]
+layout_mode = 2
+text = "Test"
+
+[node name="Label9" type="Label" parent="ScrollContainer/GridContainer" unique_id=1722159894]
+layout_mode = 2
+text = "Test"
+
+[node name="Label10" type="Label" parent="ScrollContainer/GridContainer" unique_id=87366806]
+layout_mode = 2
+text = "Test"
+
+[node name="Label11" type="Label" parent="ScrollContainer/GridContainer" unique_id=1031134420]
+layout_mode = 2
+text = "Test"
+
+[node name="Label12" type="Label" parent="ScrollContainer/GridContainer" unique_id=469073609]
+layout_mode = 2
+text = "Test"
+
+[node name="Label13" type="Label" parent="ScrollContainer/GridContainer" unique_id=999577020]
+layout_mode = 2
+text = "Test"
+
+[node name="Label14" type="Label" parent="ScrollContainer/GridContainer" unique_id=561013580]
+layout_mode = 2
+text = "Test"
+
+[node name="Label15" type="Label" parent="ScrollContainer/GridContainer" unique_id=83050971]
+layout_mode = 2
+text = "Test"
+
+[node name="Label16" type="Label" parent="ScrollContainer/GridContainer" unique_id=1533034953]
+layout_mode = 2
+text = "Test"
+
+[node name="Label17" type="Label" parent="ScrollContainer/GridContainer" unique_id=1439302024]
+layout_mode = 2
+text = "Test"
+
+[node name="Label18" type="Label" parent="ScrollContainer/GridContainer" unique_id=2130417803]
+layout_mode = 2
+text = "Test"
